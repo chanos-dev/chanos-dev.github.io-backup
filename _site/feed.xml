@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom"><generator uri="http://jekyllrb.com" version="3.6.3">Jekyll</generator><link href="http://localhost:4000/feed.xml" rel="self" type="application/atom+xml" /><link href="http://localhost:4000/" rel="alternate" type="text/html" /><updated>2020-04-02T22:36:39+09:00</updated><id>http://localhost:4000/</id><title>chanos-dev</title><subtitle>Delphi Developer</subtitle><entry><title>First github blog post</title><link href="http://localhost:4000/first-post/" rel="alternate" type="text/html" title="First github blog post" /><published>2020-04-02T00:00:00+09:00</published><updated>2020-04-02T00:00:00+09:00</updated><id>http://localhost:4000/first-post</id><content type="html" xml:base="http://localhost:4000/first-post/">&lt;p&gt;&lt;a href=&quot;http://localhost:4000/images/halve-home-image.png&quot;&gt;&lt;img src=&quot;http://localhost:4000/images/halve-home-image.png&quot; alt=&quot;Home Page of Halve&quot; /&gt;&lt;/a&gt;&lt;/p&gt;
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom"><generator uri="http://jekyllrb.com" version="3.6.3">Jekyll</generator><link href="https://chanos-dev.github.io/feed.xml" rel="self" type="application/atom+xml" /><link href="https://chanos-dev.github.io/" rel="alternate" type="text/html" /><updated>2020-04-02T22:56:45+09:00</updated><id>https://chanos-dev.github.io/</id><title>chanos-dev</title><subtitle>Delphi Developer</subtitle><entry><title>First github blog post</title><link href="https://chanos-dev.github.io/first-post/" rel="alternate" type="text/html" title="First github blog post" /><published>2020-04-02T00:00:00+09:00</published><updated>2020-04-02T00:00:00+09:00</updated><id>https://chanos-dev.github.io/first-post</id><content type="html" xml:base="https://chanos-dev.github.io/first-post/">&lt;p&gt;&lt;a href=&quot;https://chanos-dev.github.io/images/halve-home-image.png&quot;&gt;&lt;img src=&quot;https://chanos-dev.github.io/images/halve-home-image.png&quot; alt=&quot;Home Page of Halve&quot; /&gt;&lt;/a&gt;&lt;/p&gt;
 
 &lt;center&gt;&lt;b&gt;Halve&lt;/b&gt; is a stylish, two-column jekyll theme.&lt;/center&gt;
 &lt;p&gt;&lt;br /&gt;&lt;/p&gt;
@@ -27,22 +27,22 @@
 
 &lt;figure class=&quot;third&quot;&gt;
     
-    &lt;a href=&quot;http://localhost:4000/images/halve-home-image.png&quot;&gt;&lt;img src=&quot;http://localhost:4000/images/halve-home-image.png&quot; alt=&quot;&quot; /&gt;&lt;/a&gt;
+    &lt;a href=&quot;https://chanos-dev.github.io/images/halve-home-image.png&quot;&gt;&lt;img src=&quot;https://chanos-dev.github.io/images/halve-home-image.png&quot; alt=&quot;&quot; /&gt;&lt;/a&gt;
     
-    &lt;a href=&quot;http://localhost:4000/images/post-image-halve-1.png&quot;&gt;&lt;img src=&quot;http://localhost:4000/images/post-image-halve-1.png&quot; alt=&quot;&quot; /&gt;&lt;/a&gt;
+    &lt;a href=&quot;https://chanos-dev.github.io/images/post-image-halve-1.png&quot;&gt;&lt;img src=&quot;https://chanos-dev.github.io/images/post-image-halve-1.png&quot; alt=&quot;&quot; /&gt;&lt;/a&gt;
     
-    &lt;a href=&quot;http://localhost:4000/images/post-image-halve-2.png&quot;&gt;&lt;img src=&quot;http://localhost:4000/images/post-image-halve-2.png&quot; alt=&quot;&quot; /&gt;&lt;/a&gt;
+    &lt;a href=&quot;https://chanos-dev.github.io/images/post-image-halve-2.png&quot;&gt;&lt;img src=&quot;https://chanos-dev.github.io/images/post-image-halve-2.png&quot; alt=&quot;&quot; /&gt;&lt;/a&gt;
     
     &lt;figcaption&gt;Screenshots of Halve Theme&lt;/figcaption&gt;
 &lt;/figure&gt;
 
 &lt;figure class=&quot;third&quot;&gt;
     
-    &lt;a href=&quot;http://localhost:4000/images/post-image-halve-3.png&quot;&gt;&lt;img src=&quot;http://localhost:4000/images/post-image-halve-3.png&quot; alt=&quot;&quot; /&gt;&lt;/a&gt;
+    &lt;a href=&quot;https://chanos-dev.github.io/images/post-image-halve-3.png&quot;&gt;&lt;img src=&quot;https://chanos-dev.github.io/images/post-image-halve-3.png&quot; alt=&quot;&quot; /&gt;&lt;/a&gt;
     
-    &lt;a href=&quot;http://localhost:4000/images/post-image-halve-6.png&quot;&gt;&lt;img src=&quot;http://localhost:4000/images/post-image-halve-6.png&quot; alt=&quot;&quot; /&gt;&lt;/a&gt;
+    &lt;a href=&quot;https://chanos-dev.github.io/images/post-image-halve-6.png&quot;&gt;&lt;img src=&quot;https://chanos-dev.github.io/images/post-image-halve-6.png&quot; alt=&quot;&quot; /&gt;&lt;/a&gt;
     
-    &lt;a href=&quot;http://localhost:4000/images/post-image-halve-4.png&quot;&gt;&lt;img src=&quot;http://localhost:4000/images/post-image-halve-4.png&quot; alt=&quot;&quot; /&gt;&lt;/a&gt;
+    &lt;a href=&quot;https://chanos-dev.github.io/images/post-image-halve-4.png&quot;&gt;&lt;img src=&quot;https://chanos-dev.github.io/images/post-image-halve-4.png&quot; alt=&quot;&quot; /&gt;&lt;/a&gt;
     
     &lt;figcaption&gt;Mobile view of Halve Theme&lt;/figcaption&gt;
 &lt;/figure&gt;
@@ -144,7 +144,7 @@ image: http://example.com/some-image.png
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
 &lt;p&gt;This also will be used for twitter card:&lt;/p&gt;
 
-&lt;p&gt;&lt;img src=&quot;http://localhost:4000/images/post-image-halve-5.png&quot; alt=&quot;Halve Twitter Card&quot; /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;https://chanos-dev.github.io/images/post-image-halve-5.png&quot; alt=&quot;Halve Twitter Card&quot; /&gt;&lt;/p&gt;
 
 &lt;hr /&gt;
 
