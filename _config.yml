@@ -5,10 +5,6 @@ url: https://chanos-dev.github.io
 logo: chanos.png                                       # Site logo
 locale: en_US
 
-#disque comments 
-disqus-identifier: chanos-dev-github-io
-disqus-shortname: chanos-dev-github-io
-
 # Left Block Images
 background:
   homepage: images/home.jpeg           # this image will be shown on homepage's left block
