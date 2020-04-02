@@ -5,6 +5,10 @@ url: https://chanos-dev.github.io
 logo: chanos.png                                       # Site logo
 locale: en_US
 
+#disque comments 
+disqus-identifier: chanos-dev-github-io
+disqus-shortname: chanos-dev-github-io
+
 # Left Block Images
 background:
   homepage: images/home.jpeg           # this image will be shown on homepage's left block
@@ -63,6 +67,3 @@ gems:
 # Exclude list
 include: [_pages]
 exclude: [README.md, Gemfile, Gemfile.lock, _site, src, vendor, CNAME, LICENSE, Rakefile, .sass-cache, .DS_Store]
-
-#disque comments 
-discus-identifier: chanos-dev-github-io
