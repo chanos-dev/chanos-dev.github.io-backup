@@ -3,7 +3,7 @@ layout: home
 ---
 # About
 
-Hello, I'm Chanos-dev. 
+Hello, I'm Chanos-dev and Junior Developer. 
 
 Thank you for visiting my blog, and have a good time!
 
