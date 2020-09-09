@@ -1,2 +1,4 @@
 User-agent: *
-Allow: 
+Allow: /
+
+Sitemap: http://chanos-dev.github.io/sitemap.xml
