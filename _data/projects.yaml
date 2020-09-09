@@ -1,7 +1,7 @@
-- title: Launching soon
-  url: http://github.com/chanos-dev
-  image: 
-  completed: false
+- title: CryptoChan
+  url: https://github.com/chanos-dev/Personal-Project/tree/master/CryptoChan
+  image: https://chanos-dev.github.io/images/20-0909-1.png
+  completed: true
 
 # - title: Moon Jekyll Theme
 #   url: http://taylantatli.me/Moon
