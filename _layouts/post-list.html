@@ -22,11 +22,12 @@ layout: compress
         <span></span>
       </a>
       <span class="projects-link">PROJECTS</span>
-      <a title="tags" class="tags-menu-icon">
+      <a href="{{ site.url }}/tags" title="tags" class="tags-menu-icon">
         <span></span>
       </a> 
       <span class="tags-link">TAGS</span>
       <div class="content">
+        <div class="date-highlight">{% if page.date %}{{ page.date | date: '%d %b %Y' }}{% else %}&#x2756;{% endif %}</div>
         <ul class="posts-list">
         {% for post in site.posts %}
           <li>

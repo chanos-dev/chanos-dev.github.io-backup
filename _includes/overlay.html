@@ -1,6 +1,5 @@
 <div class="overlay">
-  <ul class="projects-menu">
-    <span class="projects-link">PROJECTS</span>
+  <ul class="projects-menu"> 
     {% for item in site.data.projects %}
       {% capture image %}{{ item.image }}{% endcapture %}
       {% unless image contains 'http://' or image contains 'https://' %}
