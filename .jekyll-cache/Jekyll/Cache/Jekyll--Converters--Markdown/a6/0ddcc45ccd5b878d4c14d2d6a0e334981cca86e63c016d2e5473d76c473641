@@ -1,0 +1,158 @@
+I"�&<h2 id="c-abstract와-interface"><center>C# Abstract와 Interface</center></h2>
+
+<h3 id="--abstract--">- Abstract -</h3>
+<ul>
+  <li></li>
+  <li>Edit <code class="language-plaintext highlighter-rouge">_config.yml</code> file.</li>
+  <li>Edit <code class="language-plaintext highlighter-rouge">index.md</code>.</li>
+  <li>Edit <code class="language-plaintext highlighter-rouge">_data/projects.yaml</code></li>
+  <li>Add a logo with a small one to <code class="language-plaintext highlighter-rouge">images</code> folder. (eg. <code class="language-plaintext highlighter-rouge">logo.png</code>, <code class="language-plaintext highlighter-rouge">logo-small.png</code>)</li>
+  <li>Remove sample posts from <code class="language-plaintext highlighter-rouge">_posts</code> folder and add yours.</li>
+  <li>Remove/Change sample images from <code class="language-plaintext highlighter-rouge">images</code> folder.</li>
+  <li>Change repo name to <code class="language-plaintext highlighter-rouge">YourUserName.github.io</code></li>
+</ul>
+
+<p>That’s all.</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>Class Blog
+{
+  
+  Console.WriteLine("GDGD");
+} 
+</code></pre></div></div>
+
+<h2 id="preview">Preview</h2>
+
+<figure class="third">
+    
+    <a href="http://localhost:4000/images/halve-home-image.png"><img src="http://localhost:4000/images/halve-home-image.png" alt="" /></a>
+    
+    <a href="http://localhost:4000/images/post-image-halve-1.png"><img src="http://localhost:4000/images/post-image-halve-1.png" alt="" /></a>
+    
+    <a href="http://localhost:4000/images/post-image-halve-2.png"><img src="http://localhost:4000/images/post-image-halve-2.png" alt="" /></a>
+    
+    <figcaption>Screenshots of Halve Theme</figcaption>
+</figure>
+
+<figure class="third">
+    
+    <a href="http://localhost:4000/images/post-image-halve-3.png"><img src="http://localhost:4000/images/post-image-halve-3.png" alt="" /></a>
+    
+    <a href="http://localhost:4000/images/post-image-halve-6.png"><img src="http://localhost:4000/images/post-image-halve-6.png" alt="" /></a>
+    
+    <a href="http://localhost:4000/images/post-image-halve-4.png"><img src="http://localhost:4000/images/post-image-halve-4.png" alt="" /></a>
+    
+    <figcaption>Mobile view of Halve Theme</figcaption>
+</figure>
+
+<p>See a <a href="http://taylantatli.github.io/Halve">live version of Halve</a> hosted on GitHub.</p>
+
+<h2 id="site-setup">Site Setup</h2>
+<p>A quick checklist of the files you’ll want to edit to get up and running.</p>
+
+<h3 id="site-wide-configuration">Site Wide Configuration</h3>
+<p><code class="language-plaintext highlighter-rouge">_config.yml</code> is your friend. Open it up and personalize it. Most variables are self explanatory but here’s an explanation of each if needed:</p>
+
+<h4 id="title">title</h4>
+
+<p>The title of your site… shocker!</p>
+
+<p>Example <code class="language-plaintext highlighter-rouge">title: My Awesome Site</code></p>
+
+<h4 id="description">description</h4>
+
+<p>The description to use for meta tags and homepage.</p>
+
+<h4 id="url">url</h4>
+
+<p>Used to generate absolute urls in <code class="language-plaintext highlighter-rouge">sitemap.xml</code>, <code class="language-plaintext highlighter-rouge">feed.xml</code>, and for generating canonical URLs in <code class="language-plaintext highlighter-rouge">&lt;head&gt;</code>. When developing locally either comment this out or use something like <code class="language-plaintext highlighter-rouge">http://localhost:4000</code> so all assets load properly. <em>Don’t include a trailing <code class="language-plaintext highlighter-rouge">/</code></em>.</p>
+
+<p>Examples:</p>
+
+<figure class="highlight"><pre><code class="language-yaml" data-lang="yaml"><span class="na">url</span><span class="pi">:</span> <span class="s">http://taylantatli.me/Halve</span>
+<span class="na">url</span><span class="pi">:</span> <span class="s">http://localhost:4000</span>
+<span class="na">url</span><span class="pi">:</span> <span class="s">//cooldude.github.io</span>
+<span class="na">url</span><span class="pi">:</span></code></pre></figure>
+
+<h4 id="logo">logo</h4>
+<p>Your site’s logo. It will be shown on homepage. Also used for twitter meta tags.</p>
+
+<h4 id="background">background</h4>
+<p>Here we will set images for left block. Example:</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>background:
+  homepage: images/home.png
+  post-list: images/unsplash-image-10.jpg
+  default-post: images/unsplash-gallery-image-3.jpg 
+</code></pre></div></div>
+
+<dl>
+  <dt>homepage</dt>
+  <dd>Is for homepage background image.</dd>
+  <dt>post-list</dt>
+  <dd>Is for posts list page background image.</dd>
+  <dt>default-post</dt>
+  <dd>Is for posts' default background image. It will be shown for every posts that don't specify any image from post's YAML front matter.</dd>
+</dl>
+
+<hr />
+
+<h3 id="projects-overlay">Projects Overlay</h3>
+
+<p>To set what image links appear in the overlay menu edit <code class="language-plaintext highlighter-rouge">_data/projects.yaml</code>. Use the following format to set the URL, title, image and project status for as many links as you’d like. If you set <code class="language-plaintext highlighter-rouge">completed</code> to <code class="language-plaintext highlighter-rouge">false</code> like <code class="language-plaintext highlighter-rouge">completed: false</code>, it won’t be clickable until you set it true like <code class="language-plaintext highlighter-rouge">completed: true</code></p>
+
+<figure class="highlight"><pre><code class="language-yaml" data-lang="yaml"><span class="pi">-</span> <span class="na">title</span><span class="pi">:</span> <span class="s">Moon Jekyll Theme</span>
+  <span class="na">url</span><span class="pi">:</span> <span class="s">http://taylantatli.me/Moon</span>
+  <span class="na">image</span><span class="pi">:</span> <span class="s">https://cloud.githubusercontent.com/assets/754514/14509720/61c61058-01d6-11e6-93ab-0918515ecd56.png</span>
+  <span class="na">completed</span><span class="pi">:</span> <span class="no">true</span>
+
+<span class="pi">-</span> <span class="na">title</span><span class="pi">:</span> <span class="s">Ramme Jekyll Theme</span>
+  <span class="na">url</span><span class="pi">:</span> <span class="s">http://taylantatli.me/Ramme</span>
+  <span class="na">image</span><span class="pi">:</span> <span class="s">https://raw.githubusercontent.com/TaylanTatli/Ramme/master/assets/img/screenshot-post.png</span>
+  <span class="na">completed</span><span class="pi">:</span> <span class="no">true</span>
+
+<span class="pi">-</span> <span class="na">title</span><span class="pi">:</span> <span class="s">Daisy Pelican Theme</span>
+  <span class="na">url</span><span class="pi">:</span> <span class="s">http://taylantatli.me/Daisy-Pelican-Theme/</span>
+  <span class="na">image</span><span class="pi">:</span> <span class="s">https://raw.githubusercontent.com/TaylanTatli/Daisy-Pelican-Theme/master/Preview-1.png</span>
+  <span class="na">completed</span><span class="pi">:</span> <span class="no">true</span>
+
+<span class="pi">-</span> <span class="na">title</span><span class="pi">:</span> <span class="s">Block Icon Theme</span>
+  <span class="na">url</span><span class="pi">:</span> <span class="s">https://github.com/TaylanTatli/Block-Icon-Theme</span>
+  <span class="na">image</span><span class="pi">:</span> <span class="s">https://raw.githubusercontent.com/TaylanTatli/Block-Icon-Theme/master/Preview.png</span>
+  <span class="na">completed</span><span class="pi">:</span> <span class="no">false</span>
+
+<span class="pi">-</span> <span class="na">title</span><span class="pi">:</span> <span class="s">Start Page</span>
+  <span class="na">url</span><span class="pi">:</span> <span class="s">http://taylantatli.me/StartPage/</span>
+  <span class="na">image</span><span class="pi">:</span> <span class="s">https://raw.githubusercontent.com/TaylanTatli/StartPage/master/preview.png</span>
+  <span class="na">completed</span><span class="pi">:</span> <span class="no">false</span></code></pre></figure>
+
+<hr />
+
+<h2 id="layouts-and-content">Layouts and Content</h2>
+
+<p>Halve Theme use <a href="https://github.com/penibelst/jekyll-compress-html">Jekyll Compress</a> to compress html output. But it can cause errors if you use “linenos” (line numbers). I suggest don’t use line numbers for codes, because it won’t look good with this theme, also i didn’t give a proper style for them. If you insist to use line numbers, just remove <code class="language-plaintext highlighter-rouge">layout: compress</code> string from layouts. It will disable compressing.</p>
+
+<h3 id="images-for-posts">Images for Posts</h3>
+
+<p>You can set left block image per post. Just add <code class="language-plaintext highlighter-rouge">image: some link</code> to your post’s front matter. If you don’t set this, default post image will be used from <code class="language-plaintext highlighter-rouge">_config.yml</code>.</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>image: /assets/img/some-image.png
+or
+image: http://example.com/some-image.png
+</code></pre></div></div>
+<p>This also will be used for twitter card:</p>
+
+<p><img src="http://localhost:4000/images/post-image-halve-5.png" alt="Halve Twitter Card" /></p>
+
+<hr />
+
+<h2 id="questions">Questions?</h2>
+
+<p>Found a bug or aren’t quite sure how something works? By all means <a href="https://github.com/TaylanTatli/Halve/issues/new">file a GitHub Issue</a>. And if you make something cool with this theme feel free to let me know.</p>
+
+<hr />
+
+<h2 id="license">License</h2>
+
+<p>This theme is free and open source software, distributed under the MIT License. So feel free to use this Jekyll theme on your site without linking back to me or including a disclaimer.</p>
+:ET

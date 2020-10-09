@@ -1,11 +1,8 @@
-I"
+I"�
 <ul class="entry-meta">
   
   
-  <li><a href="#CI/CD" class="tag"><span class="term">CI/CD</span> <span class="count">1</span></a></li>
-  
-  
-  <li><a href="#Jenkins" class="tag"><span class="term">Jenkins</span> <span class="count">1</span></a></li>
+  <li><a href="#C#" class="tag"><span class="term">C#</span> <span class="count">1</span></a></li>
   
   
   <li><a href="#blog" class="tag"><span class="term">blog</span> <span class="count">1</span></a></li>
@@ -15,17 +12,10 @@
   
 </ul>
 
-<h2 id="CI/CD" class="tag-heading">CI/CD</h2>
+<h2 id="C#" class="tag-heading">C#</h2>
 <ul>
     
-    <li class="entry-title"><a href="http://localhost:4000/Jenkins1/" title="Jenkins 설치(Windows)">Jenkins 설치(Windows)</a></li>
-    
-  </ul>
-
-<h2 id="Jenkins" class="tag-heading">Jenkins</h2>
-<ul>
-    
-    <li class="entry-title"><a href="http://localhost:4000/Jenkins1/" title="Jenkins 설치(Windows)">Jenkins 설치(Windows)</a></li>
+    <li class="entry-title"><a href="http://localhost:4000/AbstractClass-Interface/" title="[C#] Abstract와 Interface">[C#] Abstract와 Interface</a></li>
     
   </ul>
 
