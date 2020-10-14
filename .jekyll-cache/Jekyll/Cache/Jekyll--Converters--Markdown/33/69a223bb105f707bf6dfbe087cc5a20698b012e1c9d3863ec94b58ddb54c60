@@ -1,0 +1,41 @@
+I"�	<h2 id="es-윈도우-elasticsearch-설치"><center>[ES] 윈도우 ElasticSearch 설치</center></h2>
+
+<hr />
+<p>오늘은 검색엔진 서비스 중 하나인 ElasticSearch를 윈도우에서 설치 해보도록 하겠다. 👍</p>
+
+<p>앞으로 실습 환경 구성은 다음과 같다. <br />
+<code class="language-plaintext highlighter-rouge">OS : Windows 10</code></p>
+
+<blockquote>
+  <p>ElasticSearch <a href="https://www.elastic.co/kr/downloads/elasticsearch">다운로드</a></p>
+</blockquote>
+
+<p><a href="http://localhost:4000/images/posts/2020-10-14/download.png"><img src="http://localhost:4000/images/posts/2020-10-14/download.png" alt="ElasticSearch_DownloadPage" /></a></p>
+
+<h4 id="--설치-순서--">- 설치 순서 -</h4>
+
+<ol>
+  <li>
+    <p><code class="language-plaintext highlighter-rouge">elasticsearch-7.9.2-windows-x86_64.zip</code> 파일 압축 풀기
+<a href="http://localhost:4000/images/posts/2020-10-14/install_1.png"><img src="http://localhost:4000/images/posts/2020-10-14/install_1.png" alt="ElasticSearch_install_1" /></a></p>
+  </li>
+  <li>
+    <p><code class="language-plaintext highlighter-rouge">cmd -&gt; cd 'elasticsearch folder'/bin</code> cmd 실행 후 directory 이동</p>
+  </li>
+  <li>
+    <p><code class="language-plaintext highlighter-rouge">elasticsearch.bat</code> bin폴더 안에 있는 elasticsearch.bat파일 실행 
+<a href="http://localhost:4000/images/posts/2020-10-14/install_2.png"><img src="http://localhost:4000/images/posts/2020-10-14/install_2.png" alt="ElasticSearch_install_2" /></a></p>
+  </li>
+  <li>
+    <p>다음과 같이 <code class="language-plaintext highlighter-rouge">started</code> 문구가 뜨면 ElasticSearch 서비스가 정상적으로 구동이 된것이다.
+<a href="http://localhost:4000/images/posts/2020-10-14/install_3.png"><img src="http://localhost:4000/images/posts/2020-10-14/install_3.png" alt="ElasticSearch_install_3" /></a></p>
+  </li>
+  <li>
+    <p>웹 브라우저 실행 후 <code class="language-plaintext highlighter-rouge">localhost:9200</code> 접속 시 다음과 같이 뜨면 성공! 😆
+<a href="http://localhost:4000/images/posts/2020-10-14/install_4.png"><img src="http://localhost:4000/images/posts/2020-10-14/install_4.png" alt="ElasticSearch_install_4" /></a></p>
+  </li>
+</ol>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>Next : ElasticSearch란?
+</code></pre></div></div>
+:ET
