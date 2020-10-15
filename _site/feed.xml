@@ -5,7 +5,18 @@
         <description>Junior Developer</description>      
         <link>http://localhost:4000</link>
         <atom:link href="http://localhost:4000/feed.xml" rel="self" type="application/rss+xml" />
-        <lastBuildDate>Wed, 14 Oct 2020 00:00:00 +0900</lastBuildDate>
+        <lastBuildDate>Thu, 15 Oct 2020 00:00:00 +0900</lastBuildDate>
+        
+            <item>
+                <title>[ES] ElasticSearch (1)</title>
+                        
+                
+                    <description>ElasticSearch</description>
+                
+                <pubDate>Thu, 15 Oct 2020 00:00:00 +0900</pubDate>
+                <link>http://localhost:4000/ElasticSearch(1)/</link>
+                <guid isPermaLink="true">http://localhost:4000/ElasticSearch(1)/</guid>
+            </item>
         
             <item>
                 <title>[ES] 윈도우 ElasticSearch 설치</title>

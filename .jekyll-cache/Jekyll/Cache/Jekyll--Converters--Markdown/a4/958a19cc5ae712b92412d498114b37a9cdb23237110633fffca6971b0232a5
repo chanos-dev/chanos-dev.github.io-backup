@@ -1,0 +1,15 @@
+I"�<h2 id="es-elasticsearch-"><center>[ES] ElasticSearch </center></h2>
+
+<hr />
+<blockquote>
+  <p>👀 <b>ElasticSearch</b></p>
+  <ul>
+    <li>Apache Lucene으로 구현한 Restful API 기반의 검색엔진이다.
+      <blockquote>
+        <p>Lucene - 풀텍스트 검색 엔진을 만들 수 있는 자바 라이브러리.</p>
+      </blockquote>
+    </li>
+    <li>방대한 양의 데이터를 신속하게 처리 가능하다.</li>
+  </ul>
+</blockquote>
+:ET

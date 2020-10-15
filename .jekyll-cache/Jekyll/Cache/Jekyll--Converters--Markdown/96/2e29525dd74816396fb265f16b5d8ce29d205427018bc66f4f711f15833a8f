@@ -1,0 +1,49 @@
+I"�<h2 id="es-elasticsearch-"><center>[ES] ElasticSearch </center></h2>
+
+<hr />
+<blockquote>
+  <p>👀 <b>ElasticSearch</b></p>
+</blockquote>
+
+<ul>
+  <li><code class="language-plaintext highlighter-rouge">Apache Lucene</code>으로 구현한 <code class="language-plaintext highlighter-rouge">Restful API</code> 기반의 검색엔진이다.
+    <ul>
+      <li><code class="language-plaintext highlighter-rouge">Lucene</code> - 풀텍스트 검색 엔진을 만들 수 있는 자바 라이브러리.</li>
+    </ul>
+  </li>
+  <li>방대한 양의 데이터를 신속하게 처리 가능하다.</li>
+  <li>거의 실시간(<code class="language-plaintext highlighter-rouge">NRT, Near Real Time</code>)으로 저장, 검색, 분석이 가능하다.</li>
+  <li>고가용성 보장, 쉬운 스케일 아웃</li>
+</ul>
+
+<blockquote>
+  <p>📑 <b>ES</b>는 역색인 구조</p>
+</blockquote>
+
+<ul>
+  <li>다음과 같이 데이터가 있을 경우 ES는 데이터를 역색인 구조로 데이터를 관리한다.</li>
+</ul>
+
+<table>
+  <thead>
+    <tr>
+      <th style="text-align: left">Option</th>
+      <th style="text-align: left">Description</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td style="text-align: left">data</td>
+      <td style="text-align: left">path to data files to supply the data that will be passed into templates.</td>
+    </tr>
+    <tr>
+      <td style="text-align: left">engine</td>
+      <td style="text-align: left">engine to be used for processing templates. Handlebars is the default.</td>
+    </tr>
+    <tr>
+      <td style="text-align: left">ext</td>
+      <td style="text-align: left">extension to be used for dest files.</td>
+    </tr>
+  </tbody>
+</table>
+:ET
