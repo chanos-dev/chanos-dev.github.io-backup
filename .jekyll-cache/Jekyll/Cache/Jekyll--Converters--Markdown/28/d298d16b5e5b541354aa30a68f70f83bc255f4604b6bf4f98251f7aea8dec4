@@ -1,0 +1,42 @@
+I"d<h2 id="c-응용프로그램-실행하기"><center>[C#] 응용프로그램 실행하기</center></h2>
+
+<blockquote>
+  <p><a href="https://github.com/chanos-dev/blogcode/tree/master/20-1021">Git Source</a></p>
+</blockquote>
+
+<hr />
+
+<h3 id="--processstart--">- Process.Start -</h3>
+
+<p><a href="http://localhost:4000/images/posts/2020-10-21/program.png"><img src="http://localhost:4000/images/posts/2020-10-21/program.png" alt="program" /></a></p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>private void button_Process_Click(object sender, EventArgs e)
+{
+    if (string.IsNullOrEmpty(textBox_Process.Text))
+        return;
+
+    Process.Start(textBox_Process.Text);
+}
+
+private void button_args_Click(object sender, EventArgs e)
+{
+    if ((string.IsNullOrEmpty(textBox_args.Text)) || (string.IsNullOrEmpty(textBox_args1.Text)))
+        return;
+
+    Process.Start(textBox_args.Text, textBox_args1.Text);                        
+}
+</code></pre></div></div>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>using System.Diagnostics; //추가
+...
+//응용프로그램 실행
+Process.Start("http://www.google.co.kr");
+
+Process.Start("C:\Windows\System32");
+
+Process.Start("cmd.exe");
+
+//arguments 전달
+Process.Start("cmd.exe", "\c ping 8.8.8.8);
+</code></pre></div></div>
+:ET

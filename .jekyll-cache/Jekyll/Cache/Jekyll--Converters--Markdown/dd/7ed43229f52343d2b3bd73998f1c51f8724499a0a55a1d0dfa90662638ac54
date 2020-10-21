@@ -1,29 +1,22 @@
----
-layout: post
-title:  "[C#] Abstract/Interface"
-date:   2020-10-09
-excerpt: "Abstract/Interface"
-tag: 
-- C# 
-comments: true
----
+I"c<h2 id="c-abstractinterface"><center>[C#] Abstract/Interface</center></h2>
 
-## <center>[C#] Abstract/Interface</center> 
+<blockquote>
+  <p><a href="https://www.elastic.co/kr/downloads/elasticsearch">Git Source</a></p>
+</blockquote>
 
->[Git Source](https://github.com/chanos-dev/blogcode/tree/master/20-1009)
+<hr />
 
----
+<h3 id="--abstract--">- Abstract -</h3>
+<ul>
+  <li>미완성된 클래스이다. (추상 메서드를 포함)</li>
+  <li>목적은 여러 개의 자식 클래스에 공통적인 정의를 제공하는 것이다.</li>
+  <li>생성자를 가질 수 있다.</li>
+  <li>인스턴스화할 수 없다.</li>
+  <li>멤버 변수 선언이 가능하다.</li>
+  <li>접근 제한자를 사용할 수 있다. <b>(private, protected, internal)</b></li>
+</ul>
 
-### - Abstract -
-- 미완성된 클래스이다. (추상 메서드를 포함)
-- 목적은 여러 개의 자식 클래스에 공통적인 정의를 제공하는 것이다. 
-- 생성자를 가질 수 있다.
-- 인스턴스화할 수 없다.
-- 멤버 변수 선언이 가능하다.
-- 접근 제한자를 사용할 수 있다. <b>(private, protected, internal)</b>
-
-```
-class Program
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>class Program
 {
     static void Main(string[] args)
     {
@@ -131,9 +124,8 @@ class Pigeon : Animal
         Console.WriteLine("구구!");
     }
 }
-```
-```
-결과:
+</code></pre></div></div>
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>결과:
 너의 이름은 바둑이, 종류는 진돗개!!
 멍멍!
 주인님 한테 달려가아~!
@@ -146,18 +138,19 @@ class Pigeon : Animal
 구구!
 구구~! 못달려요~!
 하늘 위로..!!
-```
----
+</code></pre></div></div>
+<hr />
 
-### - Interface -
-- 멤버 변수를 선언이 불가능하다. (그 외 가능)
-- 메서드의 구현이 없다. (선언만 가능)
-- 모든 접근 제한자가 <b>public</b>이다.
-- 여러 클래스의 공통적인 기능을 약속하기 위함이다.
-- 다중 상속이 가능하다.
+<h3 id="--interface--">- Interface -</h3>
+<ul>
+  <li>멤버 변수를 선언이 불가능하다. (그 외 가능)</li>
+  <li>메서드의 구현이 없다. (선언만 가능)</li>
+  <li>모든 접근 제한자가 <b>public</b>이다.</li>
+  <li>여러 클래스의 공통적인 기능을 약속하기 위함이다.</li>
+  <li>다중 상속이 가능하다.</li>
+</ul>
 
-```
-class Program
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>class Program
 {
     static void Main(string[] args)
     { 
@@ -204,9 +197,9 @@ class Dragon : IAttack, IMove
         Console.WriteLine($"{this.name}가 하늘에서 이동");
     }
 }
-```
-```
-결과:
+</code></pre></div></div>
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>결과:
 용용이의 공격!
 용용이가 땅에서 이동
-``` 
+</code></pre></div></div>
+:ET
