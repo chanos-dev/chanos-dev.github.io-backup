@@ -1,0 +1,82 @@
+I">
+<h2 id="c-json-serialize-deserialize"><center>[C#] Json Serialize, Deserialize</center></h2>
+
+<blockquote>
+  <p><a href="https://github.com/chanos-dev/blogcode/tree/master/20-1027">Git Source</a></p>
+</blockquote>
+
+<hr />
+
+<ul>
+  <li>C#에서 Json을 간단하게 컨트롤할 수 있다.</li>
+  <li>JsonConvertor 클래스에 Serialize와 Deserialize를 사용하여 간단하게 Json을 직렬화, 역직렬화를 할 수 있고, Nuget에서 <code class="language-plaintext highlighter-rouge">Newtonsoft.Json</code>을 추가하여 사용할 수 있다.</li>
+</ul>
+
+<p><a href="http://localhost:4000/images/posts/2020-10-27/Json.png"><img src="http://localhost:4000/images/posts/2020-10-27/Json.png" alt="Json" /></a></p>
+
+<blockquote>
+  <p>Person Class</p>
+</blockquote>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>class Person
+    {
+        public Person() { }
+
+        public string Name;
+        public int Age;
+        public string Sex;
+        public string Address;
+        
+        public void PrintInfo(object obj, Person person)
+        {
+            if(obj is TextBox textBox)
+            {
+                textBox.Text = person.ToString();
+            }
+        }
+
+        public override string ToString()
+        {
+            StringBuilder sb = new StringBuilder();
+            sb.AppendLine($"Name : {this.Name}");
+            sb.AppendLine($"Age : {this.Age}");
+            sb.AppendLine($"Sex : {this.Sex}");
+            sb.AppendLine($"Address : {this.Address}");
+
+            return sb.ToString();
+        }
+    }
+</code></pre></div></div>
+
+<blockquote>
+  <p>Person Class 직렬화</p>
+</blockquote>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>private void button_serialize_Click(object sender, EventArgs e)
+{
+    Person person = new Person();
+    person.Name = "홍길동";
+    person.Age = 23;
+    person.Sex = "남자";
+    person.Address = "경기도 광주시";
+
+    string json = JsonConvert.SerializeObject(person);
+    textBox1.Text = json;
+}
+</code></pre></div></div>
+
+<h3 id="--processstart--">- Process.Start -</h3>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>using System.Diagnostics; //추가
+...
+//응용프로그램 실행
+Process.Start("http://www.google.co.kr"); //인터넷 실행
+
+Process.Start("C:\Windows\System32"); //폴더 실행
+
+Process.Start("cmd.exe"); //cmd 실행
+
+//arguments 전달
+Process.Start("cmd.exe", "\c ping 8.8.8.8); //cmd - ping 8.8.8.8 커맨드 실행
+</code></pre></div></div>
+:ET
