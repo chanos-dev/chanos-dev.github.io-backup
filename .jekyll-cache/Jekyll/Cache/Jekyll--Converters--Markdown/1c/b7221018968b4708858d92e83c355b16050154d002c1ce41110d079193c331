@@ -1,0 +1,27 @@
+I"<h2 id="es-elasticsearch-3-"><center>[ES] ElasticSearch (3) </center></h2>
+
+<ul>
+  <li>목차
+    <ul>
+      <li><a href="http://localhost:4000/ElasticSearchInstall-Windows/">[ES] 윈도우 ElasticSearch 설치</a></li>
+      <li><a href="http://localhost:4000/ElasticSearch(1)/">[ES] ElasticSearch (1)</a></li>
+      <li><a href="http://localhost:4000/ElasticSearch(2)/">[ES] ElasticSearch (2)</a></li>
+      <li>[ES] ElasticSearch (3) 👈</li>
+    </ul>
+  </li>
+</ul>
+
+<hr />
+<blockquote>
+  <p><b>ElasticSearch analysis-nori</b> 🔧</p>
+</blockquote>
+
+<ul>
+  <li>
+    <p>한글형태소 분석기는 <code class="language-plaintext highlighter-rouge">아리랑</code>, <code class="language-plaintext highlighter-rouge">은전한닢</code>, <code class="language-plaintext highlighter-rouge">Open korean text</code>, <code class="language-plaintext highlighter-rouge">Nori</code>가 있다. 그 중 ElasticSearch에서 개발하여 제공하는 <code class="language-plaintext highlighter-rouge">Nori</code>를 설치하여 사용해보기로 했다.</p>
+  </li>
+  <li>
+    <p><code class="language-plaintext highlighter-rouge">Nori</code>는 루씬을 기반으로 만들어졌으며, 은전한닢에서 사용하는 사전을 재가공하여 사용하고 있다.</p>
+  </li>
+</ul>
+:ET

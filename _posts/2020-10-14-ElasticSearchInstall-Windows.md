@@ -15,6 +15,7 @@ comments: true
     - [ES] 윈도우 ElasticSearch 설치 👈
     - [[ES] ElasticSearch (1)]({{ site.url }}/ElasticSearch(1)/)
     - [[ES] ElasticSearch (2)]({{ site.url }}/ElasticSearch(2)/)
+    - [[ES] ElasticSearch (3)]({{ site.url }}/ElasticSearch(3)/)
 
 --- 
 오늘은 검색엔진 서비스 중 하나인 ElasticSearch를 윈도우에서 설치 해보도록 하겠다. 👍

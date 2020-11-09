@@ -1,0 +1,43 @@
+<!DOCTYPE html> <html> <head> <meta name="google-site-verification" content="oRybRn1Wb8__bQCtUNMi9IRj8Jzcg1uE-PNO1oa0Lv8" /> <meta charset="utf-8"> <meta http-equiv="X-UA-Compatible" content="IE=edge"> <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no"> <title>[ES] ElasticSearch (3) &#8211; chanos-dev</title> <meta name="description" content="ElasticSearch"> <meta name="keywords" content="ElasticSearch, ES"> <!-- Twitter Cards --> <meta name="twitter:card" content="summary"> <meta name="twitter:image" content="chanos.png"> <meta name="twitter:title" content="[ES] ElasticSearch (3)"> <meta name="twitter:description" content="ElasticSearch"> <!-- Open Graph --> <meta property="og:locale" content="en_US"> <meta property="og:type" content="article"> <meta property="og:title" content="[ES] ElasticSearch (3)"> <meta property="og:description" content="ElasticSearch"> <meta property="og:url" content="http://localhost:4000/ElasticSearch(3)/"> <meta property="og:site_name" content="chanos-dev"> <meta property="og:image" content="http://localhost:4000/images/chanos.png"> <link rel="canonical" href="http://localhost:4000/ElasticSearch(3)/"> <!-- Handheld --> <meta name="HandheldFriendly" content="True"> <meta name="MobileOptimized" content="320"> <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- Feed --> <!-- Favicons --> <link rel="shortcut icon" type="image/png" href="http://localhost:4000/favicon.png" /> <link rel="shortcut icon" href="http://localhost:4000/favicon.ico" /> <!-- CSS --> <link rel="stylesheet" type="text/css" href="http://localhost:4000/assets/css/main.css"> <!-- Left Block Image for Posts --> <style type="text/css"> #posts.inner-post-page .block-left {background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url(http://localhost:4000/images/main.jpg) no-repeat;background-size: cover;} </style> <!-- Left Block Images for Home and Pages --> <style type="text/css"> #posts .block-left {background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url(http://localhost:4000/images/main.jpg) no-repeat;background-size: cover, cover;} .block-left {background: linear-gradient(rgba(44,45,51,0.9), rgba(44,45,51,0.9)), url(http://localhost:4000/images/main.jpg) no-repeat;background-size: cover;} </style> </head> <body id="posts" class="inner-post-page"> <div class="block-left"> <div class="content"> <a href="http://localhost:4000" class="logo"><img src="http://localhost:4000/images/chanos.png"></a> <div class="post-title-section"> <div class="section-line">Posts <em>/</em></div> <h1 class="section-title">[ES] ElasticSearch (3) </h1> <ul class="tags"> <li><a href="http://localhost:4000/tags#ElasticSearch">ElasticSearch</a></li> <li><a href="http://localhost:4000/tags#ES">ES</a></li> </ul> <div class="section-line reverse"><a href="http://localhost:4000/posts">Back to posts</a> <em>/</em></div> </div> </div> </div> <div class="block-right"> <!-- <div class="share-buttons"> <a href="https://twitter.com/intent/tweet?text=http://localhost:4000/ElasticSearch(3)/" class="btn btn_twitter" title="Share on Twitter"><i class="fa fa-fw fa-twitter" aria-hidden="true"></i><span> Twitter</span></a> <a href="https://www.facebook.com/sharer/sharer.php?u=http://localhost:4000/ElasticSearch(3)/" class="btn btn_facebook" title="Share on Facebook"><i class="fa fa-fw fa-facebook" aria-hidden="true"></i><span> Facebook</span></a> <a href="https://plus.google.com/share?url=http://localhost:4000/ElasticSearch(3)/" class="btn btn_google-plus" title="Share on Google Plus"><i class="fa fa-fw fa-google-plus" aria-hidden="true"></i><span> Google+</span></a> </div> --> <a href="../posts.html" title="posts" class="posts-menu-icon"></a> <span class="posts-link">POSTS</span> <a title="projects" class="projects-menu-icon"> <span></span> </a> <span class="projects-link">PROJECTS</span> <a href="http://localhost:4000/tags" title="tags" class="tags-menu-icon"> <span></span> </a> <span class="tags-link">TAGS</span> <div class="inner-post content"> <div class="date-highlight">09 Nov 2020</div> <h2 id="es-elasticsearch-3-"><center>[ES] ElasticSearch (3) </center></h2> <ul> <li>목차 <ul> <li><a href="http://localhost:4000/ElasticSearchInstall-Windows/">[ES] 윈도우 ElasticSearch 설치</a></li> <li><a href="http://localhost:4000/ElasticSearch(1)/">[ES] ElasticSearch (1)</a></li> <li><a href="http://localhost:4000/ElasticSearch(2)/">[ES] ElasticSearch (2)</a></li> <li>[ES] ElasticSearch (3) 👈</li> </ul> </li> </ul> <hr /> <blockquote> <p><b>ElasticSearch analysis-nori</b> ✏</p> </blockquote> <ul> <li> <p>한글형태소 분석기는 <code class="language-plaintext highlighter-rouge">아리랑</code>, <code class="language-plaintext highlighter-rouge">은전한닢</code>, <code class="language-plaintext highlighter-rouge">Open korean text</code>, <code class="language-plaintext highlighter-rouge">Nori</code>가 있다. 그 중 ElasticSearch에서 개발하여 제공하는 <code class="language-plaintext highlighter-rouge">Nori</code>를 설치하여 사용해보기로 했다.</p> </li> <li> <p><code class="language-plaintext highlighter-rouge">Nori</code>는 루씬을 기반으로 만들어졌으며, 은전한닢에서 사용하는 사전을 재가공하여 사용하고 있다.</p> </li> </ul> <blockquote> <p><b> analysis-nori 설치 </b> 🔧</p> </blockquote> <div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>C:\elasticsearch-7.9.2-windows-x86_64\elasticsearch-7.9.2\bin&gt;elasticsearch-plugin install analysis-nori
+
+//result
+-&gt; Installing analysis-nori
+-&gt; Downloading analysis-nori from elastic
+[=================================================] 100%??
+-&gt; Installed analysis-nori
+</code></pre></div></div> <ul> <li> <p>다음과 같은 명령어를 실행하면 <code class="language-plaintext highlighter-rouge">analysis-nori</code>를 <code class="language-plaintext highlighter-rouge">install</code>한다.</p> </li> <li> <p>설치가 완료 됐으면 Elasticsearch Service를 재실행하여 정상적으로 Nori Plugin이 설치 되었는지 확인한다.</p> </li> </ul> <blockquote> <p><b> analysis-nori 확인하기 </b> ✔</p> </blockquote> <div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>//URL - GET Method
+http://127.0.0.1:9200/_analyze
+
+//RequestBody
+{
+    "tokenizer": "nori_tokenizer",
+    "text":  "모두들 화이팅"
+}
+
+//Response
+{
+    "tokens": [
+        {
+            "token": "모두",
+            "start_offset": 0,
+            "end_offset": 2,
+            "type": "word",
+            "position": 0
+        },
+        {
+            "token": "들",
+            "start_offset": 2,
+            "end_offset": 3,
+            "type": "word",
+            "position": 1
+        },
+        {
+            "token": "화이팅",
+            "start_offset": 4,
+            "end_offset": 7,
+            "type": "word",
+            "position": 2
+        }
+    ]
+}
+</code></pre></div></div> <ul> <li>다음과 같이 Get api 요청을 보내고, text의 문자가 토큰화 됐으면 성공!</li> </ul> <br> <a href="https://twitter.com/intent/tweet?text=http://localhost:4000/ElasticSearch(3)/" class="btn btn_twitter" title="Share on Twitter"><i class="fa fa-fw fa-twitter" aria-hidden="true"></i><span> Twitter</span></a> <a href="https://www.facebook.com/sharer/sharer.php?u=http://localhost:4000/ElasticSearch(3)/" class="btn btn_facebook" title="Share on Facebook"><i class="fa fa-fw fa-facebook" aria-hidden="true"></i><span> Facebook</span></a> <a href="https://plus.google.com/share?url=http://localhost:4000/ElasticSearch(3)/" class="btn btn_google-plus" title="Share on Google Plus"><i class="fa fa-fw fa-google-plus" aria-hidden="true"></i><span> Google+</span></a> <nav class="pagination"> <a href="http://localhost:4000/ElasticSearch(2)/" class="pagination_pager" title="[ES] ElasticSearch (2) ">previous</a> <a href="#" class="pagination_pager disabled">next</a> </nav> </div> </div> <!-- JS --> <script src="http://localhost:4000/assets/js/main.min.js"></script> <div class="overlay"> <ul class="projects-menu"> <li style="background:url(http://localhost:4000/images/project/CryptoChan.png) center center no-repeat;"> <a href="https://github.com/chanos-dev/CryptoChan" class="inactive" target="_blank" rel="nofollow external"> <span> CryptoChan <br><em>in progress</em> </span> </a> </li> </ul> </div> </body> </html>
