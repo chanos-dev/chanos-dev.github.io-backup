@@ -1,9 +1,11 @@
-I"L
-
+I"
 <ul class="entry-meta">
   
   
-  <li><a href="#C#" class="tag"><span class="term">C#</span> <span class="count">3</span></a></li>
+  <li><a href="#Barcode" class="tag"><span class="term">Barcode</span> <span class="count">1</span></a></li>
+  
+  
+  <li><a href="#C#" class="tag"><span class="term">C#</span> <span class="count">4</span></a></li>
   
   
   <li><a href="#ES" class="tag"><span class="term">ES</span> <span class="count">4</span></a></li>
@@ -16,8 +18,17 @@
   
 </ul>
 
+<h2 id="Barcode" class="tag-heading">Barcode</h2>
+<ul>
+    
+    <li class="entry-title"><a href="http://localhost:4000/Barcode/" title="[C#] 바코드 출력">[C#] 바코드 출력</a></li>
+    
+  </ul>
+
 <h2 id="C#" class="tag-heading">C#</h2>
 <ul>
+    
+    <li class="entry-title"><a href="http://localhost:4000/Barcode/" title="[C#] 바코드 출력">[C#] 바코드 출력</a></li>
     
     <li class="entry-title"><a href="http://localhost:4000/JsonSerialize/" title="[C#] Json Serialize, Deserialize">[C#] Json Serialize, Deserialize</a></li>
     
