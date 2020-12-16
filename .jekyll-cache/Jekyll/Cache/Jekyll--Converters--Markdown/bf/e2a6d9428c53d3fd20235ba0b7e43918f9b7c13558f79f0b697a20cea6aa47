@@ -1,0 +1,34 @@
+I"Z<h2 id="c-swap-알고리즘"><center>[C#] swap 알고리즘</center></h2>
+
+<blockquote>
+  <p><b>swap</b> 🎈</p>
+</blockquote>
+
+<ul>
+  <li>두 개의 변수값을 서로 바꾸기 위한 알고리즘 총 3개의 방법을 소개하고자 합니다.</li>
+</ul>
+
+<blockquote>
+  <p>임시 변수 사용(temp)</p>
+  <blockquote>
+    <p>가장 일반적인 방법으로 임시변수(temp)를 선언하여 사용하는 방법이다.</p>
+  </blockquote>
+</blockquote>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>int a = 10;
+int b = 20;
+int temp;
+
+temp = a;
+a = b;
+b = temp;
+</code></pre></div></div>
+
+<blockquote>
+  <p>Xor 연산</p>
+  <blockquote>
+    <p>추가적인 변수를 사용하지 않고 두 개의 변수를 Xor비트연산을 하여 바꾸는 방법이다.</p>
+  </blockquote>
+</blockquote>
+
+:ET

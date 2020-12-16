@@ -1,0 +1,66 @@
+I"b<h2 id="c-swap-알고리즘"><center>[C#] swap 알고리즘</center></h2>
+
+<blockquote>
+  <p><b>swap</b> 🎈</p>
+</blockquote>
+
+<ul>
+  <li>두 개의 변수값을 서로 바꾸기 위한 알고리즘 총 3개의 방법을 소개하고자 합니다.</li>
+</ul>
+
+<blockquote>
+  <p>임시 변수 사용(temp)</p>
+  <blockquote>
+    <p>가장 일반적인 방법으로 임시변수(temp)를 선언하여 사용하는 방법이다.</p>
+  </blockquote>
+</blockquote>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>int a = 10;
+int b = 20;
+int temp;
+
+temp = a;
+a = b;
+b = temp;
+</code></pre></div></div>
+
+<p><a href="http://localhost:4000/images/posts/2020-12-16/temp.png"><img src="http://localhost:4000/images/posts/2020-12-16/temp.png" alt="temp" /></a></p>
+
+<blockquote>
+  <p>Xor 연산</p>
+  <blockquote>
+    <p>추가적인 변수를 사용하지 않고 두 개의 변수를 Xor비트연산을 하여 바꾸는 방법이다.
+같은 값을 연산하면 0이 나오기 때문에 swap전에 비교연산이 필요하다.
+두 변수 간의 xor연산이 일어나기 때문에 임시 변수를 사용하는 방법보다는 느리다.</p>
+  </blockquote>
+</blockquote>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>int a = 10;
+int b = 20;
+
+if (a!=b)
+{
+    a ^= b ^= a;
+    b ^= a;
+}
+</code></pre></div></div>
+
+<p><a href="http://localhost:4000/images/posts/2020-12-16/xor.png"><img src="http://localhost:4000/images/posts/2020-12-16/xor.png" alt="xor" /></a></p>
+
+<blockquote>
+  <p>+,- 연산</p>
+  <blockquote>
+    <p>간단한 덧셈,뺄셈으로 두 변수를 바꾸는 방법으로 Add,Sub등 xor보다 복잡한 연산이 이루어져 가장 느린 방법이다.</p>
+  </blockquote>
+</blockquote>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>int a = 10;
+int b = 20;
+
+a += b;
+b = a - b;
+a -= b;
+</code></pre></div></div>
+
+<p><a href="http://localhost:4000/images/posts/2020-12-16/calc.png"><img src="http://localhost:4000/images/posts/2020-12-16/calc.png" alt="calc" /></a></p>
+:ET

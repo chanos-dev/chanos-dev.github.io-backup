@@ -1,0 +1,15 @@
+I"F<h2 id="c-swap-알고리즘"><center>[C#] swap 알고리즘</center></h2>
+
+<blockquote>
+  <p><b>swap</b> 🎈</p>
+</blockquote>
+
+<ul>
+  <li>두 개의 변수값을 서로 바꾸기 위한 알고리즘 총 3개의 방법을 소개하고자 합니다.</li>
+</ul>
+
+<blockquote>
+  <p>임시 변수 사용(temp)</p>
+</blockquote>
+
+:ET
