@@ -5,7 +5,18 @@
         <description>Junior Developer</description>      
         <link>http://localhost:4000</link>
         <atom:link href="http://localhost:4000/feed.xml" rel="self" type="application/rss+xml" />
-        <lastBuildDate>Wed, 16 Dec 2020 00:00:00 +0900</lastBuildDate>
+        <lastBuildDate>Mon, 04 Jan 2021 00:00:00 +0900</lastBuildDate>
+        
+            <item>
+                <title>[C#] 확장 메서드</title>
+                        
+                
+                    <description>C# Extension Method</description>
+                
+                <pubDate>Mon, 04 Jan 2021 00:00:00 +0900</pubDate>
+                <link>http://localhost:4000/ExtensionMethod/</link>
+                <guid isPermaLink="true">http://localhost:4000/ExtensionMethod/</guid>
+            </item>
         
             <item>
                 <title>[C#] swap 알고리즘</title>
