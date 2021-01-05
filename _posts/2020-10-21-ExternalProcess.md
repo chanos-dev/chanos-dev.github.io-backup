@@ -16,7 +16,7 @@ comments: true
 
 <a href="{{ site.url }}/images/posts/2020-10-21/program.png"><img src="{{ site.url }}/images/posts/2020-10-21/program.png" alt="program"></a> 
 
-```
+```c#
 private void button_Process_Click(object sender, EventArgs e)
 {
     if (string.IsNullOrEmpty(textBox_Process.Text))
@@ -37,7 +37,7 @@ private void button_args_Click(object sender, EventArgs e)
 ### - Process.Start -
 
 
-```
+```c#
 using System.Diagnostics; //추가
 ...
 //응용프로그램 실행

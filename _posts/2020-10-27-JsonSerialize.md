@@ -22,7 +22,7 @@ comments: true
 
 >Person Class
 
-```
+```c#
 class Person
 {
     public Person() { }
@@ -55,7 +55,7 @@ class Person
 
 >Person Class 직렬화
 
-```
+```c#
 private void button_serialize_Click(object sender, EventArgs e)
 {
     Person person = new Person();
@@ -71,7 +71,7 @@ private void button_serialize_Click(object sender, EventArgs e)
 
 >Person Class 역직렬화
 
-```
+```c#
 private void button_deserialize_Click(object sender, EventArgs e)
 {
     Person newPerson = JsonConvert.DeserializeObject<Person>(textBox1.Text);
@@ -85,7 +85,7 @@ private void button_deserialize_Click(object sender, EventArgs e)
 
 > Village Class, Fruit Class
 
-```
+```c#
 class Village
 {
     public Village() { }
@@ -134,7 +134,7 @@ class Fruit
 
 > Village Class 직렬화
 
-```
+```c#
 private void button_serializeArr_Click(object sender, EventArgs e)
 {
     Village village = new Village();
@@ -150,7 +150,7 @@ private void button_serializeArr_Click(object sender, EventArgs e)
 
 > Village Class 역직렬화
 
-```
+```c#
 private void button_deserializeArr_Click(object sender, EventArgs e)
 {
     Village newVillage = JsonConvert.DeserializeObject<Village>(textBox1.Text);
@@ -160,7 +160,7 @@ private void button_deserializeArr_Click(object sender, EventArgs e)
 
 - 또한 클래스에서 Json에 역,직렬화를 원하지 필드가 있는 경우, 해당 필드에 `Attribute`를 선언하면 역,직렬화할 때 무시가된다! 😮
 
-```
+```c#
 class Village
 {
     public Village() { }

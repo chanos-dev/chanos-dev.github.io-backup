@@ -26,7 +26,7 @@ comments: true
 
 > <b>확장 메서드 사용</b> ⌨
 
-```
+```c#
 static class ExtensionClass
 {
     public static int Factorial(this int i)

@@ -21,8 +21,9 @@ comments: true
 - 인스턴스화할 수 없다.
 - 멤버 변수 선언이 가능하다.
 - 접근 제한자를 사용할 수 있다. <b>(private, protected, internal)</b>
+- 다중 상속이 불가능하다.
 
-```
+```c#
 class Program
 {
     static void Main(string[] args)
@@ -156,7 +157,7 @@ class Pigeon : Animal
 - 여러 클래스의 공통적인 기능을 약속하기 위함이다.
 - 다중 상속이 가능하다.
 
-```
+```c#
 class Program
 {
     static void Main(string[] args)

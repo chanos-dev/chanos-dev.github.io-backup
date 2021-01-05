@@ -1,115 +1,115 @@
-<!DOCTYPE html> <html> <head> <meta name="google-site-verification" content="oRybRn1Wb8__bQCtUNMi9IRj8Jzcg1uE-PNO1oa0Lv8" /> <meta charset="utf-8"> <meta http-equiv="X-UA-Compatible" content="IE=edge"> <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no"> <title>[C#] Json Serialize, Deserialize &#8211; chanos-dev</title> <meta name="description" content="Json Serialize, Deserialize"> <meta name="keywords" content="C#, Json"> <!-- Twitter Cards --> <meta name="twitter:card" content="summary"> <meta name="twitter:image" content="chanos.png"> <meta name="twitter:title" content="[C#] Json Serialize, Deserialize"> <meta name="twitter:description" content="Json Serialize, Deserialize"> <!-- Open Graph --> <meta property="og:locale" content="en_US"> <meta property="og:type" content="article"> <meta property="og:title" content="[C#] Json Serialize, Deserialize"> <meta property="og:description" content="Json Serialize, Deserialize"> <meta property="og:url" content="http://localhost:4000/JsonSerialize/"> <meta property="og:site_name" content="chanos-dev"> <meta property="og:image" content="http://localhost:4000/images/chanos.png"> <link rel="canonical" href="http://localhost:4000/JsonSerialize/"> <!-- Handheld --> <meta name="HandheldFriendly" content="True"> <meta name="MobileOptimized" content="320"> <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- Feed --> <!-- Favicons --> <link rel="shortcut icon" type="image/png" href="http://localhost:4000/favicon.png" /> <link rel="shortcut icon" href="http://localhost:4000/favicon.ico" /> <!-- CSS --> <link rel="stylesheet" type="text/css" href="http://localhost:4000/assets/css/main.css"> <!-- Left Block Image for Posts --> <style type="text/css"> #posts.inner-post-page .block-left {background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url(http://localhost:4000/images/main.jpg) no-repeat;background-size: cover;} </style> <!-- Left Block Images for Home and Pages --> <style type="text/css"> #posts .block-left {background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url(http://localhost:4000/images/main.jpg) no-repeat;background-size: cover, cover;} .block-left {background: linear-gradient(rgba(44,45,51,0.9), rgba(44,45,51,0.9)), url(http://localhost:4000/images/main.jpg) no-repeat;background-size: cover;} </style> </head> <body id="posts" class="inner-post-page"> <div class="block-left"> <div class="content"> <a href="http://localhost:4000" class="logo"><img src="http://localhost:4000/images/chanos.png"></a> <div class="post-title-section"> <div class="section-line">Posts <em>/</em></div> <h1 class="section-title">[C#] Json Serialize, Deserialize </h1> <ul class="tags"> <li><a href="http://localhost:4000/tags#C#">C#</a></li> <li><a href="http://localhost:4000/tags#Json">Json</a></li> </ul> <div class="section-line reverse"><a href="http://localhost:4000/posts">Back to posts</a> <em>/</em></div> </div> </div> </div> <div class="block-right"> <!-- <div class="share-buttons"> <a href="https://twitter.com/intent/tweet?text=http://localhost:4000/JsonSerialize/" class="btn btn_twitter" title="Share on Twitter"><i class="fa fa-fw fa-twitter" aria-hidden="true"></i><span> Twitter</span></a> <a href="https://www.facebook.com/sharer/sharer.php?u=http://localhost:4000/JsonSerialize/" class="btn btn_facebook" title="Share on Facebook"><i class="fa fa-fw fa-facebook" aria-hidden="true"></i><span> Facebook</span></a> <a href="https://plus.google.com/share?url=http://localhost:4000/JsonSerialize/" class="btn btn_google-plus" title="Share on Google Plus"><i class="fa fa-fw fa-google-plus" aria-hidden="true"></i><span> Google+</span></a> </div> --> <a href="../posts.html" title="posts" class="posts-menu-icon"></a> <span class="posts-link">POSTS</span> <a title="projects" class="projects-menu-icon"> <span></span> </a> <span class="projects-link">PROJECTS</span> <a href="http://localhost:4000/tags" title="tags" class="tags-menu-icon"> <span></span> </a> <span class="tags-link">TAGS</span> <div class="inner-post content"> <div class="date-highlight">27 Oct 2020</div> <h2 id="c-json-serialize-deserialize"><center>[C#] Json Serialize, Deserialize</center></h2> <blockquote> <p><a href="https://github.com/chanos-dev/blogcode/tree/master/20-1027">Git Source</a></p> </blockquote> <hr /> <ul> <li>C#에서 Json을 간단하게 컨트롤할 수 있다. 👍</li> <li>JsonConvertor 클래스에 Serialize와 Deserialize를 사용하여 간단하게 Json을 직렬화, 역직렬화를 할 수 있고, Nuget에서 <code class="language-plaintext highlighter-rouge">Newtonsoft.Json</code>을 추가하여 사용할 수 있다.</li> </ul> <p><a href="http://localhost:4000/images/posts/2020-10-27/Json.png"><img src="http://localhost:4000/images/posts/2020-10-27/Json.png" alt="Json" /></a></p> <blockquote> <p>Person Class</p> </blockquote> <div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>class Person
-{
-    public Person() { }
+<!DOCTYPE html> <html> <head> <meta name="google-site-verification" content="oRybRn1Wb8__bQCtUNMi9IRj8Jzcg1uE-PNO1oa0Lv8" /> <meta charset="utf-8"> <meta http-equiv="X-UA-Compatible" content="IE=edge"> <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no"> <title>[C#] Json Serialize, Deserialize &#8211; chanos-dev</title> <meta name="description" content="Json Serialize, Deserialize"> <meta name="keywords" content="C#, Json"> <!-- Twitter Cards --> <meta name="twitter:card" content="summary"> <meta name="twitter:image" content="chanos.png"> <meta name="twitter:title" content="[C#] Json Serialize, Deserialize"> <meta name="twitter:description" content="Json Serialize, Deserialize"> <!-- Open Graph --> <meta property="og:locale" content="en_US"> <meta property="og:type" content="article"> <meta property="og:title" content="[C#] Json Serialize, Deserialize"> <meta property="og:description" content="Json Serialize, Deserialize"> <meta property="og:url" content="http://localhost:4000/JsonSerialize/"> <meta property="og:site_name" content="chanos-dev"> <meta property="og:image" content="http://localhost:4000/images/chanos.png"> <link rel="canonical" href="http://localhost:4000/JsonSerialize/"> <!-- Handheld --> <meta name="HandheldFriendly" content="True"> <meta name="MobileOptimized" content="320"> <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- Feed --> <!-- Favicons --> <link rel="shortcut icon" type="image/png" href="http://localhost:4000/favicon.png" /> <link rel="shortcut icon" href="http://localhost:4000/favicon.ico" /> <!-- CSS --> <link rel="stylesheet" type="text/css" href="http://localhost:4000/assets/css/main.css"> <!-- Left Block Image for Posts --> <style type="text/css"> #posts.inner-post-page .block-left {background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url(http://localhost:4000/images/main.jpg) no-repeat;background-size: cover;} </style> <!-- Left Block Images for Home and Pages --> <style type="text/css"> #posts .block-left {background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url(http://localhost:4000/images/main.jpg) no-repeat;background-size: cover, cover;} .block-left {background: linear-gradient(rgba(44,45,51,0.9), rgba(44,45,51,0.9)), url(http://localhost:4000/images/main.jpg) no-repeat;background-size: cover;} </style> </head> <body id="posts" class="inner-post-page"> <div class="block-left"> <div class="content"> <a href="http://localhost:4000" class="logo"><img src="http://localhost:4000/images/chanos.png"></a> <div class="post-title-section"> <div class="section-line">Posts <em>/</em></div> <h1 class="section-title">[C#] Json Serialize, Deserialize </h1> <ul class="tags"> <li><a href="http://localhost:4000/tags#C#">C#</a></li> <li><a href="http://localhost:4000/tags#Json">Json</a></li> </ul> <div class="section-line reverse"><a href="http://localhost:4000/posts">Back to posts</a> <em>/</em></div> </div> </div> </div> <div class="block-right"> <!-- <div class="share-buttons"> <a href="https://twitter.com/intent/tweet?text=http://localhost:4000/JsonSerialize/" class="btn btn_twitter" title="Share on Twitter"><i class="fa fa-fw fa-twitter" aria-hidden="true"></i><span> Twitter</span></a> <a href="https://www.facebook.com/sharer/sharer.php?u=http://localhost:4000/JsonSerialize/" class="btn btn_facebook" title="Share on Facebook"><i class="fa fa-fw fa-facebook" aria-hidden="true"></i><span> Facebook</span></a> <a href="https://plus.google.com/share?url=http://localhost:4000/JsonSerialize/" class="btn btn_google-plus" title="Share on Google Plus"><i class="fa fa-fw fa-google-plus" aria-hidden="true"></i><span> Google+</span></a> </div> --> <a href="../posts.html" title="posts" class="posts-menu-icon"></a> <span class="posts-link">POSTS</span> <a title="projects" class="projects-menu-icon"> <span></span> </a> <span class="projects-link">PROJECTS</span> <a href="http://localhost:4000/tags" title="tags" class="tags-menu-icon"> <span></span> </a> <span class="tags-link">TAGS</span> <div class="inner-post content"> <div class="date-highlight">27 Oct 2020</div> <h2 id="c-json-serialize-deserialize"><center>[C#] Json Serialize, Deserialize</center></h2> <blockquote> <p><a href="https://github.com/chanos-dev/blogcode/tree/master/20-1027">Git Source</a></p> </blockquote> <hr /> <ul> <li>C#에서 Json을 간단하게 컨트롤할 수 있다. 👍</li> <li>JsonConvertor 클래스에 Serialize와 Deserialize를 사용하여 간단하게 Json을 직렬화, 역직렬화를 할 수 있고, Nuget에서 <code class="language-plaintext highlighter-rouge">Newtonsoft.Json</code>을 추가하여 사용할 수 있다.</li> </ul> <p><a href="http://localhost:4000/images/posts/2020-10-27/Json.png"><img src="http://localhost:4000/images/posts/2020-10-27/Json.png" alt="Json" /></a></p> <blockquote> <p>Person Class</p> </blockquote> <div class="language-c# highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">class</span> <span class="nc">Person</span>
+<span class="p">{</span>
+    <span class="k">public</span> <span class="nf">Person</span><span class="p">()</span> <span class="p">{</span> <span class="p">}</span>
 
-    public string Name;
-    public int Age;
-    public string Sex;
-    public string Address;
+    <span class="k">public</span> <span class="kt">string</span> <span class="n">Name</span><span class="p">;</span>
+    <span class="k">public</span> <span class="kt">int</span> <span class="n">Age</span><span class="p">;</span>
+    <span class="k">public</span> <span class="kt">string</span> <span class="n">Sex</span><span class="p">;</span>
+    <span class="k">public</span> <span class="kt">string</span> <span class="n">Address</span><span class="p">;</span>
     
-    public void PrintInfo(object obj, Person person)
-    {
-        if(obj is TextBox textBox)
-        {
-            textBox.Text = person.ToString();
-        }
-    }
+    <span class="k">public</span> <span class="k">void</span> <span class="nf">PrintInfo</span><span class="p">(</span><span class="kt">object</span> <span class="n">obj</span><span class="p">,</span> <span class="n">Person</span> <span class="n">person</span><span class="p">)</span>
+    <span class="p">{</span>
+        <span class="k">if</span><span class="p">(</span><span class="n">obj</span> <span class="k">is</span> <span class="n">TextBox</span> <span class="n">textBox</span><span class="p">)</span>
+        <span class="p">{</span>
+            <span class="n">textBox</span><span class="p">.</span><span class="n">Text</span> <span class="p">=</span> <span class="n">person</span><span class="p">.</span><span class="nf">ToString</span><span class="p">();</span>
+        <span class="p">}</span>
+    <span class="p">}</span>
 
-    public override string ToString()
-    {
-        StringBuilder sb = new StringBuilder();
-        sb.AppendLine($"Name : {this.Name}");
-        sb.AppendLine($"Age : {this.Age}");
-        sb.AppendLine($"Sex : {this.Sex}");
-        sb.AppendLine($"Address : {this.Address}");
+    <span class="k">public</span> <span class="k">override</span> <span class="kt">string</span> <span class="nf">ToString</span><span class="p">()</span>
+    <span class="p">{</span>
+        <span class="n">StringBuilder</span> <span class="n">sb</span> <span class="p">=</span> <span class="k">new</span> <span class="nf">StringBuilder</span><span class="p">();</span>
+        <span class="n">sb</span><span class="p">.</span><span class="nf">AppendLine</span><span class="p">(</span><span class="s">$"Name : </span><span class="p">{</span><span class="k">this</span><span class="p">.</span><span class="n">Name</span><span class="p">}</span><span class="s">"</span><span class="p">);</span>
+        <span class="n">sb</span><span class="p">.</span><span class="nf">AppendLine</span><span class="p">(</span><span class="s">$"Age : </span><span class="p">{</span><span class="k">this</span><span class="p">.</span><span class="n">Age</span><span class="p">}</span><span class="s">"</span><span class="p">);</span>
+        <span class="n">sb</span><span class="p">.</span><span class="nf">AppendLine</span><span class="p">(</span><span class="s">$"Sex : </span><span class="p">{</span><span class="k">this</span><span class="p">.</span><span class="n">Sex</span><span class="p">}</span><span class="s">"</span><span class="p">);</span>
+        <span class="n">sb</span><span class="p">.</span><span class="nf">AppendLine</span><span class="p">(</span><span class="s">$"Address : </span><span class="p">{</span><span class="k">this</span><span class="p">.</span><span class="n">Address</span><span class="p">}</span><span class="s">"</span><span class="p">);</span>
 
-        return sb.ToString();
-    }
-}
-</code></pre></div></div> <blockquote> <p>Person Class 직렬화</p> </blockquote> <div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>private void button_serialize_Click(object sender, EventArgs e)
-{
-    Person person = new Person();
-    person.Name = "홍길동";
-    person.Age = 23;
-    person.Sex = "남자";
-    person.Address = "경기도 광주시";
+        <span class="k">return</span> <span class="n">sb</span><span class="p">.</span><span class="nf">ToString</span><span class="p">();</span>
+    <span class="p">}</span>
+<span class="p">}</span>
+</code></pre></div></div> <blockquote> <p>Person Class 직렬화</p> </blockquote> <div class="language-c# highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">private</span> <span class="k">void</span> <span class="nf">button_serialize_Click</span><span class="p">(</span><span class="kt">object</span> <span class="n">sender</span><span class="p">,</span> <span class="n">EventArgs</span> <span class="n">e</span><span class="p">)</span>
+<span class="p">{</span>
+    <span class="n">Person</span> <span class="n">person</span> <span class="p">=</span> <span class="k">new</span> <span class="nf">Person</span><span class="p">();</span>
+    <span class="n">person</span><span class="p">.</span><span class="n">Name</span> <span class="p">=</span> <span class="s">"홍길동"</span><span class="p">;</span>
+    <span class="n">person</span><span class="p">.</span><span class="n">Age</span> <span class="p">=</span> <span class="m">23</span><span class="p">;</span>
+    <span class="n">person</span><span class="p">.</span><span class="n">Sex</span> <span class="p">=</span> <span class="s">"남자"</span><span class="p">;</span>
+    <span class="n">person</span><span class="p">.</span><span class="n">Address</span> <span class="p">=</span> <span class="s">"경기도 광주시"</span><span class="p">;</span>
 
-    string json = JsonConvert.SerializeObject(person);
-    textBox1.Text = json;
-}
-</code></pre></div></div> <blockquote> <p>Person Class 역직렬화</p> </blockquote> <div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>private void button_deserialize_Click(object sender, EventArgs e)
-{
-    Person newPerson = JsonConvert.DeserializeObject&lt;Person&gt;(textBox1.Text);
-    newPerson.PrintInfo(textBox2, newPerson);
-}
-</code></pre></div></div> <ul> <li>Json에는 <code class="language-plaintext highlighter-rouge">JsonArray</code> 형식도 가지고 있는데, C#에서 해당 Array형식을 클래스로 만들고 클래스 Array로 갖고있으면 <code class="language-plaintext highlighter-rouge">JsonArray</code>로도 만들 수 있다! 👏</li> </ul> <p><a href="http://localhost:4000/images/posts/2020-10-27/JsonArr.png"><img src="http://localhost:4000/images/posts/2020-10-27/JsonArr.png" alt="JsonArr" /></a></p> <blockquote> <p>Village Class, Fruit Class</p> </blockquote> <div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>class Village
-{
-    public Village() { }
+    <span class="kt">string</span> <span class="n">json</span> <span class="p">=</span> <span class="n">JsonConvert</span><span class="p">.</span><span class="nf">SerializeObject</span><span class="p">(</span><span class="n">person</span><span class="p">);</span>
+    <span class="n">textBox1</span><span class="p">.</span><span class="n">Text</span> <span class="p">=</span> <span class="n">json</span><span class="p">;</span>
+<span class="p">}</span>
+</code></pre></div></div> <blockquote> <p>Person Class 역직렬화</p> </blockquote> <div class="language-c# highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">private</span> <span class="k">void</span> <span class="nf">button_deserialize_Click</span><span class="p">(</span><span class="kt">object</span> <span class="n">sender</span><span class="p">,</span> <span class="n">EventArgs</span> <span class="n">e</span><span class="p">)</span>
+<span class="p">{</span>
+    <span class="n">Person</span> <span class="n">newPerson</span> <span class="p">=</span> <span class="n">JsonConvert</span><span class="p">.</span><span class="n">DeserializeObject</span><span class="p">&lt;</span><span class="n">Person</span><span class="p">&gt;(</span><span class="n">textBox1</span><span class="p">.</span><span class="n">Text</span><span class="p">);</span>
+    <span class="n">newPerson</span><span class="p">.</span><span class="nf">PrintInfo</span><span class="p">(</span><span class="n">textBox2</span><span class="p">,</span> <span class="n">newPerson</span><span class="p">);</span>
+<span class="p">}</span>
+</code></pre></div></div> <ul> <li>Json에는 <code class="language-plaintext highlighter-rouge">JsonArray</code> 형식도 가지고 있는데, C#에서 해당 Array형식을 클래스로 만들고 클래스 Array로 갖고있으면 <code class="language-plaintext highlighter-rouge">JsonArray</code>로도 만들 수 있다! 👏</li> </ul> <p><a href="http://localhost:4000/images/posts/2020-10-27/JsonArr.png"><img src="http://localhost:4000/images/posts/2020-10-27/JsonArr.png" alt="JsonArr" /></a></p> <blockquote> <p>Village Class, Fruit Class</p> </blockquote> <div class="language-c# highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">class</span> <span class="nc">Village</span>
+<span class="p">{</span>
+    <span class="k">public</span> <span class="nf">Village</span><span class="p">()</span> <span class="p">{</span> <span class="p">}</span>
 
-    public string Location;
-    public Fruit[] Fruit;
+    <span class="k">public</span> <span class="kt">string</span> <span class="n">Location</span><span class="p">;</span>
+    <span class="k">public</span> <span class="n">Fruit</span><span class="p">[]</span> <span class="n">Fruit</span><span class="p">;</span>
 
-    public void PrintInfo(object obj, Village village)
-    {
-        if (obj is TextBox textBox)
-        {
-            textBox.Text = village.ToString();
-        }
-    }
+    <span class="k">public</span> <span class="k">void</span> <span class="nf">PrintInfo</span><span class="p">(</span><span class="kt">object</span> <span class="n">obj</span><span class="p">,</span> <span class="n">Village</span> <span class="n">village</span><span class="p">)</span>
+    <span class="p">{</span>
+        <span class="k">if</span> <span class="p">(</span><span class="n">obj</span> <span class="k">is</span> <span class="n">TextBox</span> <span class="n">textBox</span><span class="p">)</span>
+        <span class="p">{</span>
+            <span class="n">textBox</span><span class="p">.</span><span class="n">Text</span> <span class="p">=</span> <span class="n">village</span><span class="p">.</span><span class="nf">ToString</span><span class="p">();</span>
+        <span class="p">}</span>
+    <span class="p">}</span>
 
-    public override string ToString()
-    {
-        StringBuilder sb = new StringBuilder();
-        sb.AppendLine($"Location : {this.Location}");
+    <span class="k">public</span> <span class="k">override</span> <span class="kt">string</span> <span class="nf">ToString</span><span class="p">()</span>
+    <span class="p">{</span>
+        <span class="n">StringBuilder</span> <span class="n">sb</span> <span class="p">=</span> <span class="k">new</span> <span class="nf">StringBuilder</span><span class="p">();</span>
+        <span class="n">sb</span><span class="p">.</span><span class="nf">AppendLine</span><span class="p">(</span><span class="s">$"Location : </span><span class="p">{</span><span class="k">this</span><span class="p">.</span><span class="n">Location</span><span class="p">}</span><span class="s">"</span><span class="p">);</span>
 
-        foreach(Fruit fruits in Fruit)
-        {
-            sb.AppendLine($"Fruit.Name : {fruits.Name}");
-            sb.AppendLine($"Fruit.Kcal : {fruits.Kcal}");
-            sb.AppendLine($"Fruit.Price : {fruits.Price}");
-        }            
+        <span class="k">foreach</span><span class="p">(</span><span class="n">Fruit</span> <span class="n">fruits</span> <span class="k">in</span> <span class="n">Fruit</span><span class="p">)</span>
+        <span class="p">{</span>
+            <span class="n">sb</span><span class="p">.</span><span class="nf">AppendLine</span><span class="p">(</span><span class="s">$"Fruit.Name : </span><span class="p">{</span><span class="n">fruits</span><span class="p">.</span><span class="n">Name</span><span class="p">}</span><span class="s">"</span><span class="p">);</span>
+            <span class="n">sb</span><span class="p">.</span><span class="nf">AppendLine</span><span class="p">(</span><span class="s">$"Fruit.Kcal : </span><span class="p">{</span><span class="n">fruits</span><span class="p">.</span><span class="n">Kcal</span><span class="p">}</span><span class="s">"</span><span class="p">);</span>
+            <span class="n">sb</span><span class="p">.</span><span class="nf">AppendLine</span><span class="p">(</span><span class="s">$"Fruit.Price : </span><span class="p">{</span><span class="n">fruits</span><span class="p">.</span><span class="n">Price</span><span class="p">}</span><span class="s">"</span><span class="p">);</span>
+        <span class="p">}</span>            
 
-        return sb.ToString();
-    }
-}
+        <span class="k">return</span> <span class="n">sb</span><span class="p">.</span><span class="nf">ToString</span><span class="p">();</span>
+    <span class="p">}</span>
+<span class="p">}</span>
 
-class Fruit
-{
-    public Fruit(string name, int kcal, int price)
-    {
-        Name = name;
-        Kcal = kcal;
-        Price = price;
-    }
+<span class="k">class</span> <span class="nc">Fruit</span>
+<span class="p">{</span>
+    <span class="k">public</span> <span class="nf">Fruit</span><span class="p">(</span><span class="kt">string</span> <span class="n">name</span><span class="p">,</span> <span class="kt">int</span> <span class="n">kcal</span><span class="p">,</span> <span class="kt">int</span> <span class="n">price</span><span class="p">)</span>
+    <span class="p">{</span>
+        <span class="n">Name</span> <span class="p">=</span> <span class="n">name</span><span class="p">;</span>
+        <span class="n">Kcal</span> <span class="p">=</span> <span class="n">kcal</span><span class="p">;</span>
+        <span class="n">Price</span> <span class="p">=</span> <span class="n">price</span><span class="p">;</span>
+    <span class="p">}</span>
 
-    public string Name;
-    public int Kcal;
-    public int Price;
-}
-</code></pre></div></div> <blockquote> <p>Village Class 직렬화</p> </blockquote> <div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>private void button_serializeArr_Click(object sender, EventArgs e)
-{
-    Village village = new Village();
-    village.Location = "Korea";
-    village.Fruit = new[] { new Fruit("Apple", 52, 1200),
-                            new Fruit("Banana", 88, 800),
-                            new Fruit("Strawberry", 32, 500)};
+    <span class="k">public</span> <span class="kt">string</span> <span class="n">Name</span><span class="p">;</span>
+    <span class="k">public</span> <span class="kt">int</span> <span class="n">Kcal</span><span class="p">;</span>
+    <span class="k">public</span> <span class="kt">int</span> <span class="n">Price</span><span class="p">;</span>
+<span class="p">}</span>
+</code></pre></div></div> <blockquote> <p>Village Class 직렬화</p> </blockquote> <div class="language-c# highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">private</span> <span class="k">void</span> <span class="nf">button_serializeArr_Click</span><span class="p">(</span><span class="kt">object</span> <span class="n">sender</span><span class="p">,</span> <span class="n">EventArgs</span> <span class="n">e</span><span class="p">)</span>
+<span class="p">{</span>
+    <span class="n">Village</span> <span class="n">village</span> <span class="p">=</span> <span class="k">new</span> <span class="nf">Village</span><span class="p">();</span>
+    <span class="n">village</span><span class="p">.</span><span class="n">Location</span> <span class="p">=</span> <span class="s">"Korea"</span><span class="p">;</span>
+    <span class="n">village</span><span class="p">.</span><span class="n">Fruit</span> <span class="p">=</span> <span class="k">new</span><span class="p">[]</span> <span class="p">{</span> <span class="k">new</span> <span class="nf">Fruit</span><span class="p">(</span><span class="s">"Apple"</span><span class="p">,</span> <span class="m">52</span><span class="p">,</span> <span class="m">1200</span><span class="p">),</span>
+                            <span class="k">new</span> <span class="nf">Fruit</span><span class="p">(</span><span class="s">"Banana"</span><span class="p">,</span> <span class="m">88</span><span class="p">,</span> <span class="m">800</span><span class="p">),</span>
+                            <span class="k">new</span> <span class="nf">Fruit</span><span class="p">(</span><span class="s">"Strawberry"</span><span class="p">,</span> <span class="m">32</span><span class="p">,</span> <span class="m">500</span><span class="p">)};</span>
 
-    string json = JsonConvert.SerializeObject(village);
-    textBox1.Text = json;
-}
-</code></pre></div></div> <blockquote> <p>Village Class 역직렬화</p> </blockquote> <div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>private void button_deserializeArr_Click(object sender, EventArgs e)
-{
-    Village newVillage = JsonConvert.DeserializeObject&lt;Village&gt;(textBox1.Text);
-    newVillage.PrintInfo(textBox2, newVillage);
-} 
-</code></pre></div></div> <ul> <li>또한 클래스에서 Json에 역,직렬화를 원하지 필드가 있는 경우, 해당 필드에 <code class="language-plaintext highlighter-rouge">Attribute</code>를 선언하면 역,직렬화할 때 무시가된다! 😮</li> </ul> <div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>class Village
-{
-    public Village() { }
+    <span class="kt">string</span> <span class="n">json</span> <span class="p">=</span> <span class="n">JsonConvert</span><span class="p">.</span><span class="nf">SerializeObject</span><span class="p">(</span><span class="n">village</span><span class="p">);</span>
+    <span class="n">textBox1</span><span class="p">.</span><span class="n">Text</span> <span class="p">=</span> <span class="n">json</span><span class="p">;</span>
+<span class="p">}</span>
+</code></pre></div></div> <blockquote> <p>Village Class 역직렬화</p> </blockquote> <div class="language-c# highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">private</span> <span class="k">void</span> <span class="nf">button_deserializeArr_Click</span><span class="p">(</span><span class="kt">object</span> <span class="n">sender</span><span class="p">,</span> <span class="n">EventArgs</span> <span class="n">e</span><span class="p">)</span>
+<span class="p">{</span>
+    <span class="n">Village</span> <span class="n">newVillage</span> <span class="p">=</span> <span class="n">JsonConvert</span><span class="p">.</span><span class="n">DeserializeObject</span><span class="p">&lt;</span><span class="n">Village</span><span class="p">&gt;(</span><span class="n">textBox1</span><span class="p">.</span><span class="n">Text</span><span class="p">);</span>
+    <span class="n">newVillage</span><span class="p">.</span><span class="nf">PrintInfo</span><span class="p">(</span><span class="n">textBox2</span><span class="p">,</span> <span class="n">newVillage</span><span class="p">);</span>
+<span class="p">}</span> 
+</code></pre></div></div> <ul> <li>또한 클래스에서 Json에 역,직렬화를 원하지 필드가 있는 경우, 해당 필드에 <code class="language-plaintext highlighter-rouge">Attribute</code>를 선언하면 역,직렬화할 때 무시가된다! 😮</li> </ul> <div class="language-c# highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">class</span> <span class="nc">Village</span>
+<span class="p">{</span>
+    <span class="k">public</span> <span class="nf">Village</span><span class="p">()</span> <span class="p">{</span> <span class="p">}</span>
 
-    public string Location;
-    public Fruit[] Fruit;
-    [JsonIgnore()] //해당 필드는 포함하지 않음!
-    public int Count;
-    ...
-}
+    <span class="k">public</span> <span class="kt">string</span> <span class="n">Location</span><span class="p">;</span>
+    <span class="k">public</span> <span class="n">Fruit</span><span class="p">[]</span> <span class="n">Fruit</span><span class="p">;</span>
+    <span class="p">[</span><span class="nf">JsonIgnore</span><span class="p">()]</span> <span class="c1">//해당 필드는 포함하지 않음!</span>
+    <span class="k">public</span> <span class="kt">int</span> <span class="n">Count</span><span class="p">;</span>
+    <span class="p">...</span>
+<span class="p">}</span>
 </code></pre></div></div> <br> <a href="https://twitter.com/intent/tweet?text=http://localhost:4000/JsonSerialize/" class="btn btn_twitter" title="Share on Twitter"><i class="fa fa-fw fa-twitter" aria-hidden="true"></i><span> Twitter</span></a> <a href="https://www.facebook.com/sharer/sharer.php?u=http://localhost:4000/JsonSerialize/" class="btn btn_facebook" title="Share on Facebook"><i class="fa fa-fw fa-facebook" aria-hidden="true"></i><span> Facebook</span></a> <a href="https://plus.google.com/share?url=http://localhost:4000/JsonSerialize/" class="btn btn_google-plus" title="Share on Google Plus"><i class="fa fa-fw fa-google-plus" aria-hidden="true"></i><span> Google+</span></a> <nav class="pagination"> <a href="http://localhost:4000/ExternalProcess/" class="pagination_pager" title="[C#] 응용프로그램 실행하기 "><b>Previous</b></a> <a href="http://localhost:4000/ElasticSearch(2)/" class="pagination_pager" title="[ES] ElasticSearch (2) "><b>Next</b></a> </nav> </div> </div> <!-- JS --> <script src="http://localhost:4000/assets/js/main.min.js"></script> <div class="overlay"> <ul class="projects-menu"> <li style="background:url(http://localhost:4000/images/project/CryptoChan.png) center center no-repeat;"> <a href="https://github.com/chanos-dev/CryptoChan" class="inactive" target="_blank" rel="nofollow external"> <span> CryptoChan <br><em>in progress</em> </span> </a> </li> </ul> </div> </body> </html>
