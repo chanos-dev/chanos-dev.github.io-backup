@@ -1,7 +1,12 @@
 - title: CryptoChan
   url: https://github.com/chanos-dev/CryptoChan
   image: images/project/CryptoChan.png
-  completed: false 
+  completed: true 
+
+- title: VirusChan
+  url: https://github.com/chanos-dev/VirusChan
+  image: images/project/VirusChan.png
+  completed: true 
 
 # - title: Moon Jekyll Theme
 #   url: http://taylantatli.me/Moon
