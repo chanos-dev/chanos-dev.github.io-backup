@@ -2,7 +2,7 @@
 layout: post
 title:  "[Algorithm] 버블 정렬"
 date:   2021-01-05
-excerpt: "C# Bubble Sort"
+excerpt: "C++ Bubble Sort"
 tag: 
 - C++
 - Sort
