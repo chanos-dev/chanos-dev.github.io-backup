@@ -1,14 +1,18 @@
-I"�
+I"
+
 <ul class="entry-meta">
   
   
   <li><a href="#Barcode" class="tag"><span class="term">Barcode</span> <span class="count">1</span></a></li>
   
   
-  <li><a href="#C#" class="tag"><span class="term">C#</span> <span class="count">6</span></a></li>
+  <li><a href="#C#" class="tag"><span class="term">C#</span> <span class="count">7</span></a></li>
   
   
   <li><a href="#C++" class="tag"><span class="term">C++</span> <span class="count">3</span></a></li>
+  
+  
+  <li><a href="#Design pattern" class="tag"><span class="term">Design pattern</span> <span class="count">1</span></a></li>
   
   
   <li><a href="#ES" class="tag"><span class="term">ES</span> <span class="count">4</span></a></li>
@@ -24,6 +28,9 @@
   
   
   <li><a href="#Method" class="tag"><span class="term">Method</span> <span class="count">1</span></a></li>
+  
+  
+  <li><a href="#Singleton" class="tag"><span class="term">Singleton</span> <span class="count">1</span></a></li>
   
   
   <li><a href="#Sort" class="tag"><span class="term">Sort</span> <span class="count">3</span></a></li>
@@ -45,6 +52,8 @@
 
 <h2 id="C#" class="tag-heading">C#</h2>
 <ul>
+    
+    <li class="entry-title"><a href="http://localhost:4000/Singleton/" title="[C#] Singleton Pattern">[C#] Singleton Pattern</a></li>
     
     <li class="entry-title"><a href="http://localhost:4000/ExtensionMethod/" title="[C#] 확장 메서드">[C#] 확장 메서드</a></li>
     
@@ -68,6 +77,13 @@
     <li class="entry-title"><a href="http://localhost:4000/BubbleSort/" title="[Algorithm] 버블 정렬">[Algorithm] 버블 정렬</a></li>
     
     <li class="entry-title"><a href="http://localhost:4000/SelectionSort/" title="[Algorithm] 선택 정렬">[Algorithm] 선택 정렬</a></li>
+    
+  </ul>
+
+<h2 id="Design pattern" class="tag-heading">Design pattern</h2>
+<ul>
+    
+    <li class="entry-title"><a href="http://localhost:4000/Singleton/" title="[C#] Singleton Pattern">[C#] Singleton Pattern</a></li>
     
   </ul>
 
@@ -115,6 +131,13 @@
 <ul>
     
     <li class="entry-title"><a href="http://localhost:4000/ExtensionMethod/" title="[C#] 확장 메서드">[C#] 확장 메서드</a></li>
+    
+  </ul>
+
+<h2 id="Singleton" class="tag-heading">Singleton</h2>
+<ul>
+    
+    <li class="entry-title"><a href="http://localhost:4000/Singleton/" title="[C#] Singleton Pattern">[C#] Singleton Pattern</a></li>
     
   </ul>
 

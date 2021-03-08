@@ -1,0 +1,219 @@
+I"TK<h2 id="c-singleton-pattern"><center>[C#] Singleton Pattern</center></h2>
+
+<blockquote>
+  <p><a href="https://github.com/chanos-dev/blogcode/tree/master/21-0309">Git Source</a></p>
+</blockquote>
+
+<hr />
+
+<blockquote>
+  <p><b> Singleton Pattern </b> 👇</p>
+</blockquote>
+
+<ul>
+  <li>각 숫자를 적절한 위치에 삽입을 하는 알고리즘</li>
+  <li>삽입 정렬 같은 경우는 <code class="language-plaintext highlighter-rouge">필요할 때</code>만 위치를 바꾸게 됩니다.</li>
+</ul>
+
+<div class="language-c# highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">using</span> <span class="nn">System</span><span class="p">;</span>
+<span class="k">using</span> <span class="nn">System.Collections.Generic</span><span class="p">;</span>
+<span class="k">using</span> <span class="nn">System.Linq</span><span class="p">;</span>
+<span class="k">using</span> <span class="nn">System.Reflection</span><span class="p">;</span>
+<span class="k">using</span> <span class="nn">System.Text</span><span class="p">;</span>
+<span class="k">using</span> <span class="nn">System.Threading</span><span class="p">;</span>
+<span class="k">using</span> <span class="nn">System.Threading.Tasks</span><span class="p">;</span>
+
+<span class="k">namespace</span> <span class="nn">Singleton</span>
+<span class="p">{</span>
+    <span class="k">enum</span> <span class="n">SingletonType</span>
+    <span class="p">{</span>
+        <span class="p">[</span><span class="nf">SingletonFactory</span><span class="p">(</span><span class="k">typeof</span><span class="p">(</span><span class="n">UnsafeSingleton</span><span class="p">))]</span>
+        <span class="n">Unsafe</span><span class="p">,</span>
+        <span class="p">[</span><span class="nf">SingletonFactory</span><span class="p">(</span><span class="k">typeof</span><span class="p">(</span><span class="n">SafeSingleton</span><span class="p">))]</span>
+        <span class="n">Safe</span><span class="p">,</span>
+        <span class="p">[</span><span class="nf">SingletonFactory</span><span class="p">(</span><span class="k">typeof</span><span class="p">(</span><span class="n">DCLSingleton</span><span class="p">))]</span>
+        <span class="n">DCL</span><span class="p">,</span>
+        <span class="p">[</span><span class="nf">SingletonFactory</span><span class="p">(</span><span class="k">typeof</span><span class="p">(</span><span class="n">StaticSingleton</span><span class="p">))]</span>
+        <span class="n">Static</span><span class="p">,</span>
+        <span class="p">[</span><span class="nf">SingletonFactory</span><span class="p">(</span><span class="k">typeof</span><span class="p">(</span><span class="n">LazySingleton</span><span class="p">))]</span>
+        <span class="n">Lazy</span><span class="p">,</span>
+    <span class="p">}</span>
+
+    <span class="k">class</span> <span class="nc">Program</span>
+    <span class="p">{</span> 
+        <span class="k">static</span> <span class="k">void</span> <span class="nf">Main</span><span class="p">(</span><span class="kt">string</span><span class="p">[]</span> <span class="n">args</span><span class="p">)</span>
+        <span class="p">{</span>
+            <span class="k">foreach</span> <span class="p">(</span><span class="kt">var</span> <span class="n">name</span> <span class="k">in</span> <span class="n">Enum</span><span class="p">.</span><span class="nf">GetNames</span><span class="p">(</span><span class="k">typeof</span><span class="p">(</span><span class="n">SingletonType</span><span class="p">)))</span>
+            <span class="p">{</span>
+                <span class="kt">var</span> <span class="n">singletonAttribute</span> <span class="p">=</span> <span class="k">typeof</span><span class="p">(</span><span class="n">SingletonType</span><span class="p">).</span><span class="nf">GetMember</span><span class="p">(</span><span class="n">name</span><span class="p">).</span><span class="nf">FirstOrDefault</span><span class="p">().</span><span class="n">GetCustomAttribute</span><span class="p">&lt;</span><span class="n">SingletonFactoryAttribute</span><span class="p">&gt;();</span>
+                
+                <span class="n">List</span><span class="p">&lt;</span><span class="n">Thread</span><span class="p">&gt;</span> <span class="n">threads</span> <span class="p">=</span> <span class="k">new</span> <span class="n">List</span><span class="p">&lt;</span><span class="n">Thread</span><span class="p">&gt;();</span>
+
+                <span class="n">Action</span> <span class="n">singletonAct</span> <span class="p">=</span> <span class="p">()</span> <span class="p">=&gt;</span>
+                <span class="p">{</span>
+                    <span class="kt">var</span> <span class="n">property</span> <span class="p">=</span> <span class="n">singletonAttribute</span><span class="p">.</span><span class="n">Type</span><span class="p">.</span><span class="nf">GetProperty</span><span class="p">(</span><span class="s">"Instance"</span><span class="p">);</span>
+
+                    <span class="kt">var</span> <span class="n">obj</span> <span class="p">=</span> <span class="n">property</span><span class="p">.</span><span class="nf">GetValue</span><span class="p">(</span><span class="n">property</span><span class="p">);</span>
+
+                    <span class="k">if</span> <span class="p">(</span><span class="n">obj</span> <span class="k">is</span> <span class="n">Singleton</span> <span class="n">singleton</span><span class="p">)</span>
+                    <span class="p">{</span>
+                        <span class="n">singleton</span><span class="p">.</span><span class="nf">Print</span><span class="p">();</span>
+                    <span class="p">}</span>
+                <span class="p">};</span> 
+
+                <span class="k">for</span><span class="p">(</span><span class="kt">int</span> <span class="n">idx</span> <span class="p">=</span> <span class="m">0</span><span class="p">;</span> <span class="n">idx</span> <span class="p">&lt;</span> <span class="m">5</span><span class="p">;</span> <span class="n">idx</span><span class="p">++)</span>
+                <span class="p">{</span>
+                    <span class="n">threads</span><span class="p">.</span><span class="nf">Add</span><span class="p">(</span><span class="k">new</span> <span class="nf">Thread</span><span class="p">(</span><span class="k">new</span> <span class="nf">ThreadStart</span><span class="p">(</span><span class="n">singletonAct</span><span class="p">)));</span>
+                <span class="p">}</span> 
+
+                <span class="n">Parallel</span><span class="p">.</span><span class="nf">ForEach</span><span class="p">(</span><span class="n">threads</span><span class="p">,</span> <span class="n">thread</span> <span class="p">=&gt;</span>
+                <span class="p">{</span>
+                    <span class="n">thread</span><span class="p">.</span><span class="nf">Start</span><span class="p">();</span>
+
+                    <span class="n">thread</span><span class="p">.</span><span class="nf">Join</span><span class="p">();</span>
+                <span class="p">});</span> 
+
+                <span class="n">Console</span><span class="p">.</span><span class="nf">WriteLine</span><span class="p">(</span><span class="s">""</span><span class="p">);</span>  
+            <span class="p">}</span> 
+        <span class="p">}</span>
+    <span class="p">}</span> 
+
+    <span class="k">abstract</span> <span class="k">class</span> <span class="nc">Singleton</span>
+    <span class="p">{</span>
+        <span class="k">public</span> <span class="k">abstract</span> <span class="k">void</span> <span class="nf">Print</span><span class="p">();</span>
+    <span class="p">}</span>
+
+    <span class="k">class</span> <span class="nc">SingletonFactoryAttribute</span> <span class="p">:</span> <span class="n">Attribute</span>
+    <span class="p">{</span>
+        <span class="k">private</span> <span class="n">Type</span> <span class="n">_type</span><span class="p">;</span>
+
+        <span class="k">public</span> <span class="nf">SingletonFactoryAttribute</span><span class="p">(</span><span class="n">Type</span> <span class="n">type</span><span class="p">)</span>
+        <span class="p">{</span>
+            <span class="k">this</span><span class="p">.</span><span class="n">_type</span> <span class="p">=</span> <span class="n">type</span><span class="p">;</span>
+        <span class="p">}</span>
+
+        <span class="k">public</span> <span class="n">Type</span> <span class="n">Type</span> <span class="p">=&gt;</span> <span class="n">_type</span><span class="p">;</span>
+    <span class="p">}</span>
+
+    <span class="k">class</span> <span class="nc">UnsafeSingleton</span> <span class="p">:</span> <span class="n">Singleton</span>
+    <span class="p">{</span> 
+        <span class="k">private</span> <span class="k">static</span> <span class="n">UnsafeSingleton</span> <span class="n">_instance</span><span class="p">;</span>
+
+        <span class="k">public</span> <span class="k">static</span> <span class="n">UnsafeSingleton</span> <span class="n">Instance</span>
+        <span class="p">{</span>
+            <span class="k">get</span>
+            <span class="p">{</span>
+                <span class="k">if</span> <span class="p">(</span><span class="n">_instance</span> <span class="k">is</span> <span class="k">null</span><span class="p">)</span>
+                <span class="p">{</span>
+                    <span class="n">_instance</span> <span class="p">=</span> <span class="k">new</span> <span class="nf">UnsafeSingleton</span><span class="p">();</span>
+                <span class="p">}</span>
+
+                <span class="k">return</span> <span class="n">_instance</span><span class="p">;</span>
+            <span class="p">}</span>
+        <span class="p">}</span> 
+
+        <span class="k">protected</span> <span class="nf">UnsafeSingleton</span><span class="p">()</span> <span class="p">=&gt;</span> <span class="n">Console</span><span class="p">.</span><span class="nf">WriteLine</span><span class="p">(</span><span class="s">"Create UnsafeSingleton instance!!"</span><span class="p">);</span>
+
+        <span class="k">public</span> <span class="k">override</span> <span class="k">void</span> <span class="nf">Print</span><span class="p">()</span>
+        <span class="p">{</span>
+            <span class="n">Console</span><span class="p">.</span><span class="nf">WriteLine</span><span class="p">(</span><span class="s">"Print UnsafeSingleton!!"</span><span class="p">);</span>
+        <span class="p">}</span>
+    <span class="p">}</span>
+
+    <span class="k">class</span> <span class="nc">SafeSingleton</span> <span class="p">:</span> <span class="n">Singleton</span>
+    <span class="p">{</span>
+        <span class="k">private</span> <span class="k">static</span> <span class="kt">object</span> <span class="n">_thislock</span> <span class="p">=</span> <span class="k">new</span> <span class="kt">object</span><span class="p">();</span>
+        <span class="k">private</span> <span class="k">static</span> <span class="n">SafeSingleton</span> <span class="n">_instance</span><span class="p">;</span>
+
+        <span class="k">public</span> <span class="k">static</span> <span class="n">SafeSingleton</span> <span class="n">Instance</span>
+        <span class="p">{</span>
+            <span class="k">get</span>
+            <span class="p">{</span>
+                <span class="k">lock</span> <span class="p">(</span><span class="n">_thislock</span><span class="p">)</span>
+                <span class="p">{</span>
+                    <span class="k">if</span> <span class="p">(</span><span class="n">_instance</span> <span class="k">is</span> <span class="k">null</span><span class="p">)</span>
+                    <span class="p">{</span>
+                        <span class="n">_instance</span> <span class="p">=</span> <span class="k">new</span> <span class="nf">SafeSingleton</span><span class="p">();</span>
+                    <span class="p">}</span>
+                <span class="p">}</span>
+
+                <span class="k">return</span> <span class="n">_instance</span><span class="p">;</span>
+            <span class="p">}</span>
+        <span class="p">}</span>
+
+        <span class="k">protected</span> <span class="nf">SafeSingleton</span><span class="p">()</span> <span class="p">=&gt;</span> <span class="n">Console</span><span class="p">.</span><span class="nf">WriteLine</span><span class="p">(</span><span class="s">"Create SafeSingleton instance!!"</span><span class="p">);</span>
+
+        <span class="k">public</span> <span class="k">override</span> <span class="k">void</span> <span class="nf">Print</span><span class="p">()</span>
+        <span class="p">{</span>
+            <span class="n">Console</span><span class="p">.</span><span class="nf">WriteLine</span><span class="p">(</span><span class="s">"Print SafeSingleton!!"</span><span class="p">);</span>
+        <span class="p">}</span>
+    <span class="p">}</span>
+
+    <span class="c1">//Double Checked Locking</span>
+    <span class="k">class</span> <span class="nc">DCLSingleton</span> <span class="p">:</span> <span class="n">Singleton</span>
+    <span class="p">{</span>
+        <span class="k">private</span> <span class="k">static</span> <span class="kt">object</span> <span class="n">_thislock</span> <span class="p">=</span> <span class="k">new</span> <span class="kt">object</span><span class="p">();</span>
+        <span class="k">private</span> <span class="k">static</span> <span class="n">DCLSingleton</span> <span class="n">_instance</span><span class="p">;</span>
+
+        <span class="k">public</span> <span class="k">static</span> <span class="n">DCLSingleton</span> <span class="n">Instance</span>
+        <span class="p">{</span>
+            <span class="k">get</span>
+            <span class="p">{</span>
+                <span class="k">if</span> <span class="p">(</span><span class="n">_instance</span> <span class="k">is</span> <span class="k">null</span><span class="p">)</span>
+                <span class="p">{</span>
+                    <span class="k">lock</span> <span class="p">(</span><span class="n">_thislock</span><span class="p">)</span>
+                    <span class="p">{</span>
+                        <span class="k">if</span> <span class="p">(</span><span class="n">_instance</span> <span class="k">is</span> <span class="k">null</span><span class="p">)</span>
+                        <span class="p">{</span>
+                            <span class="n">_instance</span> <span class="p">=</span> <span class="k">new</span> <span class="nf">DCLSingleton</span><span class="p">();</span>
+                        <span class="p">}</span>
+                    <span class="p">}</span>
+                <span class="p">}</span>
+
+                <span class="k">return</span> <span class="n">_instance</span><span class="p">;</span>
+            <span class="p">}</span>
+        <span class="p">}</span>
+
+        <span class="k">protected</span> <span class="nf">DCLSingleton</span><span class="p">()</span> <span class="p">=&gt;</span> <span class="n">Console</span><span class="p">.</span><span class="nf">WriteLine</span><span class="p">(</span><span class="s">"Create DCLSingleton instance!!"</span><span class="p">);</span>
+
+        <span class="k">public</span> <span class="k">override</span> <span class="k">void</span> <span class="nf">Print</span><span class="p">()</span>
+        <span class="p">{</span>
+            <span class="n">Console</span><span class="p">.</span><span class="nf">WriteLine</span><span class="p">(</span><span class="s">"Print DCLSingleton!!"</span><span class="p">);</span>
+        <span class="p">}</span>
+    <span class="p">}</span>
+
+    <span class="k">class</span> <span class="nc">StaticSingleton</span> <span class="p">:</span> <span class="n">Singleton</span>
+    <span class="p">{</span>
+        <span class="k">private</span> <span class="k">static</span> <span class="k">readonly</span> <span class="n">StaticSingleton</span> <span class="n">_instance</span><span class="p">;</span>
+
+        <span class="k">static</span> <span class="nf">StaticSingleton</span><span class="p">()</span>
+        <span class="p">{</span>
+            <span class="n">_instance</span> <span class="p">=</span> <span class="k">new</span> <span class="nf">StaticSingleton</span><span class="p">();</span>
+        <span class="p">}</span>
+
+        <span class="k">public</span> <span class="k">static</span> <span class="n">StaticSingleton</span> <span class="n">Instance</span> <span class="p">=&gt;</span> <span class="n">_instance</span><span class="p">;</span>
+
+        <span class="k">protected</span> <span class="nf">StaticSingleton</span><span class="p">()</span> <span class="p">=&gt;</span> <span class="n">Console</span><span class="p">.</span><span class="nf">WriteLine</span><span class="p">(</span><span class="s">"Create StaticSingleton instance!!"</span><span class="p">);</span>
+
+        <span class="k">public</span> <span class="k">override</span> <span class="k">void</span> <span class="nf">Print</span><span class="p">()</span>
+        <span class="p">{</span>
+            <span class="n">Console</span><span class="p">.</span><span class="nf">WriteLine</span><span class="p">(</span><span class="s">"Print StaticSingleton!!"</span><span class="p">);</span>
+        <span class="p">}</span>
+    <span class="p">}</span>
+
+    <span class="k">class</span> <span class="nc">LazySingleton</span> <span class="p">:</span> <span class="n">Singleton</span>
+    <span class="p">{</span>
+        <span class="k">private</span> <span class="k">static</span> <span class="k">readonly</span> <span class="n">Lazy</span><span class="p">&lt;</span><span class="n">LazySingleton</span><span class="p">&gt;</span> <span class="n">_instance</span> <span class="p">=</span> <span class="k">new</span> <span class="n">Lazy</span><span class="p">&lt;</span><span class="n">LazySingleton</span><span class="p">&gt;(()</span> <span class="p">=&gt;</span> <span class="k">new</span> <span class="nf">LazySingleton</span><span class="p">());</span>
+
+        <span class="k">public</span> <span class="k">static</span> <span class="n">LazySingleton</span> <span class="n">Instance</span> <span class="p">=&gt;</span> <span class="n">_instance</span><span class="p">.</span><span class="n">Value</span><span class="p">;</span>
+
+        <span class="k">protected</span> <span class="nf">LazySingleton</span><span class="p">()</span> <span class="p">=&gt;</span> <span class="n">Console</span><span class="p">.</span><span class="nf">WriteLine</span><span class="p">(</span><span class="s">"Create LazySingleton instance!!"</span><span class="p">);</span>
+
+        <span class="k">public</span> <span class="k">override</span> <span class="k">void</span> <span class="nf">Print</span><span class="p">()</span>
+        <span class="p">{</span>
+            <span class="n">Console</span><span class="p">.</span><span class="nf">WriteLine</span><span class="p">(</span><span class="s">"Print LazySingleton!!"</span><span class="p">);</span>
+        <span class="p">}</span>
+    <span class="p">}</span>
+<span class="p">}</span>
+</code></pre></div></div>
+:ET
