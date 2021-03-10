@@ -1,0 +1,30 @@
+I"�<h2 id="c-getproperties-특정-property-제외하고-가져오기"><center>[C#] GetProperties 특정 Property 제외하고 가져오기</center></h2>
+
+<blockquote>
+  <p><a href="https://github.com/chanos-dev/blogcode/tree/master/21-0311">Git Source</a></p>
+</blockquote>
+
+<hr />
+
+<blockquote>
+  <p><b> 특정 Property 제외 </b> 👓</p>
+</blockquote>
+
+<ul>
+  <li>
+    <p>Reflection을 활용하여 특정 객체의 프로퍼티를 가져올 때 특정 프로퍼티는 제외하고 가져오고 싶을 때가 있다.</p>
+  </li>
+  <li>
+    <p>그런 경우 Attribute를 활용하여 특정 프로퍼티를 제외시킬 수 있다.</p>
+  </li>
+</ul>
+
+<div class="language-c# highlighter-rouge"><div class="highlight"><pre class="highlight"><code>
+</code></pre></div></div>
+
+<blockquote>
+  <p>결과</p>
+</blockquote>
+
+<p><a href="http://localhost:4000/images/posts/2021-03-11/skipproperty.png"><img src="http://localhost:4000/images/posts/2021-03-11/skipproperty.png" alt="skipproperty" /></a></p>
+:ET
