@@ -1,0 +1,65 @@
+I"L<h2 id="jenkins-ubuntu-jenkins-설치"><center>[Jenkins] Ubuntu Jenkins 설치</center></h2>
+
+<blockquote>
+  <p><b> Jenkins </b> 👓</p>
+</blockquote>
+
+<ul>
+  <li>
+    <p>Reflection을 활용하여 특정 객체의 프로퍼티를 가져올 때 특정 프로퍼티는 제외하고 가져오고 싶을 때가 있다.</p>
+  </li>
+  <li>
+    <p>그런 경우 Attribute를 활용하여 특정 프로퍼티를 제외시킬 수 있다.</p>
+  </li>
+</ul>
+
+<div class="language-c# highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">class</span> <span class="nc">SkipPropertyAttribute</span> <span class="p">:</span> <span class="n">Attribute</span>
+<span class="p">{</span>
+
+<span class="p">}</span>
+
+<span class="k">class</span> <span class="nc">Person</span>
+<span class="p">{</span>
+	<span class="p">[</span><span class="n">SkipProperty</span><span class="p">]</span>
+	<span class="k">public</span> <span class="kt">string</span> <span class="n">PersonalID</span> <span class="p">{</span> <span class="k">get</span><span class="p">;</span> <span class="k">set</span><span class="p">;</span> <span class="p">}</span>
+	<span class="k">public</span> <span class="kt">string</span> <span class="n">Name</span> <span class="p">{</span> <span class="k">get</span><span class="p">;</span> <span class="k">set</span><span class="p">;</span> <span class="p">}</span>
+	<span class="k">public</span> <span class="kt">int</span> <span class="n">Age</span> <span class="p">{</span> <span class="k">get</span><span class="p">;</span> <span class="k">set</span><span class="p">;</span> <span class="p">}</span>
+	<span class="k">public</span> <span class="kt">string</span> <span class="n">Address</span> <span class="p">{</span> <span class="k">get</span><span class="p">;</span> <span class="k">set</span><span class="p">;</span> <span class="p">}</span> 
+<span class="p">}</span>
+</code></pre></div></div>
+
+<ul>
+  <li>다음과 같이 Attribute를 상속받아 사용자 정의를 하고, GetProperties시 제외시킬 프로퍼티에 적용시킨다.</li>
+</ul>
+
+<div class="language-c# highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1">//main</span>
+<span class="k">static</span> <span class="k">void</span> <span class="nf">Main</span><span class="p">(</span><span class="kt">string</span><span class="p">[]</span> <span class="n">args</span><span class="p">)</span>
+<span class="p">{</span>
+	<span class="kt">var</span> <span class="n">properties</span> <span class="p">=</span> <span class="k">typeof</span><span class="p">(</span><span class="n">Person</span><span class="p">).</span><span class="nf">GetProperties</span><span class="p">();</span>
+
+	<span class="k">foreach</span> <span class="p">(</span><span class="kt">var</span> <span class="n">property</span> <span class="k">in</span> <span class="n">properties</span><span class="p">)</span>
+	<span class="p">{</span>
+		<span class="n">Console</span><span class="p">.</span><span class="nf">WriteLine</span><span class="p">(</span><span class="n">property</span><span class="p">.</span><span class="n">Name</span><span class="p">);</span>
+	<span class="p">}</span>
+
+	<span class="n">Console</span><span class="p">.</span><span class="nf">WriteLine</span><span class="p">(</span><span class="s">""</span><span class="p">);</span>
+
+	<span class="kt">var</span> <span class="n">skipProperties</span> <span class="p">=</span> <span class="k">typeof</span><span class="p">(</span><span class="n">Person</span><span class="p">).</span><span class="nf">GetProperties</span><span class="p">().</span><span class="nf">Where</span><span class="p">(</span><span class="n">property</span> <span class="p">=&gt;</span> <span class="p">!</span><span class="n">Attribute</span><span class="p">.</span><span class="nf">IsDefined</span><span class="p">(</span><span class="n">property</span><span class="p">,</span> <span class="k">typeof</span><span class="p">(</span><span class="n">SkipPropertyAttribute</span><span class="p">)));</span>
+
+	<span class="k">foreach</span> <span class="p">(</span><span class="kt">var</span> <span class="n">skip</span> <span class="k">in</span> <span class="n">skipProperties</span><span class="p">)</span>
+	<span class="p">{</span>
+		<span class="n">Console</span><span class="p">.</span><span class="nf">WriteLine</span><span class="p">(</span><span class="n">skip</span><span class="p">.</span><span class="n">Name</span><span class="p">);</span>
+	<span class="p">}</span>
+<span class="p">}</span>
+</code></pre></div></div>
+
+<ul>
+  <li>Attribute.IsDefined를 이용하여 SkipPropertyAttribute를 갖고있는 프로퍼티를 제외한 나머지를 갖고온다.</li>
+</ul>
+
+<blockquote>
+  <p>결과</p>
+</blockquote>
+
+<p><a href="http://localhost:4000/images/posts/2021-03-11/skipproperty.png"><img src="http://localhost:4000/images/posts/2021-03-11/skipproperty.png" alt="skipproperty" /></a></p>
+:ET

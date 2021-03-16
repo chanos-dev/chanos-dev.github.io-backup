@@ -1,0 +1,14 @@
+I"B<h2 id="jenkins-ubuntu-jenkins-설치"><center>[Jenkins] Ubuntu Jenkins 설치</center></h2>
+
+<blockquote>
+  <p>Ubuntu Jenkins 설치 방법</p>
+</blockquote>
+
+<div class="language-shell highlighter-rouge"><div class="highlight"><pre class="highlight"><code>wget <span class="nt">-q</span> <span class="nt">-O</span> - https://pkg.jenkins.io/debian/jenkins-ci.org.key | <span class="nb">sudo </span>apt-key add -
+sh <span class="nt">-c</span> <span class="s1">'echo deb http://pkg.jenkins.io/debian-stable binary/ &gt; /etc/apt/sources.list.d/jenkins.list'</span>
+apt-get update
+apt-get <span class="nb">install </span>jenkins
+</code></pre></div></div>
+
+<p><a href="http://localhost:4000/images/posts/2021-03-11/skipproperty.png"><img src="http://localhost:4000/images/posts/2021-03-11/skipproperty.png" alt="skipproperty" /></a></p>
+:ET

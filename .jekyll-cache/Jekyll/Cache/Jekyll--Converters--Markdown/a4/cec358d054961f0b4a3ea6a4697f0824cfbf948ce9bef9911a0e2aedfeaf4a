@@ -1,0 +1,19 @@
+I"�<h2 id="jenkins-ubuntu-jenkins-설치"><center>[Jenkins] Ubuntu Jenkins 설치</center></h2>
+
+<blockquote>
+  <p>Ubuntu Jenkins 설치 방법</p>
+</blockquote>
+
+<p>📌Jenkins 설치 전에 Java가 설치 되어 있어야 한다.</p>
+
+<div class="language-shell highlighter-rouge"><div class="highlight"><pre class="highlight"><code>wget <span class="nt">-q</span> <span class="nt">-O</span> - https://pkg.jenkins.io/debian/jenkins-ci.org.key | <span class="nb">sudo </span>apt-key add -
+sh <span class="nt">-c</span> <span class="s1">'echo deb http://pkg.jenkins.io/debian-stable binary/ &gt; /etc/apt/sources.list.d/jenkins.list'</span>
+apt-get update
+apt-get <span class="nb">install </span>jenkins
+
+service jenkins start
+<span class="c">#default port:8080</span>
+</code></pre></div></div>
+
+<p><a href="http://localhost:4000/images/posts/2021-03-16/install1.png"><img src="http://localhost:4000/images/posts/2021-03-16/install1.png" alt="install1" /></a></p>
+:ET

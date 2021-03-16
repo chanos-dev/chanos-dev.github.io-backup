@@ -5,7 +5,18 @@
         <description>Junior Developer</description>      
         <link>http://localhost:4000</link>
         <atom:link href="http://localhost:4000/feed.xml" rel="self" type="application/rss+xml" />
-        <lastBuildDate>Thu, 11 Mar 2021 00:00:00 +0900</lastBuildDate>
+        <lastBuildDate>Tue, 16 Mar 2021 00:00:00 +0900</lastBuildDate>
+        
+            <item>
+                <title>[Jenkins] Ubuntu Jenkins 설치</title>
+                        
+                
+                    <description>Ubuntu Jenkins</description>
+                
+                <pubDate>Tue, 16 Mar 2021 00:00:00 +0900</pubDate>
+                <link>http://localhost:4000/Jenkins-Install/</link>
+                <guid isPermaLink="true">http://localhost:4000/Jenkins-Install/</guid>
+            </item>
         
             <item>
                 <title>[C#] GetProperties 특정 Property 제외하고 가져오기</title>
@@ -104,17 +115,6 @@
                 <pubDate>Wed, 09 Dec 2020 00:00:00 +0900</pubDate>
                 <link>http://localhost:4000/Barcode/</link>
                 <guid isPermaLink="true">http://localhost:4000/Barcode/</guid>
-            </item>
-        
-            <item>
-                <title>[ES] ElasticSearch (3)</title>
-                        
-                
-                    <description>ElasticSearch</description>
-                
-                <pubDate>Mon, 09 Nov 2020 00:00:00 +0900</pubDate>
-                <link>http://localhost:4000/ElasticSearch(3)/</link>
-                <guid isPermaLink="true">http://localhost:4000/ElasticSearch(3)/</guid>
             </item>
         
     </channel>
