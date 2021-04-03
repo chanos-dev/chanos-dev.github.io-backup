@@ -1,0 +1,15 @@
+I"�<h2 id="c-사용자-정의-형변환"><center>[C#] 사용자 정의 형변환</center></h2>
+
+<p>implicit, explicit 두 가지 모두 C# 4.0 부터 제공하는 연산자이다.</p>
+
+<ul>
+  <li>
+    <p>implicit : 별도의 캐스팅 없이 컴파일러가 알아서 변환하는 것, 반환에 의한 값 손실이 없을 때 사용한다.</p>
+  </li>
+  <li>
+    <p>explicit : 값 손실이 발생할 수 있어, 캐스팅에 의해서만 반환이 가능하다.</p>
+  </li>
+</ul>
+
+<p><a href="http://localhost:4000/images/posts/2021-04-02/boxing.png"><img src="http://localhost:4000/images/posts/2021-04-02/boxing.png" alt="boxing" /></a></p>
+:ET

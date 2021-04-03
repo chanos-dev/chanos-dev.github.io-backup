@@ -1,0 +1,55 @@
+I"�<h2 id="c-사용자-정의-형변환"><center>[C#] 사용자 정의 형변환</center></h2>
+
+<blockquote>
+  <p><a href="https://github.com/chanos-dev/blogcode/tree/master/21-0403">Git Source</a></p>
+</blockquote>
+
+<hr />
+
+<blockquote>
+  <p><b> 사용자 정의 형변환 </b> 🎈</p>
+</blockquote>
+
+<p>implicit, explicit 두 가지 모두 C# 4.0 부터 제공하는 연산자이다.</p>
+
+<ul>
+  <li>
+    <p>implicit : 별도의 캐스팅 없이 컴파일러가 알아서 변환하는 것, 반환에 의한 값 손실이 없을 때 사용한다.</p>
+  </li>
+  <li>
+    <p>explicit : 값 손실이 발생할 수 있어, 캐스팅에 의해서만 반환이 가능하다.</p>
+  </li>
+</ul>
+
+<div class="language-c# highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">class</span> <span class="nc">Time</span>
+<span class="p">{</span>
+    <span class="k">public</span> <span class="kt">int</span> <span class="n">Hour</span> <span class="p">{</span> <span class="k">get</span><span class="p">;</span> <span class="k">set</span><span class="p">;</span> <span class="p">}</span>
+
+    <span class="k">public</span> <span class="kt">int</span> <span class="n">Minute</span> <span class="p">{</span> <span class="k">get</span><span class="p">;</span> <span class="k">set</span><span class="p">;</span> <span class="p">}</span>
+
+    <span class="k">public</span> <span class="kt">int</span> <span class="n">Second</span> <span class="p">{</span> <span class="k">get</span><span class="p">;</span> <span class="k">set</span><span class="p">;</span> <span class="p">}</span>
+
+    <span class="k">public</span> <span class="k">static</span> <span class="k">implicit</span> <span class="k">operator</span> <span class="kt">int</span><span class="p">(</span><span class="n">Time</span> <span class="n">time</span><span class="p">)</span> <span class="p">=&gt;</span> <span class="n">time</span><span class="p">.</span><span class="n">Hour</span> <span class="p">*</span> <span class="m">3600</span> <span class="p">+</span> <span class="n">time</span><span class="p">.</span><span class="n">Minute</span> <span class="p">*</span> <span class="m">60</span> <span class="p">+</span> <span class="n">time</span><span class="p">.</span><span class="n">Second</span><span class="p">;</span>
+<span class="p">}</span>
+</code></pre></div></div>
+
+<div class="language-c# highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">static</span> <span class="k">void</span> <span class="nf">Main</span><span class="p">(</span><span class="kt">string</span><span class="p">[]</span> <span class="n">args</span><span class="p">)</span>
+<span class="p">{</span>
+    <span class="kt">var</span> <span class="n">time</span> <span class="p">=</span> <span class="k">new</span> <span class="nf">Time</span><span class="p">()</span>
+    <span class="p">{</span>
+        <span class="n">Hour</span> <span class="p">=</span> <span class="m">5</span><span class="p">,</span>
+        <span class="n">Minute</span> <span class="p">=</span> <span class="m">30</span><span class="p">,</span>
+        <span class="n">Second</span> <span class="p">=</span> <span class="m">15</span><span class="p">,</span>
+    <span class="p">};</span>
+
+    <span class="kt">int</span> <span class="n">totalSec</span> <span class="p">=</span> <span class="n">time</span><span class="p">;</span>
+
+    <span class="n">Console</span><span class="p">.</span><span class="nf">WriteLine</span><span class="p">(</span><span class="s">$"Sec : </span><span class="p">{</span><span class="n">totalSec</span><span class="p">}</span><span class="s">"</span><span class="p">);</span>
+<span class="p">}</span>
+</code></pre></div></div>
+<ul>
+  <li>implicit을 이용하면 int totalSec = time 과 같이 별도의 캐스팅 없이도 대입이 가능하다.</li>
+</ul>
+
+<p><a href="http://localhost:4000/images/posts/2021-04-03/result.png"><img src="http://localhost:4000/images/posts/2021-04-03/result.png" alt="result" /></a></p>
+:ET
