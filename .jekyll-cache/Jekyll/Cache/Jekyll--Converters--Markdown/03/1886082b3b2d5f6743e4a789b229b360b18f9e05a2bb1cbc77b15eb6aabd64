@@ -1,0 +1,42 @@
+I"<h2 id="c-원-그리기"><center>[C#] 원 그리기</center></h2>
+
+<blockquote>
+  <p><a href="https://github.com/chanos-dev/blogcode/tree/master/21-0405">Git Source</a></p>
+</blockquote>
+
+<hr />
+
+<blockquote>
+  <p><b> 원 그리기 </b> 🎈</p>
+</blockquote>
+
+<p>Graphics 클래스에서 제공하는 DrawPie와 FillPie를 이용하여 원을 그릴 수 있다.</p>
+
+<ul>
+  <li>DrawPie : 좌표 쌍, 너비, 높이 및 두 개의 방사형 선에 의해 지정된 타원으로 정의되는 원형 도형을 그립니다.</li>
+</ul>
+
+<p><a href="http://localhost:4000/images/posts/2021-04-05/drawpie.png"><img src="http://localhost:4000/images/posts/2021-04-05/drawpie.png" alt="drawpie" /></a></p>
+
+<ul>
+  <li>FillPie : 좌표 쌍, 너비, 높이 및 두 개의 방사형 선에 의해 지정된 타원에 의해 정의되는 원형 섹션의 내부를 채웁니다.</li>
+</ul>
+
+<p><a href="http://localhost:4000/images/posts/2021-04-05/fillpie.png"><img src="http://localhost:4000/images/posts/2021-04-05/fillpie.png" alt="fillpie" /></a></p>
+
+<ul>
+  <li>StartAngle, SweepAngle</li>
+</ul>
+
+<p><a href="http://localhost:4000/images/posts/2021-04-05/angle.png"><img src="http://localhost:4000/images/posts/2021-04-05/angle.png" alt="angle" /></a></p>
+
+<ul>
+  <li>StartAngle에 값은 0(360), 90, 180, 270 기준으로 생각하면 되고, SweepAngle은 StartAngle의 지점으로 부터 그려지는 값이다. 양수(+)이면 시계방향, 음수(-)이면 반시계방향.</li>
+</ul>
+
+<p><a href="http://localhost:4000/images/posts/2021-04-05/smooth.png"><img src="http://localhost:4000/images/posts/2021-04-05/smooth.png" alt="smooth" /></a></p>
+
+<h2 id="reference">Reference</h2>
+
+<p><a href="http://csharphelper.com/blog/2016/03/fill-and-draw-pie-slices-in-c/">Fill and draw pie clices in C#</a></p>
+:ET
