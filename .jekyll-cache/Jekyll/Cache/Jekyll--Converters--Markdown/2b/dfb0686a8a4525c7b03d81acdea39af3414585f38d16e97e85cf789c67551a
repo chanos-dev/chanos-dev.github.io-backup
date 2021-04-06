@@ -1,5 +1,8 @@
-I"�0
+I"�2
 <ul class="entry-meta">
+  
+  
+  <li><a href="#Anonymous Type" class="tag"><span class="term">Anonymous Type</span> <span class="count">1</span></a></li>
   
   
   <li><a href="#Attribute" class="tag"><span class="term">Attribute</span> <span class="count">1</span></a></li>
@@ -11,7 +14,7 @@
   <li><a href="#Boxing" class="tag"><span class="term">Boxing</span> <span class="count">1</span></a></li>
   
   
-  <li><a href="#C#" class="tag"><span class="term">C#</span> <span class="count">12</span></a></li>
+  <li><a href="#C#" class="tag"><span class="term">C#</span> <span class="count">13</span></a></li>
   
   
   <li><a href="#C++" class="tag"><span class="term">C++</span> <span class="count">3</span></a></li>
@@ -81,6 +84,13 @@
   
 </ul>
 
+<h2 id="Anonymous Type" class="tag-heading">Anonymous Type</h2>
+<ul>
+    
+    <li class="entry-title"><a href="http://localhost:4000/anonymoustype/" title="[C#] 익명 타입">[C#] 익명 타입</a></li>
+    
+  </ul>
+
 <h2 id="Attribute" class="tag-heading">Attribute</h2>
 <ul>
     
@@ -104,6 +114,8 @@
 
 <h2 id="C#" class="tag-heading">C#</h2>
 <ul>
+    
+    <li class="entry-title"><a href="http://localhost:4000/anonymoustype/" title="[C#] 익명 타입">[C#] 익명 타입</a></li>
     
     <li class="entry-title"><a href="http://localhost:4000/circle/" title="[C#] 원 그리기">[C#] 원 그리기</a></li>
     

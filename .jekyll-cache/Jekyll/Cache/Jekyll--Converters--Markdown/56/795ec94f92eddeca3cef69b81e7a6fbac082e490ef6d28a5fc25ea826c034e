@@ -1,0 +1,29 @@
+I"�<h2 id="c-익명-타입"><center>[C#] 익명 타입</center></h2>
+
+<blockquote>
+  <p><a href="https://github.com/chanos-dev/blogcode/tree/master/21-0406">Git Source</a></p>
+</blockquote>
+
+<hr />
+
+<blockquote>
+  <p><b> 익명 타입 </b> 😎</p>
+</blockquote>
+
+<p>C# 3.0부터 클래스를 미리 정의하지 않고 사용할 수 있는 익명타입을 지원한다.</p>
+
+<ul>
+  <li>익명 타입 특징
+    <ol>
+      <li>읽기 전용이다. (할달 불가능)</li>
+      <li>변수할당 시 타입은 <code class="language-plaintext highlighter-rouge">var</code></li>
+      <li>new { 속성 : 값 } 형식으로 <code class="language-plaintext highlighter-rouge">Json</code> 형태와 비슷하다.</li>
+      <li>매개변수로 전달이 불가하고 리턴 타입으로도 사용할 수 없다.</li>
+    </ol>
+  </li>
+</ul>
+
+<p>사용방볍)</p>
+<div class="language-c# highlighter-rouge"><div class="highlight"><pre class="highlight"><code>
+</code></pre></div></div>
+:ET

@@ -5,7 +5,18 @@
         <description>Junior Developer</description>      
         <link>http://localhost:4000</link>
         <atom:link href="http://localhost:4000/feed.xml" rel="self" type="application/rss+xml" />
-        <lastBuildDate>Mon, 05 Apr 2021 00:00:00 +0900</lastBuildDate>
+        <lastBuildDate>Tue, 06 Apr 2021 00:00:00 +0900</lastBuildDate>
+        
+            <item>
+                <title>[C#] 익명 타입</title>
+                        
+                
+                    <description>C# Anonymous Type</description>
+                
+                <pubDate>Tue, 06 Apr 2021 00:00:00 +0900</pubDate>
+                <link>http://localhost:4000/anonymoustype/</link>
+                <guid isPermaLink="true">http://localhost:4000/anonymoustype/</guid>
+            </item>
         
             <item>
                 <title>[C#] 원 그리기</title>
@@ -104,17 +115,6 @@
                 <pubDate>Tue, 05 Jan 2021 00:00:00 +0900</pubDate>
                 <link>http://localhost:4000/BubbleSort/</link>
                 <guid isPermaLink="true">http://localhost:4000/BubbleSort/</guid>
-            </item>
-        
-            <item>
-                <title>[Algorithm] 선택 정렬</title>
-                        
-                
-                    <description>C++ Selection Sort</description>
-                
-                <pubDate>Tue, 05 Jan 2021 00:00:00 +0900</pubDate>
-                <link>http://localhost:4000/SelectionSort/</link>
-                <guid isPermaLink="true">http://localhost:4000/SelectionSort/</guid>
             </item>
         
     </channel>
