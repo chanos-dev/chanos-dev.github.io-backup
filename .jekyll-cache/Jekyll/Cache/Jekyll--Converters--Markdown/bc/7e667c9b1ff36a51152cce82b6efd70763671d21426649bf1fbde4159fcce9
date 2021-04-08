@@ -1,4 +1,4 @@
-I"�2
+I"�5
 <ul class="entry-meta">
   
   
@@ -14,7 +14,7 @@
   <li><a href="#Boxing" class="tag"><span class="term">Boxing</span> <span class="count">1</span></a></li>
   
   
-  <li><a href="#C#" class="tag"><span class="term">C#</span> <span class="count">13</span></a></li>
+  <li><a href="#C#" class="tag"><span class="term">C#</span> <span class="count">14</span></a></li>
   
   
   <li><a href="#C++" class="tag"><span class="term">C++</span> <span class="count">3</span></a></li>
@@ -74,10 +74,16 @@
   <li><a href="#algorithm" class="tag"><span class="term">algorithm</span> <span class="count">4</span></a></li>
   
   
+  <li><a href="#const" class="tag"><span class="term">const</span> <span class="count">1</span></a></li>
+  
+  
   <li><a href="#explicit" class="tag"><span class="term">explicit</span> <span class="count">1</span></a></li>
   
   
   <li><a href="#implicit" class="tag"><span class="term">implicit</span> <span class="count">1</span></a></li>
+  
+  
+  <li><a href="#readonly" class="tag"><span class="term">readonly</span> <span class="count">1</span></a></li>
   
   
   <li><a href="#swap" class="tag"><span class="term">swap</span> <span class="count">1</span></a></li>
@@ -87,7 +93,7 @@
 <h2 id="Anonymous Type" class="tag-heading">Anonymous Type</h2>
 <ul>
     
-    <li class="entry-title"><a href="http://localhost:4000/anonymoustype/" title="[C#] 익명 타입">[C#] 익명 타입</a></li>
+    <li class="entry-title"><a href="http://localhost:4000/const_readonly/" title="[C#] 익명 타입">[C#] 익명 타입</a></li>
     
   </ul>
 
@@ -115,7 +121,9 @@
 <h2 id="C#" class="tag-heading">C#</h2>
 <ul>
     
-    <li class="entry-title"><a href="http://localhost:4000/anonymoustype/" title="[C#] 익명 타입">[C#] 익명 타입</a></li>
+    <li class="entry-title"><a href="http://localhost:4000/anonymoustype/" title="[C#] const, readonly">[C#] const, readonly</a></li>
+    
+    <li class="entry-title"><a href="http://localhost:4000/const_readonly/" title="[C#] 익명 타입">[C#] 익명 타입</a></li>
     
     <li class="entry-title"><a href="http://localhost:4000/circle/" title="[C#] 원 그리기">[C#] 원 그리기</a></li>
     
@@ -302,6 +310,13 @@
     
   </ul>
 
+<h2 id="const" class="tag-heading">const</h2>
+<ul>
+    
+    <li class="entry-title"><a href="http://localhost:4000/anonymoustype/" title="[C#] const, readonly">[C#] const, readonly</a></li>
+    
+  </ul>
+
 <h2 id="explicit" class="tag-heading">explicit</h2>
 <ul>
     
@@ -313,6 +328,13 @@
 <ul>
     
     <li class="entry-title"><a href="http://localhost:4000/implicit-explicit/" title="[C#] 사용자 정의 형변환">[C#] 사용자 정의 형변환</a></li>
+    
+  </ul>
+
+<h2 id="readonly" class="tag-heading">readonly</h2>
+<ul>
+    
+    <li class="entry-title"><a href="http://localhost:4000/anonymoustype/" title="[C#] const, readonly">[C#] const, readonly</a></li>
     
   </ul>
 

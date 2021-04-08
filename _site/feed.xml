@@ -5,7 +5,18 @@
         <description>Junior Developer</description>      
         <link>http://localhost:4000</link>
         <atom:link href="http://localhost:4000/feed.xml" rel="self" type="application/rss+xml" />
-        <lastBuildDate>Tue, 06 Apr 2021 00:00:00 +0900</lastBuildDate>
+        <lastBuildDate>Thu, 08 Apr 2021 00:00:00 +0900</lastBuildDate>
+        
+            <item>
+                <title>[C#] const, readonly</title>
+                        
+                
+                    <description>C# const, readlony</description>
+                
+                <pubDate>Thu, 08 Apr 2021 00:00:00 +0900</pubDate>
+                <link>http://localhost:4000/anonymoustype/</link>
+                <guid isPermaLink="true">http://localhost:4000/anonymoustype/</guid>
+            </item>
         
             <item>
                 <title>[C#] 익명 타입</title>
@@ -14,8 +25,8 @@
                     <description>C# Anonymous Type</description>
                 
                 <pubDate>Tue, 06 Apr 2021 00:00:00 +0900</pubDate>
-                <link>http://localhost:4000/anonymoustype/</link>
-                <guid isPermaLink="true">http://localhost:4000/anonymoustype/</guid>
+                <link>http://localhost:4000/const_readonly/</link>
+                <guid isPermaLink="true">http://localhost:4000/const_readonly/</guid>
             </item>
         
             <item>
@@ -104,17 +115,6 @@
                 <pubDate>Sun, 10 Jan 2021 00:00:00 +0900</pubDate>
                 <link>http://localhost:4000/InsertionSort/</link>
                 <guid isPermaLink="true">http://localhost:4000/InsertionSort/</guid>
-            </item>
-        
-            <item>
-                <title>[Algorithm] 버블 정렬</title>
-                        
-                
-                    <description>C++ Bubble Sort</description>
-                
-                <pubDate>Tue, 05 Jan 2021 00:00:00 +0900</pubDate>
-                <link>http://localhost:4000/BubbleSort/</link>
-                <guid isPermaLink="true">http://localhost:4000/BubbleSort/</guid>
             </item>
         
     </channel>

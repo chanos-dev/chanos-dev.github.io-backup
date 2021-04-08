@@ -1,0 +1,63 @@
+I"�<h2 id="c-const-readonly"><center>[C#] const, readonly</center></h2>
+
+<blockquote>
+  <p><a href="https://github.com/chanos-dev/blogcode/tree/master/21-0408">Git Source</a></p>
+</blockquote>
+
+<hr />
+
+<blockquote>
+  <p><b> const, readonly </b> 🌈</p>
+</blockquote>
+
+<p>const :</p>
+<ul>
+  <li>한번 값이 할당되면 그 이후 변경이 불가능하다.</li>
+  <li>static 변수이다.</li>
+  <li>클래스, 구조체 및 배열을 비롯한 사용자 정의 형식의 타입을 사용할 수 없다. (only primitive types, enums and string)</li>
+  <li>컴파일 타임에 처리된다.</li>
+  <li>컴파일 시 할당한 값이 어셈블리 메타데이터에 기록이 된다. (컴파일 상수)</li>
+  <li>배포 후 업데이트가 일어나면 참조하고 있는 어셈블리는 모두 리빌드를 해주어야한다.</li>
+  <li>heap memory</li>
+</ul>
+
+<p>readonly :</p>
+<ul>
+  <li>선언과 동시에 초기화를 하지 않아도 된다.</li>
+  <li>생성자에서 한번 더 할당이 가능하다.</li>
+  <li>static 키워드와 사용되면 static 생성자에서만 할당이 가능하다.</li>
+  <li>모든 타입이 가능하다.</li>
+  <li>런타임에 처리된다.</li>
+  <li>stack memory (static 선언 시 heap)</li>
+</ul>
+
+<div class="language-c# highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">private</span> <span class="k">readonly</span> <span class="n">Person</span> <span class="n">person</span><span class="p">;</span><span class="c1">// = new Person("홍길동", 24);</span>
+<span class="k">private</span> <span class="k">static</span> <span class="k">readonly</span> <span class="n">Person</span> <span class="n">person2</span> <span class="p">=</span> <span class="k">new</span> <span class="nf">Person</span><span class="p">(</span><span class="s">"심봉사"</span><span class="p">,</span> <span class="m">24</span><span class="p">);</span>
+<span class="k">private</span> <span class="k">const</span> <span class="kt">float</span> <span class="n">Pi</span> <span class="p">=</span> <span class="m">3.14f</span><span class="p">;</span>
+
+<span class="c1">// constructor</span>
+<span class="k">public</span> <span class="nf">Program</span><span class="p">()</span>
+<span class="p">{</span>
+    <span class="n">person</span> <span class="p">=</span> <span class="k">new</span> <span class="nf">Person</span><span class="p">(</span><span class="s">"홍길동"</span><span class="p">,</span> <span class="m">24</span><span class="p">);</span>
+    <span class="c1">// Pi = 3.1415f; (X)</span>
+    <span class="c1">// person2 = null; ( X )</span>
+<span class="p">}</span>
+
+<span class="k">static</span> <span class="nf">Program</span><span class="p">()</span>
+<span class="p">{</span>
+    <span class="n">person2</span> <span class="p">=</span> <span class="k">null</span><span class="p">;</span>
+<span class="p">}</span>
+
+<span class="k">class</span> <span class="nc">Person</span>
+<span class="p">{</span>
+    <span class="k">public</span> <span class="kt">string</span> <span class="n">Name</span> <span class="p">{</span> <span class="k">get</span><span class="p">;</span> <span class="k">set</span><span class="p">;</span> <span class="p">}</span>
+    <span class="k">public</span> <span class="kt">int</span> <span class="n">Age</span> <span class="p">{</span> <span class="k">get</span><span class="p">;</span> <span class="k">set</span><span class="p">;</span> <span class="p">}</span> 
+
+    <span class="k">public</span> <span class="nf">Person</span><span class="p">(</span><span class="kt">string</span> <span class="n">name</span><span class="p">,</span> <span class="kt">int</span> <span class="n">age</span><span class="p">)</span>
+    <span class="p">{</span>
+        <span class="n">Name</span> <span class="p">=</span> <span class="n">name</span><span class="p">;</span>
+        <span class="n">Age</span> <span class="p">=</span> <span class="n">age</span><span class="p">;</span>
+    <span class="p">}</span>
+<span class="p">}</span> 
+</code></pre></div></div>
+:ET
