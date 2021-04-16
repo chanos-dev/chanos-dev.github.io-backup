@@ -1,0 +1,87 @@
+I"j<h2 id="c-zip"><center>[C#] zip</center></h2>
+
+<blockquote>
+  <p><a href="https://github.com/chanos-dev/blogcode/tree/master/21-0408">Git Source</a></p>
+</blockquote>
+
+<hr />
+
+<blockquote>
+  <p><b> ZipArchive </b> 😎</p>
+</blockquote>
+
+<p>.Net Framework 4.5 부터 압축에 대한 라이브러리가 제공이 되며 이번 포스트에서는 ZipArchive에 대해 소개하려한다.</p>
+
+<ul>
+  <li>익명 타입 특징
+    <ol>
+      <li>읽기 전용이다. (할달 불가능)</li>
+      <li>변수할당 시 타입은 <code class="language-plaintext highlighter-rouge">var</code></li>
+      <li>new { 속성 : 값 } 형식으로 <code class="language-plaintext highlighter-rouge">Json</code> 형태와 비슷하다.</li>
+      <li>매개변수로 전달이 불가하고 리턴 타입으로도 사용할 수 없다.</li>
+    </ol>
+  </li>
+</ul>
+
+<p>사용방법)</p>
+
+<p><a href="http://localhost:4000/images/posts/2021-04-06/use1.png"><img src="http://localhost:4000/images/posts/2021-04-06/use1.png" alt="use1" /></a></p>
+<ul>
+  <li>컴파일러는 익명 타입에 대해 내부적으로 임의의 클래스를 생성한다.</li>
+  <li>이미지와 같이 setter가 없고 getter만 있다.</li>
+</ul>
+
+<hr />
+
+<p>컴파일러는 이전에 만든 익명 타입을 재사용하지만 조건이 있다.</p>
+<ol>
+  <li>동일한 어셈블리 내에 선언되어야한다.</li>
+  <li>속성 이름과 타입이 일치해야 하며, 같은 순서로 선언되어야한다.</li>
+</ol>
+
+<div class="language-c# highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kt">var</span> <span class="n">person</span> <span class="p">=</span> <span class="k">new</span> <span class="p">{</span> <span class="n">Name</span> <span class="p">=</span> <span class="s">"홍길동"</span><span class="p">,</span> <span class="n">Age</span> <span class="p">=</span> <span class="m">24</span><span class="p">,</span> <span class="n">Address</span> <span class="p">=</span> <span class="s">"경기도 광주"</span> <span class="p">};</span>
+<span class="kt">var</span> <span class="n">person2</span> <span class="p">=</span> <span class="k">new</span> <span class="p">{</span> <span class="n">Name</span> <span class="p">=</span> <span class="s">"홍길동"</span><span class="p">,</span> <span class="n">Address</span> <span class="p">=</span> <span class="s">"경기도 광주"</span><span class="p">,</span> <span class="n">Age</span> <span class="p">=</span> <span class="m">24</span> <span class="p">};</span>
+<span class="c1">// 다음 두 인스턴스는 서로 다른 독립적인 익명타입을 생성한다.</span>
+</code></pre></div></div>
+
+<hr />
+
+<p>익명 타입은 공식적으로 클래스를 정의할 필요 없이 Type을 간단히 임시로 만들어 사용할 때 유용하다. 특히 익명 타입은 LINQ를 사용할 때 많이 사용된다.</p>
+
+<div class="language-c# highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">internal</span> <span class="k">static</span> <span class="k">void</span> <span class="nf">CreateZip</span><span class="p">(</span><span class="kt">string</span> <span class="n">contentsFolderPath</span><span class="p">,</span> <span class="kt">string</span> <span class="n">saveZipPath</span><span class="p">,</span> <span class="kt">string</span> <span class="n">extention</span> <span class="p">=</span> <span class="s">"*"</span><span class="p">)</span>
+<span class="p">{</span>
+    <span class="k">if</span> <span class="p">(!</span><span class="n">Directory</span><span class="p">.</span><span class="nf">Exists</span><span class="p">(</span><span class="n">contentsFolderPath</span><span class="p">))</span>
+        <span class="k">throw</span> <span class="k">new</span> <span class="nf">DirectoryNotFoundException</span><span class="p">(</span><span class="s">$"The directory is not found. \n</span><span class="p">{</span><span class="n">contentsFolderPath</span><span class="p">}</span><span class="s">"</span><span class="p">);</span>
+
+    <span class="k">if</span> <span class="p">(!</span><span class="n">Directory</span><span class="p">.</span><span class="nf">Exists</span><span class="p">(</span><span class="n">saveZipPath</span><span class="p">))</span>
+        <span class="n">Directory</span><span class="p">.</span><span class="nf">CreateDirectory</span><span class="p">(</span><span class="n">Path</span><span class="p">.</span><span class="nf">GetDirectoryName</span><span class="p">(</span><span class="n">saveZipPath</span><span class="p">));</span>
+
+    <span class="k">using</span> <span class="p">(</span><span class="kt">var</span> <span class="n">fs</span> <span class="p">=</span> <span class="k">new</span> <span class="nf">FileStream</span><span class="p">(</span><span class="n">saveZipPath</span><span class="p">,</span> <span class="n">FileMode</span><span class="p">.</span><span class="n">Create</span><span class="p">,</span> <span class="n">FileAccess</span><span class="p">.</span><span class="n">ReadWrite</span><span class="p">))</span>
+    <span class="k">using</span> <span class="p">(</span><span class="kt">var</span> <span class="n">za</span> <span class="p">=</span> <span class="k">new</span> <span class="nf">ZipArchive</span><span class="p">(</span><span class="n">fs</span><span class="p">,</span> <span class="n">ZipArchiveMode</span><span class="p">.</span><span class="n">Create</span><span class="p">))</span>
+    <span class="p">{</span>
+        <span class="k">foreach</span> <span class="p">(</span><span class="kt">var</span> <span class="n">filePath</span> <span class="k">in</span> <span class="n">Directory</span><span class="p">.</span><span class="nf">EnumerateFiles</span><span class="p">(</span><span class="n">contentsFolderPath</span><span class="p">,</span> <span class="s">$"*.</span><span class="p">{</span><span class="n">extention</span><span class="p">}</span><span class="s">"</span><span class="p">,</span> <span class="n">SearchOption</span><span class="p">.</span><span class="n">AllDirectories</span><span class="p">))</span>
+        <span class="p">{</span>
+            <span class="k">try</span>
+            <span class="p">{</span> 
+                <span class="n">za</span><span class="p">.</span><span class="nf">CreateEntryFromFile</span><span class="p">(</span><span class="n">filePath</span><span class="p">,</span> <span class="n">Path</span><span class="p">.</span><span class="nf">GetFileName</span><span class="p">(</span><span class="n">filePath</span><span class="p">));</span>
+                                    
+                <span class="c1">//var entry = za.CreateEntry(Path.GetFileName(filePath));</span>
+                <span class="c1">//using (var es = entry.Open())</span>
+                <span class="c1">//using (var writer = new StreamWriter(es))</span>
+                <span class="c1">//{</span>
+                <span class="c1">//    writer.Write(File.ReadAllText(filePath));</span>
+                <span class="c1">//}</span>
+            <span class="p">}</span>
+            <span class="k">catch</span>
+            <span class="p">{</span>
+                <span class="k">throw</span><span class="p">;</span>
+            <span class="p">}</span>
+        <span class="p">}</span>
+    <span class="p">}</span>
+<span class="p">}</span>
+</code></pre></div></div>
+
+<h2 id="reference">Reference</h2>
+
+<p><a href="http://csharphelper.com/blog/2016/03/fill-and-draw-pie-slices-in-c/">Fill and draw pie clices in C#</a></p>
+:ET

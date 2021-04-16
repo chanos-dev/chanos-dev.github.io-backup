@@ -1,67 +1,65 @@
 ---
 layout: post
-title:  "[C#] const, readonly"
-date:   2021-04-08
-excerpt: "C# const, readlony"
+title:  "[C#] 익명 타입"
+date:   2021-04-06
+excerpt: "C# Anonymous Type"
 tag: 
 - C#
-- const
-- readonly
+- Anonymous Type
 comments: true
 ---
 
-## <center>[C#] const, readonly</center>   
+## <center>[C#] 익명 타입</center>   
 
->[Git Source](https://github.com/chanos-dev/blogcode/tree/master/21-0408)
+>[Git Source](https://github.com/chanos-dev/blogcode/tree/master/21-0406)
 
 ---
 
-> <b> const, readonly </b> 🌈
+> <b> 익명 타입 </b> 😎
 
-const : 
-- 한번 값이 할당되면 그 이후 변경이 불가능하다.
-- static 변수이다.
-- 클래스, 구조체 및 배열을 비롯한 사용자 정의 형식의 타입을 사용할 수 없다. (only primitive types, enums and string)
-- 컴파일 타임에 처리된다.
-- 컴파일 시 할당한 값이 어셈블리 메타데이터에 기록이 된다. (컴파일 상수)
-- 배포 후 업데이트가 일어나면 참조하고 있는 어셈블리는 모두 리빌드를 해주어야한다.
-- heap memory
+C# 3.0부터 클래스를 미리 정의하지 않고 사용할 수 있는 익명타입을 지원한다.
 
-readonly :
-- 선언과 동시에 초기화를 하지 않아도 된다.
-- 생성자에서 한번 더 할당이 가능하다.
-- static 키워드와 사용되면 static 생성자에서만 할당이 가능하다.
-- 모든 타입이 가능하다.
-- 런타임에 처리된다.
-- stack memory (static 선언 시 heap)
+- 익명 타입 특징
+    1. 읽기 전용이다. (할달 불가능)
+    2. 변수할당 시 타입은 `var`
+    3. new { 속성 : 값 } 형식으로 `Json` 형태와 비슷하다.
+    4. 매개변수로 전달이 불가하고 리턴 타입으로도 사용할 수 없다.
+
+사용방법)
+
+<a href="{{ site.url }}/images/posts/2021-04-06/use1.png"><img src="{{ site.url }}/images/posts/2021-04-06/use1.png" alt="use1"></a> 
+- 컴파일러는 익명 타입에 대해 내부적으로 임의의 클래스를 생성한다.
+- 이미지와 같이 setter가 없고 getter만 있다.
+
+---
+
+컴파일러는 이전에 만든 익명 타입을 재사용하지만 조건이 있다.
+1. 동일한 어셈블리 내에 선언되어야한다.
+2. 속성 이름과 타입이 일치해야 하며, 같은 순서로 선언되어야한다.
 
 ```c#
-private readonly Person person;// = new Person("홍길동", 24);
-private static readonly Person person2 = new Person("심봉사", 24);
-private const float Pi = 3.14f;
+var person = new { Name = "홍길동", Age = 24, Address = "경기도 광주" };
+var person2 = new { Name = "홍길동", Address = "경기도 광주", Age = 24 };
+// 다음 두 인스턴스는 서로 다른 독립적인 익명타입을 생성한다.
+```
 
-// constructor
-public Program()
+---
+
+익명 타입은 공식적으로 클래스를 정의할 필요 없이 Type을 간단히 임시로 만들어 사용할 때 유용하다. 특히 익명 타입은 LINQ를 사용할 때 많이 사용된다.
+
+```c#
+var cities = new[]
 {
-    person = new Person("홍길동", 24);
-    // Pi = 3.1415f; (X)
-    // person2 = null; ( X )
-}
+    new { Name = "Baek", Age = 50, Job = "Programmer"},
+    new { Name = "Lee", Age = 20, Job = "Chef"},
+    new { Name = "Park", Age = 30, Job = "Teacher"},
+    new { Name = "Choi", Age = 40, Job = "Docter"},
+};
 
-static Program()
-{
-    person2 = null;
-}
+var lists = cities.Where(c => c.Age <= 30).Select(c => new { c.Name, c.Job });
 
-class Person
-{
-    public string Name { get; set; }
-    public int Age { get; set; } 
+foreach(var list in lists)
+    Console.WriteLine($"{list.Name} is {list.Job}");
 
-    public Person(string name, int age)
-    {
-        Name = name;
-        Age = age;
-    }
-} 
+// Select() 메서드를 사용하여 일부 컬럼들로만 구성된 새 익명 타입을 만들어 리턴한다.
 ```

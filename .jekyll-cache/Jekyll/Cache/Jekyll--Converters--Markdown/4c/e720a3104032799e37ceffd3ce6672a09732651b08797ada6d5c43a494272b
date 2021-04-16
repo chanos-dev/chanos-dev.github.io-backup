@@ -1,0 +1,120 @@
+I"6&<h2 id="c-zip"><center>[C#] zip</center></h2>
+
+<blockquote>
+  <p><a href="https://github.com/chanos-dev/blogcode/tree/master/21-0408">Git Source</a></p>
+</blockquote>
+
+<hr />
+
+<blockquote>
+  <p><b> ZipArchive </b> 🐔</p>
+</blockquote>
+
+<ul>
+  <li>참조
+    <ul>
+      <li>System.IO.Compression</li>
+      <li>System.IO.Compression.FileSystem</li>
+    </ul>
+  </li>
+</ul>
+
+<p>.Net Framework 4.5 부터 압축에 대한 라이브러리가 제공이 되며 이번 포스트에서는 제공되는 라이브러리 중 ZipArchive를 사용한다.</p>
+
+<ul>
+  <li>압축하기
+    <div class="language-c# highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">internal</span> <span class="k">static</span> <span class="k">void</span> <span class="nf">CreateZip</span><span class="p">(</span><span class="kt">string</span> <span class="n">contentsFolderPath</span><span class="p">,</span> <span class="kt">string</span> <span class="n">saveZipPath</span><span class="p">,</span> <span class="kt">string</span> <span class="n">extention</span> <span class="p">=</span> <span class="s">"*"</span><span class="p">)</span>
+<span class="p">{</span>
+  <span class="k">if</span> <span class="p">(!</span><span class="n">Directory</span><span class="p">.</span><span class="nf">Exists</span><span class="p">(</span><span class="n">contentsFolderPath</span><span class="p">))</span>
+      <span class="k">throw</span> <span class="k">new</span> <span class="nf">DirectoryNotFoundException</span><span class="p">(</span><span class="s">$"The directory is not found. \n</span><span class="p">{</span><span class="n">contentsFolderPath</span><span class="p">}</span><span class="s">"</span><span class="p">);</span>
+
+  <span class="k">if</span> <span class="p">(!</span><span class="n">Directory</span><span class="p">.</span><span class="nf">Exists</span><span class="p">(</span><span class="n">saveZipPath</span><span class="p">))</span>
+      <span class="n">Directory</span><span class="p">.</span><span class="nf">CreateDirectory</span><span class="p">(</span><span class="n">Path</span><span class="p">.</span><span class="nf">GetDirectoryName</span><span class="p">(</span><span class="n">saveZipPath</span><span class="p">));</span>
+
+  <span class="k">using</span> <span class="p">(</span><span class="kt">var</span> <span class="n">fs</span> <span class="p">=</span> <span class="k">new</span> <span class="nf">FileStream</span><span class="p">(</span><span class="n">saveZipPath</span><span class="p">,</span> <span class="n">FileMode</span><span class="p">.</span><span class="n">Create</span><span class="p">,</span> <span class="n">FileAccess</span><span class="p">.</span><span class="n">ReadWrite</span><span class="p">))</span>
+  <span class="k">using</span> <span class="p">(</span><span class="kt">var</span> <span class="n">za</span> <span class="p">=</span> <span class="k">new</span> <span class="nf">ZipArchive</span><span class="p">(</span><span class="n">fs</span><span class="p">,</span> <span class="n">ZipArchiveMode</span><span class="p">.</span><span class="n">Create</span><span class="p">))</span>
+  <span class="p">{</span>
+      <span class="k">foreach</span> <span class="p">(</span><span class="kt">var</span> <span class="n">filePath</span> <span class="k">in</span> <span class="n">Directory</span><span class="p">.</span><span class="nf">EnumerateFiles</span><span class="p">(</span><span class="n">contentsFolderPath</span><span class="p">,</span> <span class="s">$"*.</span><span class="p">{</span><span class="n">extention</span><span class="p">}</span><span class="s">"</span><span class="p">,</span> <span class="n">SearchOption</span><span class="p">.</span><span class="n">AllDirectories</span><span class="p">))</span>
+      <span class="p">{</span>
+          <span class="k">try</span>
+          <span class="p">{</span> 
+              <span class="n">za</span><span class="p">.</span><span class="nf">CreateEntryFromFile</span><span class="p">(</span><span class="n">filePath</span><span class="p">,</span> <span class="n">Path</span><span class="p">.</span><span class="nf">GetFileName</span><span class="p">(</span><span class="n">filePath</span><span class="p">));</span>
+                                    
+              <span class="c1">//var entry = za.CreateEntry(Path.GetFileName(filePath));</span>
+              <span class="c1">//using (var es = entry.Open())</span>
+              <span class="c1">//using (var writer = new StreamWriter(es))</span>
+              <span class="c1">//{</span>
+              <span class="c1">//    writer.Write(File.ReadAllText(filePath));</span>
+              <span class="c1">//}</span>
+          <span class="p">}</span>
+          <span class="k">catch</span>
+          <span class="p">{</span>
+              <span class="k">throw</span><span class="p">;</span>
+          <span class="p">}</span>
+      <span class="p">}</span>
+  <span class="p">}</span>
+<span class="p">}</span>
+</code></pre></div>    </div>
+    <ul>
+      <li>ZipArchive 클래스의 확장세머드인 CreateEntryFromFile는 해당
+        <div class="language-c# highlighter-rouge"><div class="highlight"><pre class="highlight"><code>  <span class="c1">//</span>
+  <span class="c1">// 요약:</span>
+  <span class="c1">//     압축 zip 보관 파일에 추가 하 여 파일에 보관 합니다.</span>
+  <span class="c1">//</span>
+  <span class="c1">// 매개 변수:</span>
+  <span class="c1">//   destination:</span>
+  <span class="c1">//     Zip 보관 파일을 추가 합니다.</span>
+  <span class="c1">//</span>
+  <span class="c1">//   sourceFileName:</span>
+  <span class="c1">//     보관 파일에 대 한 경로입니다. 상대 경로 또는 절대 경로를 지정할 수 있습니다. 상대 경로는 현재 작업 디렉터리에 상대적으로 해석됩니다.</span>
+  <span class="c1">//</span>
+  <span class="c1">//   entryName:</span>
+  <span class="c1">//     Zip 보관 파일에서 만들 항목의 이름입니다.</span>
+  <span class="c1">//</span>
+  <span class="c1">// 반환 값:</span>
+  <span class="c1">//     Zip 보관 파일에서 새 항목에 대 한 래퍼.</span>
+  <span class="c1">//</span>
+  <span class="c1">// 예외:</span>
+  <span class="c1">//   T:System.ArgumentException:</span>
+  <span class="c1">//     sourceFileNameSystem.String.Empty, 공백만, 또는 잘못 된 문자가 하나 이상 포함 합니다. 또는 entryName가</span>
+  <span class="c1">//     System.String.Empty인 경우</span>
+  <span class="c1">//</span>
+  <span class="c1">//   T:System.ArgumentNullException:</span>
+  <span class="c1">//     sourceFileName 또는 entryName가 null인 경우</span>
+  <span class="c1">//</span>
+  <span class="c1">//   T:System.IO.PathTooLongException:</span>
+  <span class="c1">//     sourceFileName, 지정된 된 경로, 파일 이름 또는 둘 다 시스템 정의 최대 길이 초과 합니다. 예를 들어 Windows 기반</span>
+  <span class="c1">//     플랫폼에서 경로는 248자를 초과할 수 없고 파일 이름은 260자를 초과할 수 없습니다.</span>
+  <span class="c1">//</span>
+  <span class="c1">//   T:System.IO.DirectoryNotFoundException:</span>
+  <span class="c1">//     sourceFileName 유효 하지 않습니다 (예를 들어 것은 매핑되지 않은 드라이브에).</span>
+  <span class="c1">//</span>
+  <span class="c1">//   T:System.IO.IOException:</span>
+  <span class="c1">//     지정 된 파일이 sourceFileName 열 수 없습니다.</span>
+  <span class="c1">//</span>
+  <span class="c1">//   T:System.UnauthorizedAccessException:</span>
+  <span class="c1">//     sourceFileName 디렉터리를 지정합니다. 또는 호출자에 의해 지정 된 파일에 액세스 하는 데 필요한 권한이 없는 sourceFileName합니다.</span>
+  <span class="c1">//</span>
+  <span class="c1">//   T:System.IO.FileNotFoundException:</span>
+  <span class="c1">//     지정 된 파일이 sourceFileName 는 찾을 수 없습니다.</span>
+  <span class="c1">//</span>
+  <span class="c1">//   T:System.NotSupportedException:</span>
+  <span class="c1">//     sourceFileName 매개 변수는 형식이 올바르지 않습니다. 또는 Zip 보관 파일에서 쓰기를 지원 하지 않습니다.</span>
+  <span class="c1">//</span>
+  <span class="c1">//   T:System.ObjectDisposedException:</span>
+  <span class="c1">//     Zip 보관 파일이 삭제 되었습니다.</span>
+  <span class="k">public</span> <span class="k">static</span> <span class="n">ZipArchiveEntry</span> <span class="nf">CreateEntryFromFile</span><span class="p">(</span><span class="k">this</span> <span class="n">ZipArchive</span> <span class="n">destination</span><span class="p">,</span> <span class="kt">string</span> <span class="n">sourceFileName</span><span class="p">,</span> <span class="kt">string</span> <span class="n">entryName</span><span class="p">);</span>
+</code></pre></div>        </div>
+      </li>
+      <li>주석구문에 ZipArchive 클래스의 인스턴스 메서드인 CreateEntry를 사용하게되면 <code class="language-plaintext highlighter-rouge">빈</code> 항목의 entry가 생성되므로 해당 entry의 stream을 가져와 주석구문처럼 write 해주어야한다. (추가적인 write 없이 해당 파일의 contents만 가져오는 경우면 CreateEntryFromFile를 사용하면 될 것 같다.)</li>
+    </ul>
+  </li>
+  <li>압축 해제하기
+    <div class="language-c# highlighter-rouge"><div class="highlight"><pre class="highlight"><code></code></pre></div>    </div>
+  </li>
+</ul>
+
+<h2 id="reference">Reference</h2>
+
+<p><a href="https://docs.microsoft.com/ko-kr/dotnet/api/system.io.compression.ziparchive?redirectedfrom=MSDN&amp;view=net-5.0">ZipArchive Class</a></p>
+:ET
