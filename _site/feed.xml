@@ -5,7 +5,18 @@
         <description>Junior Developer</description>      
         <link>http://localhost:4000</link>
         <atom:link href="http://localhost:4000/feed.xml" rel="self" type="application/rss+xml" />
-        <lastBuildDate>Mon, 19 Apr 2021 00:00:00 +0900</lastBuildDate>
+        <lastBuildDate>Tue, 20 Apr 2021 00:00:00 +0900</lastBuildDate>
+        
+            <item>
+                <title>[C#] Garbage Collector 1</title>
+                        
+                
+                    <description>C# Garbage Collector 1</description>
+                
+                <pubDate>Tue, 20 Apr 2021 00:00:00 +0900</pubDate>
+                <link>http://localhost:4000/namedpipe/</link>
+                <guid isPermaLink="true">http://localhost:4000/namedpipe/</guid>
+            </item>
         
             <item>
                 <title>[C#] named pipe</title>
@@ -14,8 +25,8 @@
                     <description>C# named pipe</description>
                 
                 <pubDate>Mon, 19 Apr 2021 00:00:00 +0900</pubDate>
-                <link>http://localhost:4000/namedpipe/</link>
-                <guid isPermaLink="true">http://localhost:4000/namedpipe/</guid>
+                <link>http://localhost:4000/GC1/</link>
+                <guid isPermaLink="true">http://localhost:4000/GC1/</guid>
             </item>
         
             <item>
@@ -104,17 +115,6 @@
                 <pubDate>Thu, 11 Mar 2021 00:00:00 +0900</pubDate>
                 <link>http://localhost:4000/SkipProperty/</link>
                 <guid isPermaLink="true">http://localhost:4000/SkipProperty/</guid>
-            </item>
-        
-            <item>
-                <title>[C#] 객체 비교</title>
-                        
-                
-                    <description>C# IEquatable</description>
-                
-                <pubDate>Wed, 10 Mar 2021 00:00:00 +0900</pubDate>
-                <link>http://localhost:4000/IEquatable/</link>
-                <guid isPermaLink="true">http://localhost:4000/IEquatable/</guid>
             </item>
         
     </channel>

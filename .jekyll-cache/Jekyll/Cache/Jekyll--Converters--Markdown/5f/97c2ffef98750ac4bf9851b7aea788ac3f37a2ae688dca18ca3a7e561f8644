@@ -1,0 +1,28 @@
+I"n<h2 id="c-garbage-collector"><center>[C#] Garbage Collector</center></h2>
+
+<blockquote>
+  <p><a href="https://github.com/chanos-dev/blogcode/tree/master/21-0420">Git Source</a></p>
+</blockquote>
+
+<hr />
+
+<blockquote>
+  <p><b> Garbage Collector 기본 작동 방식 </b> 🧷</p>
+</blockquote>
+
+<p>닷넷의 가비지 컬렉터(이하 GC)을 살펴보기 전 GC가 없는 C/C++는 메모리 관리가 어떻게 되고 있는지 살펴보자.</p>
+
+<p>C/C++ 환경에서늬 메모리 할당/해제는 프로그래머의 몫 이였다.</p>
+
+<p>C/C++ 런타임 라이브러리는 힙 상에서 사용 가능한 메모리 블록의 리스트를 유지하고, 메모리 할당 요청(new 혹은 malloc)이 있을 때마다 메모리 블록 리스트를 검색하여 요청된 크기의 메모리를 할당할 메모리 블록을 찾는다. 메모리 해제 요청(delete 혹은 free)이 있을 경우 할당된 메모리는 다시 사용 가능한 메모리 리스트에 삽입되게 된다.</p>
+
+<blockquote>
+  <p><b> 세대별 Garbage Collector </b> 🧷</p>
+</blockquote>
+
+<h2 id="reference">Reference</h2>
+
+<p><a href="http://www.simpleisbest.net/post/2011/04/01/Review-NET-Garbage-Collection.aspx">가비지 컬렉션 다시 보기 Part I</a></p>
+
+<p><a href="http://www.simpleisbest.net/post/2011/04/05/Generational-Garbage-Collection.aspx">가비지 컬렉션 다시 보기 Part II</a></p>
+:ET
