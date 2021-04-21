@@ -114,6 +114,6 @@ static void Main(string[] args)
 
 ## Reference
 
-[NamedPipeServerStream](https://docs.microsoft.com/ko-kr/dotnet/api/system.io.pipes.namedpipeserverstream?view=net-5.0)
+[NamedPipeServerStream](https://docs.microsoft.com/ko-kr/dotnet/api/system.io.pipes.namedpipeserverstream?view=net-5.0){:target="_blank"}
 
-[NamedPipeClientStream](https://docs.microsoft.com/ko-kr/dotnet/api/system.io.pipes.namedpipeclientstream?view=net-5.0)
+[NamedPipeClientStream](https://docs.microsoft.com/ko-kr/dotnet/api/system.io.pipes.namedpipeclientstream?view=net-5.0){:target="_blank"}

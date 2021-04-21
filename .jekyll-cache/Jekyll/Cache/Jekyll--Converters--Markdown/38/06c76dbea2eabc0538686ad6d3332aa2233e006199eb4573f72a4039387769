@@ -1,0 +1,14 @@
+I"�<h2 id="c-garbage-collector-1"><center>[C#] Garbage Collector 1</center></h2>
+
+<blockquote>
+  <p><a href="https://github.com/chanos-dev/blogcode/tree/master/21-0421">Git Source</a></p>
+</blockquote>
+
+<hr />
+
+<hr />
+
+<h2 id="reference">Reference</h2>
+
+<p><a href="https://docs.microsoft.com/ko-kr/dotnet/csharp/deconstruct#deconstructing-user-defined-types">튜플 사용자 정의 형식 분해</a></p>
+:ET

@@ -1,0 +1,96 @@
+I"�<h2 id="-c-튜플-사용자-정의-형식-분해-"><center> C# 튜플 사용자 정의 형식 분해 </center></h2>
+
+<blockquote>
+  <p><a href="https://github.com/chanos-dev/blogcode/tree/master/21-0421">Git Source</a></p>
+</blockquote>
+
+<hr />
+
+<p>C# 7.0 부터 Deconstruct라는 예약된 메서드를 제공한다. 대충 보면 소멸자(Destructor)와 스펠링이 비슷하게 생겨서 헷갈릴 수도 있다.</p>
+
+<p>생성자(constructor)는 객체를 생성할 때 호출 되는 메서드로, 매개변수를 받아 인스턴스 멤버 변수를 만들고 초기화 하는데 사용을 하는데, Deconstruct는 그와 반대로 필드의 값들을 외부로 전달하는 역활을 한다.</p>
+
+<p>사용하기 위해서는 클래스에서 인스턴스 메서드로 Deconstruct라는 예약어를 사용하여 구현을 해야한다. 여러 개의 out 매개변수를 사용할 수 있어 오버로딩 또한 가능하다.</p>
+
+<p>다음은 Deconstruct 메서드를 구현하는 방법이다.</p>
+<ul>
+  <li>리턴 값은 void를 반환해야 한다.</li>
+  <li>인스턴스 메서드야 한다.</li>
+  <li></li>
+</ul>
+
+<div class="language-c# highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">class</span> <span class="nc">Person</span>
+<span class="p">{</span>
+    <span class="k">public</span> <span class="kt">string</span> <span class="n">Name</span> <span class="p">{</span> <span class="k">get</span><span class="p">;</span> <span class="k">set</span><span class="p">;</span> <span class="p">}</span>
+    <span class="k">public</span> <span class="kt">int</span> <span class="n">Age</span> <span class="p">{</span> <span class="k">get</span><span class="p">;</span> <span class="k">set</span><span class="p">;</span> <span class="p">}</span>
+    <span class="k">public</span> <span class="kt">string</span> <span class="n">Job</span> <span class="p">{</span> <span class="k">get</span><span class="p">;</span> <span class="k">set</span><span class="p">;</span> <span class="p">}</span>
+
+    <span class="k">public</span> <span class="nf">Person</span><span class="p">()</span>
+    <span class="p">{</span>
+
+    <span class="p">}</span> 
+
+    <span class="c1">// 지정된 예약어.. Deconstruct</span>
+    <span class="k">public</span> <span class="k">void</span> <span class="nf">Deconstruct</span><span class="p">(</span><span class="k">out</span> <span class="kt">string</span> <span class="n">Name</span><span class="p">)</span>
+    <span class="p">{</span>
+        <span class="n">Name</span> <span class="p">=</span> <span class="k">this</span><span class="p">.</span><span class="n">Name</span><span class="p">;</span>
+    <span class="p">}</span>
+
+    <span class="k">public</span> <span class="k">void</span> <span class="nf">Deconstruct</span><span class="p">(</span><span class="k">out</span> <span class="kt">string</span> <span class="n">Name</span><span class="p">,</span> <span class="k">out</span> <span class="kt">int</span> <span class="n">Age</span><span class="p">)</span>
+    <span class="p">{</span>
+        <span class="n">Name</span> <span class="p">=</span> <span class="k">this</span><span class="p">.</span><span class="n">Name</span><span class="p">;</span>
+        <span class="n">Age</span> <span class="p">=</span> <span class="k">this</span><span class="p">.</span><span class="n">Age</span><span class="p">;</span> 
+    <span class="p">}</span>
+
+    <span class="k">public</span> <span class="k">void</span> <span class="nf">Deconstruct</span><span class="p">(</span><span class="k">out</span> <span class="kt">string</span> <span class="n">Name</span><span class="p">,</span> <span class="k">out</span> <span class="kt">int</span> <span class="n">Age</span><span class="p">,</span> <span class="k">out</span> <span class="kt">string</span> <span class="n">Job</span><span class="p">)</span>
+    <span class="p">{</span>
+        <span class="n">Name</span> <span class="p">=</span> <span class="k">this</span><span class="p">.</span><span class="n">Name</span><span class="p">;</span>
+        <span class="n">Age</span> <span class="p">=</span> <span class="k">this</span><span class="p">.</span><span class="n">Age</span><span class="p">;</span>
+        <span class="n">Job</span> <span class="p">=</span> <span class="k">this</span><span class="p">.</span><span class="n">Job</span><span class="p">;</span>
+    <span class="p">}</span>
+
+    <span class="k">public</span> <span class="k">override</span> <span class="kt">string</span> <span class="nf">ToString</span><span class="p">()</span> <span class="p">=&gt;</span> <span class="s">$"Name : </span><span class="p">{</span><span class="n">Name</span><span class="p">}</span><span class="s">\nAge : </span><span class="p">{</span><span class="n">Age</span><span class="p">}</span><span class="s">\nJob : </span><span class="p">{</span><span class="n">Job</span><span class="p">}</span><span class="s">"</span><span class="p">;</span>
+<span class="p">}</span>
+</code></pre></div></div>
+
+<ul>
+  <li>사용</li>
+</ul>
+
+<div class="language-c# highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">static</span> <span class="k">void</span> <span class="nf">Main</span><span class="p">(</span><span class="kt">string</span><span class="p">[]</span> <span class="n">args</span><span class="p">)</span>
+<span class="p">{</span>
+    <span class="kt">var</span> <span class="n">person</span> <span class="p">=</span> <span class="k">new</span> <span class="nf">Person</span><span class="p">()</span>
+    <span class="p">{</span>
+        <span class="n">Name</span> <span class="p">=</span> <span class="s">"백찬호"</span><span class="p">,</span>
+        <span class="n">Age</span> <span class="p">=</span> <span class="m">24</span><span class="p">,</span>
+        <span class="n">Job</span> <span class="p">=</span> <span class="s">"Programmer"</span><span class="p">,</span>
+    <span class="p">};</span>
+
+    <span class="n">Console</span><span class="p">.</span><span class="nf">WriteLine</span><span class="p">(</span><span class="n">person</span><span class="p">);</span>
+
+    <span class="kt">var</span> <span class="p">(</span><span class="n">name</span><span class="p">,</span> <span class="n">age</span><span class="p">,</span> <span class="n">job</span><span class="p">)</span> <span class="p">=</span> <span class="n">person</span><span class="p">;</span>
+
+    <span class="n">Console</span><span class="p">.</span><span class="nf">WriteLine</span><span class="p">(</span><span class="n">name</span><span class="p">);</span>
+    <span class="n">Console</span><span class="p">.</span><span class="nf">WriteLine</span><span class="p">(</span><span class="n">age</span><span class="p">);</span>
+    <span class="n">Console</span><span class="p">.</span><span class="nf">WriteLine</span><span class="p">(</span><span class="n">job</span><span class="p">);</span>
+
+    <span class="kt">var</span> <span class="p">(</span><span class="n">name2</span><span class="p">,</span> <span class="n">age2</span><span class="p">)</span> <span class="p">=</span> <span class="n">person</span><span class="p">;</span>
+
+    <span class="n">Console</span><span class="p">.</span><span class="nf">WriteLine</span><span class="p">(</span><span class="n">name2</span><span class="p">);</span>
+    <span class="n">Console</span><span class="p">.</span><span class="nf">WriteLine</span><span class="p">(</span><span class="n">age2</span><span class="p">);</span> 
+<span class="p">}</span>
+</code></pre></div></div>
+
+<ul>
+  <li>결과
+<a href="http://localhost:4000/images/posts/2021-04-20/gc3.png"><img src="http://localhost:4000/images/posts/2021-04-20/gc3.png" alt="gc3" /></a></li>
+</ul>
+
+<hr />
+
+<h2 id="reference">Reference</h2>
+
+<p><a href="https://docs.microsoft.com/ko-kr/dotnet/csharp/deconstruct#deconstructing-user-defined-types" target="_blank">튜플 사용자 정의 형식 분해</a></p>
+
+<p><a href="http://www.csharpstudy.com/Latest/CS7-deconstructor.aspx" target="_blank">C# 7.0 Deconstructor</a></p>
+:ET

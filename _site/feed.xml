@@ -5,7 +5,18 @@
         <description>Junior Developer</description>      
         <link>http://localhost:4000</link>
         <atom:link href="http://localhost:4000/feed.xml" rel="self" type="application/rss+xml" />
-        <lastBuildDate>Tue, 20 Apr 2021 00:00:00 +0900</lastBuildDate>
+        <lastBuildDate>Thu, 22 Apr 2021 00:00:00 +0900</lastBuildDate>
+        
+            <item>
+                <title>[C#] 튜플 사용자 정의 형식 분해</title>
+                        
+                
+                    <description>C# Deconstruct</description>
+                
+                <pubDate>Thu, 22 Apr 2021 00:00:00 +0900</pubDate>
+                <link>http://localhost:4000/Deconstruct/</link>
+                <guid isPermaLink="true">http://localhost:4000/Deconstruct/</guid>
+            </item>
         
             <item>
                 <title>[C#] Garbage Collector 1</title>
@@ -14,8 +25,8 @@
                     <description>C# Garbage Collector 1</description>
                 
                 <pubDate>Tue, 20 Apr 2021 00:00:00 +0900</pubDate>
-                <link>http://localhost:4000/namedpipe/</link>
-                <guid isPermaLink="true">http://localhost:4000/namedpipe/</guid>
+                <link>http://localhost:4000/GC1/</link>
+                <guid isPermaLink="true">http://localhost:4000/GC1/</guid>
             </item>
         
             <item>
@@ -25,8 +36,8 @@
                     <description>C# named pipe</description>
                 
                 <pubDate>Mon, 19 Apr 2021 00:00:00 +0900</pubDate>
-                <link>http://localhost:4000/GC1/</link>
-                <guid isPermaLink="true">http://localhost:4000/GC1/</guid>
+                <link>http://localhost:4000/namedpipe/</link>
+                <guid isPermaLink="true">http://localhost:4000/namedpipe/</guid>
             </item>
         
             <item>
@@ -104,17 +115,6 @@
                 <pubDate>Tue, 16 Mar 2021 00:00:00 +0900</pubDate>
                 <link>http://localhost:4000/Jenkins-Install/</link>
                 <guid isPermaLink="true">http://localhost:4000/Jenkins-Install/</guid>
-            </item>
-        
-            <item>
-                <title>[C#] GetProperties 특정 Property 제외하고 가져오기</title>
-                        
-                
-                    <description>C# SkipProperty</description>
-                
-                <pubDate>Thu, 11 Mar 2021 00:00:00 +0900</pubDate>
-                <link>http://localhost:4000/SkipProperty/</link>
-                <guid isPermaLink="true">http://localhost:4000/SkipProperty/</guid>
             </item>
         
     </channel>

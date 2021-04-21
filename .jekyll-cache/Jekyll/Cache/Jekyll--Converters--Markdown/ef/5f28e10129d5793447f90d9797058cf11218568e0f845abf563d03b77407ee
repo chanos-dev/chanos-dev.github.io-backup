@@ -1,0 +1,22 @@
+I"�<h2 id="-c-튜플-사용자-정의-형식-분해-"><center> C# 튜플 사용자 정의 형식 분해 </center></h2>
+
+<blockquote>
+  <p><a href="https://github.com/chanos-dev/blogcode/tree/master/21-0421">Git Source</a></p>
+</blockquote>
+
+<hr />
+
+<p>C# 7.0 부터 Deconstruct라는 예약된 메서드를 제공한다. 대충 보면 소멸자(Destructor)와 스펠링이 비슷하게 생겨서 헷갈릴 수도 있다.</p>
+
+<p>생성자(constructor)는 객체를 생성할 때 외부에서 입력 파라메터를 받아들여 필드에 저장하는 역활을 하는데, Deconstruct는 그와 반대로 필드의 값들을 외부로 전달하는 역활을 한다.</p>
+
+<p>사용하기 위해서는 클래스에서 인스턴스 메서드로 Deconstruct라는 예약어를 사용하여 구현을 해야한다. 여러 개의 out 매개변수를 사용할 수 있어 오버로딩 또한 가능하다.</p>
+
+<div class="language-c# highlighter-rouge"><div class="highlight"><pre class="highlight"><code></code></pre></div></div>
+
+<hr />
+
+<h2 id="reference">Reference</h2>
+
+<p><a href="https://docs.microsoft.com/ko-kr/dotnet/csharp/deconstruct#deconstructing-user-defined-types" target="_blank">튜플 사용자 정의 형식 분해</a></p>
+:ET
