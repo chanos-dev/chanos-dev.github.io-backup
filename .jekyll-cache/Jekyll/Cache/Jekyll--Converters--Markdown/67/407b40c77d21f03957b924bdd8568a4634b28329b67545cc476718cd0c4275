@@ -1,0 +1,24 @@
+I".<h2 id="-visualstudio-colorpicker-"><center> VisualStudio ColorPicker </center></h2>
+
+<hr />
+
+<p>Visual Studio의 Source Editor에서 Color를 사용할 때 작성한 Color가 어떤 색상인지 바로 육안으로 확인이 불가능하다.</p>
+
+<p>e.g)</p>
+<div class="language-c# highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kt">var</span> <span class="n">color</span> <span class="p">=</span> <span class="n">Color</span><span class="p">.</span><span class="n">Red</span><span class="p">;</span>
+</code></pre></div></div>
+
+<p>이를 위해 Visual Studio MarketPlace에서 Color Picker라는 확장 프로그램을 지원하는데 Visual Studio에 적용이 가능하다.</p>
+
+<p><a href="https://marketplace.visualstudio.com/items?itemName=ShemeerNS.ColorPicker&amp;ssr=false#overview" target="_blank">MS Color Picker</a></p>
+
+<p>해당 사이트에서 다운로드를하면 VSColorPicker.vsix를 다운받는다.</p>
+
+<p>Visual Studio를 종료한 다음 인스톨을 진행하면 도구에서 Color Picker을 확인할 수 있다.</p>
+
+<p><a href="http://localhost:4000/images/posts/2021-05-04/option1.png"><img src="http://localhost:4000/images/posts/2021-05-04/option1.png" alt="option1" /></a></p>
+
+<p>Color Picker가 있으면 정상적으로 설치된 것이다.</p>
+
+<hr />
+:ET
