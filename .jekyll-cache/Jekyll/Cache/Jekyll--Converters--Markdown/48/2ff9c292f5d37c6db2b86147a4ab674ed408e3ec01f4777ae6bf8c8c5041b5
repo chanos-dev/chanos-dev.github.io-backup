@@ -1,0 +1,24 @@
+I"7<h2 id="-문자열-비교-"><center> 문자열 비교 </center></h2>
+
+<blockquote>
+  <p><a href="https://github.com/chanos-dev/blogcode/tree/master/21-0531">Git Source</a></p>
+</blockquote>
+
+<hr />
+
+<ul>
+  <li>
+    <p>C#에서 문자열 비교 시 사용되는 메서드는 크게 2가지이다. op_Equality(==)와 string.Equals이다.</p>
+  </li>
+  <li>
+    <p>string class에는 op_Equality가 재정의 되어있어 문자열 비교 시 <code class="language-plaintext highlighter-rouge">==</code>를 사용하면 내부적으로 string.Equals 메서드를 호출한다.</p>
+  </li>
+</ul>
+
+<p><a href="http://localhost:4000/images/posts/2021-05-31/string_equals.png"><img src="http://localhost:4000/images/posts/2021-05-31/string_equals.png" alt="string_equals" title="hehe" /></a></p>
+<ul>
+  <li>qwe</li>
+</ul>
+
+<hr />
+:ET
