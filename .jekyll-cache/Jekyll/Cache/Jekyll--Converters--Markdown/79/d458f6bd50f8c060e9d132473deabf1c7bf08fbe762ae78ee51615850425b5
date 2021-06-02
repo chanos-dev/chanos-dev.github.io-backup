@@ -1,0 +1,18 @@
+I"L<h2 id="-제네릭메서드-안에서-객체-비교-"><center> 제네릭메서드 안에서 객체 비교 </center></h2>
+
+<blockquote>
+  <p><a href="https://github.com/chanos-dev/blogcode/tree/master/21-0602">Git Source</a></p>
+</blockquote>
+
+<hr />
+
+<ul>
+  <li>저번 <a href="http://localhost:4000/string/">문자열 비교</a>에서 제네릭</li>
+</ul>
+
+<hr />
+
+<h2 id="reference">Reference</h2>
+
+<p><a href="https://docs.microsoft.com/ko-kr/dotnet/csharp/programming-guide/generics/constraints-on-type-parameters" target="_blank">형식 매개 변수에 대한 제약 조건</a></p>
+:ET

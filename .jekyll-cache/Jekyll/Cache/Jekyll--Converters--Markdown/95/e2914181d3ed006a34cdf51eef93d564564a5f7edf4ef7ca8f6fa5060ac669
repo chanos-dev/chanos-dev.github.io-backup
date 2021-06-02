@@ -1,0 +1,21 @@
+I"�<h2 id="-제네릭메서드-안에서-객체-비교-문제-"><center> 제네릭메서드 안에서 객체 비교 문제 </center></h2>
+
+<blockquote>
+  <p><a href="https://github.com/chanos-dev/blogcode/tree/master/21-0602">Git Source</a></p>
+</blockquote>
+
+<hr />
+
+<ul>
+  <li>
+    <p>저번 <a href="http://localhost:4000/string/">문자열 비교</a>에서 제네릭 메서드 안에서 string 타입을 비교할 때 object ==연산인 ReferenceEquals연산을 호출하는 것 같다고 했었다.</p>
+  </li>
+  <li></li>
+</ul>
+
+<hr />
+
+<h2 id="reference">Reference</h2>
+
+<p><a href="https://docs.microsoft.com/ko-kr/dotnet/csharp/programming-guide/generics/constraints-on-type-parameters" target="_blank">형식 매개 변수에 대한 제약 조건</a></p>
+:ET
