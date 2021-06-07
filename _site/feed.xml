@@ -5,7 +5,18 @@
         <description>Junior Developer</description>      
         <link>http://localhost:4000</link>
         <atom:link href="http://localhost:4000/feed.xml" rel="self" type="application/rss+xml" />
-        <lastBuildDate>Wed, 02 Jun 2021 00:00:00 +0900</lastBuildDate>
+        <lastBuildDate>Mon, 07 Jun 2021 00:00:00 +0900</lastBuildDate>
+        
+            <item>
+                <title>C# 객체 생성</title>
+                        
+                
+                    <description>C# 객체 생성</description>
+                
+                <pubDate>Mon, 07 Jun 2021 00:00:00 +0900</pubDate>
+                <link>http://localhost:4000/create_object/</link>
+                <guid isPermaLink="true">http://localhost:4000/create_object/</guid>
+            </item>
         
             <item>
                 <title>C# 제네릭메서드 안에서 객체 비교 문제</title>
@@ -104,17 +115,6 @@
                 <pubDate>Thu, 08 Apr 2021 00:00:00 +0900</pubDate>
                 <link>http://localhost:4000/const_readonly/</link>
                 <guid isPermaLink="true">http://localhost:4000/const_readonly/</guid>
-            </item>
-        
-            <item>
-                <title>[C#] 익명 타입</title>
-                        
-                
-                    <description>C# Anonymous Type</description>
-                
-                <pubDate>Tue, 06 Apr 2021 00:00:00 +0900</pubDate>
-                <link>http://localhost:4000/anonymoustype/</link>
-                <guid isPermaLink="true">http://localhost:4000/anonymoustype/</guid>
             </item>
         
     </channel>
