@@ -1,8 +1,8 @@
 ---
 layout: post
-title:  "C# 객체 생성"
+title:  "C# 원격 객체 생성"
 date:   2021-06-07
-excerpt: "C# 객체 생성"
+excerpt: "C# 원격 객체 생성"
 tag: 
 - C#
 - Activator
@@ -11,7 +11,7 @@ tag:
 comments: true
 ---
 
-## <center> 객체 생성 </center>    
+## <center> 원격 객체 생성 </center>    
 
 --- 
 

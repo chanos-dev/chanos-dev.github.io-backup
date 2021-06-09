@@ -1,0 +1,58 @@
+I"f<h2 id="-캡처-변수-"><center> 캡처 변수 </center></h2>
+
+<blockquote>
+  <p><a href="https://github.com/chanos-dev/blogcode/tree/master/21-0609">Git Source</a></p>
+</blockquote>
+
+<hr />
+
+<ul>
+  <li>
+    <p>람다식을 구현할 때 로컬변수를 사용하는 경우, 이를 클로저(Closure)라 부르는데 로컬변수를 사용하는 경우 캡처 변수라는 것을 주의해야한다. ⚠</p>
+  </li>
+  <li>다음 코드를 살펴보면 개발자가 기대한 값이 0, 1, 2, 3, 4 이지만 실제 실행하여 결과를 확인하면 5, 5, 5, 5, 5가 출력되는 것을 확인할 수 있다.
+    <div class="language-c# highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">static</span> <span class="k">void</span> <span class="nf">Main</span><span class="p">(</span><span class="kt">string</span><span class="p">[]</span> <span class="n">args</span><span class="p">)</span>
+<span class="p">{</span>
+  <span class="kt">var</span> <span class="n">actions</span> <span class="p">=</span> <span class="k">new</span> <span class="n">List</span><span class="p">&lt;</span><span class="n">Action</span><span class="p">&gt;();</span>
+
+  <span class="k">for</span> <span class="p">(</span><span class="kt">int</span> <span class="n">idx</span> <span class="p">=</span> <span class="m">0</span><span class="p">;</span> <span class="n">idx</span> <span class="p">&lt;</span> <span class="m">5</span><span class="p">;</span> <span class="n">idx</span><span class="p">++)</span>
+  <span class="p">{</span> 
+      <span class="n">actions</span><span class="p">.</span><span class="nf">Add</span><span class="p">(()</span> <span class="p">=&gt;</span> <span class="n">Console</span><span class="p">.</span><span class="nf">WriteLine</span><span class="p">(</span><span class="n">idx</span><span class="p">));</span>
+  <span class="p">}</span>
+
+  <span class="k">foreach</span> <span class="p">(</span><span class="kt">var</span> <span class="n">action</span> <span class="k">in</span> <span class="n">actions</span><span class="p">)</span>
+  <span class="p">{</span>
+      <span class="n">action</span><span class="p">.</span><span class="nf">Invoke</span><span class="p">();</span>
+  <span class="p">}</span>
+<span class="p">}</span>
+</code></pre></div>    </div>
+  </li>
+  <li>이를 해결해주기 위해서는 for scope안에 새로운 로컬변수를 할당하여 대리자에 넘겨주어야 한다. 이를 반영하여 수정한 코드는 다음과 같을 것이다.
+    <div class="language-c# highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">static</span> <span class="k">void</span> <span class="nf">Main</span><span class="p">(</span><span class="kt">string</span><span class="p">[]</span> <span class="n">args</span><span class="p">)</span>
+<span class="p">{</span>
+  <span class="kt">var</span> <span class="n">actions</span> <span class="p">=</span> <span class="k">new</span> <span class="n">List</span><span class="p">&lt;</span><span class="n">Action</span><span class="p">&gt;();</span>
+
+  <span class="k">for</span> <span class="p">(</span><span class="kt">int</span> <span class="n">idx</span> <span class="p">=</span> <span class="m">0</span><span class="p">;</span> <span class="n">idx</span> <span class="p">&lt;</span> <span class="m">5</span><span class="p">;</span> <span class="n">idx</span><span class="p">++)</span>
+  <span class="p">{</span> 
+      <span class="kt">int</span> <span class="n">temp</span> <span class="p">=</span> <span class="n">idx</span><span class="p">;</span>
+      <span class="n">actions</span><span class="p">.</span><span class="nf">Add</span><span class="p">(()</span> <span class="p">=&gt;</span> <span class="n">Console</span><span class="p">.</span><span class="nf">WriteLine</span><span class="p">(</span><span class="n">temp</span><span class="p">));</span>
+  <span class="p">}</span>
+
+  <span class="k">foreach</span> <span class="p">(</span><span class="kt">var</span> <span class="n">action</span> <span class="k">in</span> <span class="n">actions</span><span class="p">)</span>
+  <span class="p">{</span>
+      <span class="n">action</span><span class="p">.</span><span class="nf">Invoke</span><span class="p">();</span>
+  <span class="p">}</span>
+<span class="p">}</span>
+</code></pre></div>    </div>
+  </li>
+  <li></li>
+</ul>
+
+<hr />
+
+<h2 id="reference">Reference</h2>
+
+<p><a href="https://www.codeproject.com/Articles/15624/Inside-C-2-0-Anonymous-Methods#4" target="_blank">Codeproject Inside C# 2.0 Anonymous Methods</a></p>
+
+<p><a href="https://www.sysnet.pe.kr/2/0/10817" target="_blank">.NET Framework: 523. C# 람다(Lambda)에서 변수 캡쳐 방식</a></p>
+:ET

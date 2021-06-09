@@ -1,0 +1,26 @@
+I"�<h2 id="-캡처-변수-"><center> 캡처 변수 </center></h2>
+
+<blockquote>
+  <p><a href="https://github.com/chanos-dev/blogcode/tree/master/21-0609">Git Source</a></p>
+</blockquote>
+
+<hr />
+
+<ul>
+  <li>람다식을 구현할 때 로컬변수를 사용하는 경우, 이를 클로저(Closure)라 부르는데 로컬변수를 사용하는 경우 캡처 변수라는 것을 주의해야한다. ⚠</li>
+</ul>
+
+<div class="language-c# highlighter-rouge"><div class="highlight"><pre class="highlight"><code>
+</code></pre></div></div>
+
+<ul>
+  <li>결과
+<a href="http://localhost:4000/images/posts/2021-06-07/result.png"><img src="http://localhost:4000/images/posts/2021-06-07/result.png" alt="result" /></a></li>
+</ul>
+
+<hr />
+
+<h2 id="reference">Reference</h2>
+
+<p><a href="https://docs.microsoft.com/ko-kr/dotnet/api/system.reflection.assembly.createinstance?view=netcore-3.1" target="_blank">Activator 클래스 (System)</a></p>
+:ET

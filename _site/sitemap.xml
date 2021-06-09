@@ -2,6 +2,10 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
     
     <url>
+        <loc>http://localhost:4000/captured_variable/</loc>
+    </url>
+    
+    <url>
         <loc>http://localhost:4000/create_object/</loc>
     </url>
     
