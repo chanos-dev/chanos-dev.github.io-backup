@@ -1,0 +1,54 @@
+I"�<h2 id="garbage-collector-2"><center>Garbage Collector 2</center></h2>
+
+<blockquote>
+  <p><a href="https://github.com/chanos-dev/chanos-dev.github.io/tree/master/document/2021-06-11/gc2.drawio">Memory Flow</a></p>
+</blockquote>
+
+<hr />
+
+<ul>
+  <li>
+    <p>닷넷의 GC의 최적화 기법 중 대표적인 것의 세대별 가비지 컬렉션이다. 오늘은 이 세대별 가비지 컬렉션이 어떻게 동작을 하는지 알아본다.</p>
+  </li>
+  <li>
+    <p>세대별 가비지 컬렉션은 <code class="language-plaintext highlighter-rouge">힙</code>상의 객체의 생존 시간에 따라 세대별로 구분하여 GC를 수행하는 것을 말한다.</p>
+  </li>
+  <li>
+    <p>0세대(GC 0)는 최근 생성된 객체이고, 1세대(GC 1)는 1회의 GC 동안 남아있는 객체이며 2세대(GC 2)는 2회 이상의 GC 동안 남아있는 객체를 의미한다.</p>
+  </li>
+  <li>
+    <p>닷넷의 GC는 기본적으로 0세대에 대해 GC를 수행하며 1,2세대는 특정 조건에 해당되면 수행한다.</p>
+  </li>
+  <li>
+    <p>0세대에 대해 집중적으로 GC를 수행하면 GC의 성능과 효율을 올릴 수 있는데 근거는 다음과 같다.</p>
+
+    <ol>
+      <li>최근 생성된 객체는 생명주기가 짧다.</li>
+      <li>오래된 객체일수록 생명주기는 길다.</li>
+      <li>최근에 생성된 객체들끼리는 서로 연관성이 높고 비슷한 시점에 엑세스 된다.</li>
+      <li>일부분의 힙을 GC하는 것이 전체 GC하는 것보다 빠르다.</li>
+    </ol>
+  </li>
+</ul>
+
+<blockquote>
+  <p>GC 0</p>
+</blockquote>
+
+<ul>
+  <li>
+    <p>GC 0의 동작 방식은 다음과 같다. 기본적으로 객체를 최초 생성하게되면 항상 0세대가 된다. 이후 CLR에 의해 GC가 발생하면 0세대에 대해서만 GC가 이루어진다.</p>
+  </li>
+  <li>
+    <p>ㅎㅇㅎㅇㅎㅇ</p>
+  </li>
+</ul>
+
+<p><a href="http://localhost:4000/images/posts/2021-06-12/gc1.png"><img src="http://localhost:4000/images/posts/2021-06-12/gc1.png" alt="gc1" /></a></p>
+
+<hr />
+
+<h2 id="reference">Reference</h2>
+
+<p><a href="http://www.simpleisbest.net/post/2011/04/05/Generational-Garbage-Collection.aspx" target="_blank">가비지 컬렉션 다시 보기 Part II</a></p>
+:ET
