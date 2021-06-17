@@ -1,0 +1,20 @@
+I"(<blockquote>
+  <p><a href="https://github.com/chanos-dev/blogcode/tree/master/21-0617">Git Source</a></p>
+</blockquote>
+
+<h2 id="list-collection-tolist"><center>List Collection ToList()</center></h2>
+
+<hr />
+
+<p>우선, 필자는 List 클래스에서 ToList 확장 메서드를 호출하면 해당 객체 및 하위 엘리멘트들이 모두 Deep Copy가 되는지 알았는데 그게 아니였다. 😥</p>
+
+<p>하지만 ToList에서 리턴된 객체에서 값을 수정하니 원본 객체의 값도 수정이된 것을 확인했다.</p>
+
+<p>해당 ToList()를 디컴파일러로 확인을 해본 결과 다음과 같았다.</p>
+
+<hr />
+
+<h2 id="reference">Reference</h2>
+
+<p><a href="https://docs.microsoft.com/ko-kr/dotnet/api/system.array.copy?view=net-5.0" target="_blank">Array.Copy 메서드</a></p>
+:ET
