@@ -8,6 +8,17 @@
         <lastBuildDate>Thu, 17 Jun 2021 00:00:00 +0900</lastBuildDate>
         
             <item>
+                <title>C# IFormattable</title>
+                        
+                
+                    <description>C# IFormattable</description>
+                
+                <pubDate>Thu, 17 Jun 2021 00:00:00 +0900</pubDate>
+                <link>http://localhost:4000/IFormattable/</link>
+                <guid isPermaLink="true">http://localhost:4000/IFormattable/</guid>
+            </item>
+        
+            <item>
                 <title>C# List Collection ToList()</title>
                         
                 
@@ -104,17 +115,6 @@
                 <pubDate>Wed, 28 Apr 2021 00:00:00 +0900</pubDate>
                 <link>http://localhost:4000/HangulAutocomplete/</link>
                 <guid isPermaLink="true">http://localhost:4000/HangulAutocomplete/</guid>
-            </item>
-        
-            <item>
-                <title>[C#] 튜플 사용자 정의 형식 분해</title>
-                        
-                
-                    <description>C# Deconstruct</description>
-                
-                <pubDate>Thu, 22 Apr 2021 00:00:00 +0900</pubDate>
-                <link>http://localhost:4000/Deconstruct/</link>
-                <guid isPermaLink="true">http://localhost:4000/Deconstruct/</guid>
             </item>
         
     </channel>

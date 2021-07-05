@@ -1,0 +1,29 @@
+I"�<h2 id="c-iformattable-사용자-지정-형식-만들어보기"><center>C# IFormattable 사용자 지정 형식 만들어보기</center></h2>
+
+<blockquote>
+  <p><a href="https://github.com/chanos-dev/blogcode/tree/master/21-0705">Git Source</a></p>
+</blockquote>
+
+<hr />
+
+<p>사용자 지정 형식에는 (숫자, 문자) 등이 있는데 DateTime 타입을 예로 들면 다음과 같다.</p>
+
+<div class="language-c# highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">static</span> <span class="k">void</span> <span class="nf">Main</span><span class="p">(</span><span class="kt">string</span><span class="p">[]</span> <span class="n">args</span><span class="p">)</span>
+<span class="p">{</span>
+    <span class="n">Console</span><span class="p">.</span><span class="nf">WriteLine</span><span class="p">(</span><span class="s">$"</span><span class="p">{</span><span class="n">DateTime</span><span class="p">.</span><span class="n">Now</span><span class="p">}</span><span class="s">"</span><span class="p">);</span>
+    <span class="n">Console</span><span class="p">.</span><span class="nf">WriteLine</span><span class="p">(</span><span class="s">$"</span><span class="p">{</span><span class="n">DateTime</span><span class="p">.</span><span class="n">Now</span><span class="p">:</span><span class="n">d</span><span class="p">}</span><span class="s">"</span><span class="p">);</span>
+<span class="p">}</span>
+
+<span class="c1">// Result</span>
+<span class="c1">// 2021-07-05 오후 10:20:16</span>
+<span class="c1">// 2021-07-05 </span>
+</code></pre></div></div>
+
+<p>특정 키워드 (위 코드에서는 <code class="language-plaintext highlighter-rouge">:d</code> 이다)를 넣어 해당 포맷에 맞게 정의된 문자열을 출력할 수 있다.</p>
+
+<hr />
+
+<h2 id="reference">Reference</h2>
+
+<p>[IFormattable]](https://docs.microsoft.com/ko-kr/dotnet/api/system.iformattable?view=net-5.0){:target=”_blank”}</p>
+:ET
