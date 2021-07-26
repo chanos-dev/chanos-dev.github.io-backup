@@ -1,7 +1,7 @@
 ---
 layout: post
 title:  "C# IFormattable"
-date:   2021-06-17
+date:   2021-07-05
 excerpt: "C# IFormattable"
 tag: 
 - C#
