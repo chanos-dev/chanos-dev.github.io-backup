@@ -1,0 +1,86 @@
+I"=<h2 id="c-finalizer"><center>C# Finalizer</center></h2>
+
+<hr />
+
+<p>Finalizer</p>
+<ul>
+  <li>c#의 메모리 관리는 CLR의 가비지 컬렉터로 관리가 되는데, 전부 그런 것은 아니다.</li>
+  <li>파일 IO, DB Connection 등 관리되지 않는 메모리 등을 사용한느 경우 이 자원들은 CLR에 의해 자동으로 메모리가 해제되지 않는다.</li>
+  <li>따라서 이러한 경우에는 개발자들이 직접 해제를 해주어야하는데, C++과 같이 Delete로 명시 해줄 수 없기 떄문에 CLR에서는 Finalizer라는 기법을 제공한다.</li>
+</ul>
+
+<p>Finalizer 정의</p>
+<ul>
+  <li>Finalizer는 생성자와 같이 클래스의 특수 메서드로 분류되는 메서드이다.</li>
+  <li>리턴 타입 및 파라미터 타입은 없으며 다음과 같이 정의한다. (<code class="language-plaintext highlighter-rouge">~</code> 키워드와 클래스명을 사용)
+    <div class="language-c# highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">class</span> <span class="nc">Foo</span>
+<span class="p">{</span>
+  <span class="p">~</span><span class="nf">Foo</span><span class="p">()</span>
+  <span class="p">{</span>
+
+  <span class="p">}</span>
+<span class="p">}</span>
+</code></pre></div>    </div>
+  </li>
+</ul>
+
+<p>Finalizer 호출 시점</p>
+<ul>
+  <li>Finalizer 메서드는 GC에 의해 객체가 제거될 때 호출이되며 명시적으로 호출은 불가능하다.</li>
+  <li>GC의 호출 주기는 알 수 없으므로, Finalizer 메서드가 호출되는 시점도 불명확하다.</li>
+</ul>
+
+<p>GC - Finalizer 관계</p>
+<ul>
+  <li>객체를 Heap에 할당할 때, Finalizer 메서드를 갖고있는 객체라면 CLR은 Finalizer 메서드를 갖고있는 목록에 추가를 한다.</li>
+  <li>GC가 수행될 때 Finalizer 메서드를 가지고 있는 객체가 정리 대상이라면 Freachable Queue 목록에 추가를 한다.</li>
+  <li>Finalizer Thread라는 별도 스레드가 Freachable Queue 목록에 있는 객체들을 꺼내어 Finalizer 메서드를 호출한다.</li>
+  <li>Finalizer 메서드가 호출이 완료된 객체는 다음 GC가 수행될 때 Heap에서 최종적으로 정리가 된다.</li>
+  <li>결국 Finalizer 메서드가 호출되기 전까지는 세대가 승급이 되면서 Heap상에 살아있는 것이다.
+    <ul>
+      <li>계속 Heap에 남아있는 이유는 Frechable Queue에서 참조되어 있기 때문이다.</li>
+    </ul>
+  </li>
+</ul>
+
+<p><a href="http://localhost:4000/images/posts/2021-08-02/Finalizer.jpg"><img src="http://localhost:4000/images/posts/2021-08-02/Finalizer.jpg" alt="Finalizer" /></a></p>
+
+<p>문제점</p>
+<ul>
+  <li>Finalizer 메서드가 호출되기 전까지는 계속 Heap에 살아있기 때문에 메모리 효율이 떨어질 수 있다.</li>
+  <li>Finalizer 메서드가 Finalizer Thread로 인해 호출되는 시점과 순서를 알 수 없다.</li>
+  <li>Finalizer 메서드가 중복으로 호출이 될 가능성이 있다.</li>
+</ul>
+
+<p>중복 호출</p>
+<div class="language-c# highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">class</span> <span class="nc">Foo</span>
+<span class="p">{</span>
+    <span class="k">private</span> <span class="n">StreamWriter</span> <span class="n">sw</span> <span class="p">{</span> <span class="k">get</span><span class="p">;</span> <span class="k">set</span><span class="p">;</span> <span class="p">}</span>
+
+    <span class="k">public</span> <span class="nf">Foo</span><span class="p">()</span>
+    <span class="p">{</span>
+        <span class="n">sw</span> <span class="p">=</span> <span class="k">new</span> <span class="nf">StreamWriter</span><span class="p">(</span><span class="s">@"C:\test.txt"</span><span class="p">);</span>
+    <span class="p">}</span>
+
+    <span class="p">~</span><span class="nf">Foo</span><span class="p">()</span>
+    <span class="p">{</span>
+        <span class="n">sw</span><span class="p">?.</span><span class="nf">Close</span><span class="p">();</span>
+    <span class="p">}</span>    
+<span class="p">}</span>
+</code></pre></div></div>
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>처리되지 않은 예외: System.ObjectDisposedException: 닫혀 있는 파일에 액세스할 수 없습니다.
+위치: System.IO.__Error.FileNotOpen()
+위치: System.IO.FileStream.Flush(Boolean flushToDisk)
+위치: System.IO.FileStream.Flush()
+위치: System.IO.StreamWriter.Flush(Boolean flushStream, Boolean flushEncoder)
+위치: System.IO.StreamWriter.Dispose(Boolean disposing)
+위치: System.IO.StreamWriter.Close()
+위치: _20_0802.Foo.Finalize()
+</code></pre></div></div>
+
+<hr />
+
+<h2 id="reference">Reference</h2>
+
+<p><a href="http://www.simpleisbest.net/post/2011/05/12/Finalizer-Usage-Pattern.aspx" target="_blank">Finalizer 사용 시 주의 사항들</a></p>
+:ET
