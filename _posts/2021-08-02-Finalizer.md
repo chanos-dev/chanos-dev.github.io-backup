@@ -12,6 +12,8 @@ comments: true
 
 ## <center>C# Finalizer</center>
 
+>[Git Source](https://github.com/chanos-dev/blogcode/tree/master/21-0802){:target="_blank"}
+
 ---
 
 Finalizer

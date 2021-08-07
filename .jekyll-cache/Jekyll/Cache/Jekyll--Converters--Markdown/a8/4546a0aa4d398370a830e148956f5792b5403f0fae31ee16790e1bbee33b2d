@@ -1,0 +1,17 @@
+I"�<h2 id="c-idisposable"><center>C# IDisposable</center></h2>
+
+<blockquote>
+  <p><a href="https://github.com/chanos-dev/blogcode/tree/master/21-0804" target="_blank">Git Source</a></p>
+</blockquote>
+
+<hr />
+
+<p>Finalizer를 선언하여 객체의 자원을 정리할 경우, 가비지 컬렉터의 메커니즘에 의해 객체의 제거 및 자원의 정리가 비결정적이라는 점을 해결하기 위해 제시된 방법이 IDisposable 패턴이다.</p>
+
+<hr />
+
+<h2 id="reference">Reference</h2>
+
+<p><a href="https://docs.microsoft.com/ko-kr/dotnet/api/system.idisposable?view=net-5.0" target="_blank">IDisposable 인터페이스</a>
+<a href="http://www.simpleisbest.net/post/2011/08/22/Dispose-Pattern-Basic.aspx">Dispose 패턴</a>{target=”_blank”}</p>
+:ET
