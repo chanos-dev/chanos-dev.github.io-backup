@@ -1,0 +1,17 @@
+I"<<h2 id="c-static-class-singleton"><center>C# static class, singleton</center></h2>
+
+<blockquote>
+  <p><a href="https://github.com/chanos-dev/blogcode/tree/master/21-0918" target="_blank">Git Source</a></p>
+</blockquote>
+
+<hr />
+
+<p>코드 작성 시 static class와 싱글톤패턴을 사용하는 경우가 있는데 어떠한 차이점이 있는지 살펴보고자 포스트를 작성하게 됐다.</p>
+
+<blockquote>
+  <p>static class</p>
+  <ol>
+    <li>인스턴스를 생성하지 않고 static 필드와 메서드만을 갖는 class이다.</li>
+  </ol>
+</blockquote>
+:ET
