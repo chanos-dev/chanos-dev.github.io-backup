@@ -1,0 +1,134 @@
+I"� <h2 id="visual-studio---code-snippet"><center>VIsual Studio - Code Snippet</center></h2>
+
+<hr />
+
+<p>Code Snippet은 클래스, 조건문 또는 반복문 등의 양식을 코드상에 빠르게 작성하기 위해 사용되는 일종의 매크로 기능이다.</p>
+
+<p>예를 들면 MessageBox.Show(““)와 같은 구문을 전체 타이핑을 하지않고 mbox라는 키워드를 입력 후 탭(tab)키를 누르면 자동으로 MessageBox.Show(““)구문이 완성되는 것이다.</p>
+
+<p><a href="http://localhost:4000/images/posts/2021-09-21/mbox.png"><img src="http://localhost:4000/images/posts/2021-09-21/mbox.png" alt="mbox" /></a></p>
+
+<p>기본적으로 MS에서 제공하는 코드 조각은 <a href="https://docs.microsoft.com/ko-kr/visualstudio/ide/visual-csharp-code-snippets?view=vs-2017" target="_blank">여기</a>에서 확인이 가능하다.</p>
+
+<p>평소에 많이 쓰는 구문들이 이미 제공되고 있기 때문에 해당 내용을 확인 후 실제 코드 작성 시 사용한다면 생산성을 크게 높일 수 있을 것 같다.</p>
+
+<p>그러나 코드 블럭을 사용자가 직접 만들고 싶은 경우가 있을 것이다.</p>
+
+<p>VS에서 직접 만든 코드 블럭을 불러와서 사용할 수 있게 메뉴로 제공되고 있다.</p>
+
+<p><code class="language-plaintext highlighter-rouge">도구</code> -&gt; <code class="language-plaintext highlighter-rouge">코드 조각 관리자</code>에서 확인이 가능하며 단축키는 <code class="language-plaintext highlighter-rouge">Ctrl+K, Ctrl+B</code>이다</p>
+
+<p><a href="http://localhost:4000/images/posts/2021-09-21/menu.png"><img src="http://localhost:4000/images/posts/2021-09-21/menu.png" alt="menu" /></a></p>
+
+<p>기본적인 코드 블럭 템플릿은 .xml 형식이며 포맷은 다음과 같다</p>
+
+<div class="language-xml highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="cp">&lt;?xml version="1.0" encoding="utf-8"?&gt;</span>
+<span class="nt">&lt;CodeSnippets</span> <span class="na">xmlns=</span><span class="s">"http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet"</span><span class="nt">&gt;</span>
+    <span class="nt">&lt;CodeSnippet</span> <span class="na">Format=</span><span class="s">"1.0.0"</span><span class="nt">&gt;</span>
+        <span class="nt">&lt;Header&gt;</span>
+            <span class="nt">&lt;Title&gt;&lt;/Title&gt;</span>
+        <span class="nt">&lt;/Header&gt;</span>
+        <span class="nt">&lt;Snippet&gt;</span>
+            <span class="nt">&lt;Code</span> <span class="na">Language=</span><span class="s">""</span><span class="nt">&gt;</span>
+                <span class="cp">&lt;![CDATA[]]&gt;</span>
+            <span class="nt">&lt;/Code&gt;</span>
+        <span class="nt">&lt;/Snippet&gt;</span>
+    <span class="nt">&lt;/CodeSnippet&gt;</span>
+<span class="nt">&lt;/CodeSnippets&gt;</span>
+</code></pre></div></div>
+
+<p>아래 형식은 이번 포스트에서 매개변수와 리턴형식이 없는 메서드를 만들어보고자 하는 형식이다.</p>
+
+<div class="language-c# highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">private</span> <span class="k">void</span> <span class="nf">Foo</span><span class="p">()</span>
+<span class="p">{</span>
+
+<span class="p">}</span>
+</code></pre></div></div>
+
+<p>위에서 제공되는 기본 포맷에서 추가 사항을 적용하면 다음과 같은 xml 형식이 나온다.</p>
+
+<div class="language-xml highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="cp">&lt;?xml version="1.0" encoding="utf-8"?&gt;</span>
+<span class="nt">&lt;CodeSnippets</span> <span class="na">xmlns=</span><span class="s">"http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet"</span><span class="nt">&gt;</span>
+    <span class="nt">&lt;CodeSnippet</span> <span class="na">Format=</span><span class="s">"1.0.0"</span><span class="nt">&gt;</span>
+        <span class="nt">&lt;Header&gt;</span>
+            <span class="nt">&lt;Title&gt;</span>기본 Method 정의<span class="nt">&lt;/Title&gt;</span>
+            <span class="nt">&lt;Description&gt;</span>코드 블럭 사용자 기본 Method 정의 테스트<span class="nt">&lt;/Description&gt;</span>
+            <span class="nt">&lt;shortcut&gt;</span>mt<span class="nt">&lt;/shortcut&gt;</span>
+        <span class="nt">&lt;/Header&gt;</span>
+        <span class="nt">&lt;Snippet&gt;</span>
+            <span class="nt">&lt;Declarations&gt;</span>
+                <span class="nt">&lt;Literal&gt;</span>
+                    <span class="nt">&lt;ID&gt;</span>accessType<span class="nt">&lt;/ID&gt;</span>
+                    <span class="nt">&lt;ToolTip&gt;</span>접근 제한자<span class="nt">&lt;/ToolTip&gt;</span>
+                    <span class="nt">&lt;Default&gt;</span>private<span class="nt">&lt;/Default&gt;</span> 
+                <span class="nt">&lt;/Literal&gt;</span>
+                <span class="nt">&lt;Literal&gt;</span>
+                    <span class="nt">&lt;ID&gt;</span>methodName<span class="nt">&lt;/ID&gt;</span>
+                    <span class="nt">&lt;ToolTip&gt;</span>메서드 명<span class="nt">&lt;/ToolTip&gt;</span>
+                    <span class="nt">&lt;Default&gt;</span>Foo<span class="nt">&lt;/Default&gt;</span> 
+                <span class="nt">&lt;/Literal&gt;</span> 
+            <span class="nt">&lt;/Declarations&gt;</span>
+            <span class="nt">&lt;Code</span> <span class="na">Language=</span><span class="s">"csharp"</span><span class="nt">&gt;</span>
+                <span class="cp">&lt;![CDATA[$accessType$ void $methodName$()
+                {
+                    $end$
+                }]]&gt;</span>
+            <span class="nt">&lt;/Code&gt;</span>
+        <span class="nt">&lt;/Snippet&gt;</span>
+    <span class="nt">&lt;/CodeSnippet&gt;</span>
+<span class="nt">&lt;/CodeSnippets&gt;</span>
+</code></pre></div></div>
+
+<p>기본 포맷 형식에는 없는 태그들이 추가되었는데 태그 내용을 참고해서 코드 블럭을 만들 때 참고하면 될 것 같다. 보다 정확한 정보는 <a href="https://docs.microsoft.com/ko-kr/visualstudio/ide/code-snippets-schema-reference?view=vs-2019" target="_blank">여기</a>에서 확인이 가능하다.</p>
+
+<table>
+  <thead>
+    <tr>
+      <th style="text-align: left">태그</th>
+      <th style="text-align: left">내용</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td style="text-align: left">Title</td>
+      <td style="text-align: left">코드 블럭의 이름</td>
+    </tr>
+    <tr>
+      <td style="text-align: left">Description</td>
+      <td style="text-align: left">인텔리센스에서 보여지는 코드 블럭에 대한 내용</td>
+    </tr>
+    <tr>
+      <td style="text-align: left">shortcut</td>
+      <td style="text-align: left">코드 상에서 스니펫을 사용하기 위한 단축키</td>
+    </tr>
+    <tr>
+      <td style="text-align: left">ID</td>
+      <td style="text-align: left">코드 블럭에서 사용될 변수 명, 사용은 ID 앞 뒤로 ‘$’를 붙인다.</td>
+    </tr>
+    <tr>
+      <td style="text-align: left">ToolTip</td>
+      <td style="text-align: left">인텔리센스에서 보여질 ID에 대한 내용</td>
+    </tr>
+    <tr>
+      <td style="text-align: left">Default</td>
+      <td style="text-align: left">코드 블럭 사용 시 ID 변수의 기본 값</td>
+    </tr>
+    <tr>
+      <td style="text-align: left">Code Language</td>
+      <td style="text-align: left">사용언어 - 제공되는 언어 (vb, csharp, cpp, xaml, xml, js, ts, sql, html)</td>
+    </tr>
+    <tr>
+      <td style="text-align: left">&lt;![CDATA[“내용”]]&gt;</td>
+      <td style="text-align: left">“내용”에 사용할 코드블럭 소스 위에서 정의된 ID 값을 사용하려면 $ID$로 작성</td>
+    </tr>
+  </tbody>
+</table>
+
+<h2 id="reference">Reference</h2>
+
+<p><a href="https://docs.microsoft.com/ko-kr/visualstudio/ide/visual-csharp-code-snippets?view=vs-2017" target="_blank">c# 코드 조각</a></p>
+
+<p><a href="https://docs.microsoft.com/ko-kr/visualstudio/ide/walkthrough-creating-a-code-snippet?view=vs-2019" target="_blank">연습: 코드 조각 만들기</a></p>
+
+<p><a href="https://docs.microsoft.com/ko-kr/visualstudio/ide/code-snippets-schema-reference?view=vs-2019" target="_blank">코드 조각 스키마 참조</a></p>
+:ET

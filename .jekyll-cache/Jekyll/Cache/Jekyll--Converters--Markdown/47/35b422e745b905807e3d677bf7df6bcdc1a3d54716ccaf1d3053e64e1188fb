@@ -1,0 +1,14 @@
+I"p<h2 id="visual-studio---code-snippet"><center>VIsual Studio - Code Snippet</center></h2>
+
+<hr />
+
+<p>Code Snippet은 클래스, 조건문 또는 반복문 등의 양식을 코드상에 빠르게 작성하기 위해 사용되는 일종의 매크로 기능이다.</p>
+
+<hr />
+
+<h2 id="reference">Reference</h2>
+
+<p><a href="https://docs.microsoft.com/ko-kr/visualstudio/ide/visual-csharp-code-snippets?view=vs-2017" target="_blank">c# 코드 조각</a></p>
+
+<p><a href="https://docs.microsoft.com/ko-kr/visualstudio/ide/walkthrough-creating-a-code-snippet?view=vs-2019" target="_blank">연습: 코드 조각 만들기</a></p>
+:ET
