@@ -8,6 +8,17 @@
         <lastBuildDate>Tue, 21 Sep 2021 00:00:00 +0900</lastBuildDate>
         
             <item>
+                <title>c# MakeGenericMethod</title>
+                        
+                
+                    <description>c# MakeGenericMethod</description>
+                
+                <pubDate>Tue, 21 Sep 2021 00:00:00 +0900</pubDate>
+                <link>http://localhost:4000/MakeGenericMethod/</link>
+                <guid isPermaLink="true">http://localhost:4000/MakeGenericMethod/</guid>
+            </item>
+        
+            <item>
                 <title>Visual Studio - Code Snippet</title>
                         
                 
@@ -104,17 +115,6 @@
                 <pubDate>Sat, 12 Jun 2021 00:00:00 +0900</pubDate>
                 <link>http://localhost:4000/GC2/</link>
                 <guid isPermaLink="true">http://localhost:4000/GC2/</guid>
-            </item>
-        
-            <item>
-                <title>C# 캡처 변수</title>
-                        
-                
-                    <description>C# 캡처 변수</description>
-                
-                <pubDate>Wed, 09 Jun 2021 00:00:00 +0900</pubDate>
-                <link>http://localhost:4000/captured_variable/</link>
-                <guid isPermaLink="true">http://localhost:4000/captured_variable/</guid>
             </item>
         
     </channel>

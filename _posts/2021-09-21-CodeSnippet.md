@@ -9,7 +9,7 @@ tag:
 comments: true
 ---
 
-## <center>VIsual Studio - Code Snippet</center>
+## <center>Visual Studio - Code Snippet</center>
 
 ---
 

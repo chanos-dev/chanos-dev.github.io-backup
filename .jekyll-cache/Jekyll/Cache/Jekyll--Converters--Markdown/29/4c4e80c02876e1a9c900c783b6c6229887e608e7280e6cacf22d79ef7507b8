@@ -1,0 +1,81 @@
+I"<h2 id="c-makegenericmethod"><center>c# MakeGenericMethod</center></h2>
+
+<blockquote>
+  <p><a href="https://github.com/chanos-dev/blogcode/tree/master/21-0925" target="_blank">Git Source</a></p>
+</blockquote>
+
+<hr />
+
+<p>제네릭을 사용하던 중 type parameter에 type 인스턴스를 넣어서 로직을 구현하고 싶어서 방법을 찾아보았다.</p>
+
+<p>일반적으로 제네릭 타입에 type 인스턴스를 넣게되면 컴파일 에러[<a href="https://docs.microsoft.com/en-us/dotnet/csharp/misc/cs0118?f1url=%3FappId%3Droslyn%26k%3Dk(CS0118)" target="_blank">CS0118</a>]가 발생한다.</p>
+
+<p>예를 들면 다음과 같은 상황이다.</p>
+
+<div class="language-c# highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">internal</span> <span class="k">enum</span> <span class="n">FooType</span>
+<span class="p">{</span>
+    <span class="c1">// values...</span>
+<span class="p">}</span>
+
+<span class="k">internal</span> <span class="k">void</span> <span class="n">GenericMethod</span><span class="p">&lt;</span><span class="n">T</span><span class="p">&gt;()</span>
+<span class="p">{</span>
+    <span class="c1">// do something...</span>
+<span class="p">}</span>
+
+<span class="k">static</span> <span class="k">void</span> <span class="nf">Main</span><span class="p">(</span><span class="kt">string</span><span class="p">[]</span> <span class="n">args</span><span class="p">)</span>
+<span class="p">{</span>
+    <span class="kt">var</span> <span class="n">p</span> <span class="p">=</span> <span class="k">new</span> <span class="nf">Program</span><span class="p">();</span>
+
+    <span class="kt">var</span> <span class="n">enumType</span> <span class="p">=</span> <span class="k">typeof</span><span class="p">(</span><span class="n">FooType</span><span class="p">);</span>
+    <span class="n">p</span><span class="p">.</span><span class="n">GenericMethod</span><span class="p">&lt;</span><span class="n">enumType</span><span class="p">&gt;();</span> <span class="c1">// compile error!!</span>
+<span class="p">}</span>
+</code></pre></div></div>
+
+<p>p.GenericMethod<enumType>(); 구문과 같이 제네릭 type parameter에 type 인스턴스가 들어가는 경우 에러가 발생한다.</enumType></p>
+<ul>
+  <li>type parameter는 클래스명 또는 키워드와 같이 이름이 들어가야 한다.</li>
+</ul>
+
+<p>type 인스턴스를 넣어서 사용하고 싶은 경우… 검색을 해본 결과 reflection을 이용해서 MakeGenericMethod를 사용하는 것이다.</p>
+
+<p>사용법은 다음과 같다.</p>
+
+<div class="language-c# highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">class</span> <span class="nc">Program</span>
+<span class="p">{</span>
+    <span class="k">public</span> <span class="k">void</span> <span class="n">GenericFoo</span><span class="p">&lt;</span><span class="n">T</span><span class="p">&gt;()</span>
+    <span class="p">{</span>
+        <span class="c1">// do something...</span>
+    <span class="p">}</span>
+
+    <span class="k">public</span> <span class="k">static</span> <span class="k">void</span> <span class="n">GenericBoo</span><span class="p">&lt;</span><span class="n">T</span><span class="p">&gt;()</span>
+    <span class="p">{</span>
+        <span class="c1">// do something...</span>
+    <span class="p">}</span>
+
+    <span class="k">static</span> <span class="k">void</span> <span class="nf">Main</span><span class="p">(</span><span class="kt">string</span><span class="p">[]</span> <span class="n">args</span><span class="p">)</span>
+    <span class="p">{</span>
+        <span class="kt">var</span> <span class="n">p</span> <span class="p">=</span> <span class="k">new</span> <span class="nf">Program</span><span class="p">();</span> 
+
+        <span class="c1">// instance method</span>
+        <span class="n">p</span><span class="p">.</span><span class="nf">GetType</span><span class="p">().</span><span class="nf">GetMethod</span><span class="p">(</span><span class="k">nameof</span><span class="p">(</span><span class="n">Program</span><span class="p">.</span><span class="n">GenericFoo</span><span class="p">)).</span><span class="nf">MakeGenericMethod</span><span class="p">(</span><span class="n">enumType</span><span class="p">).</span><span class="nf">Invoke</span><span class="p">(</span><span class="n">p</span><span class="p">,</span> <span class="k">null</span><span class="p">);</span>
+
+        <span class="c1">// class method</span>
+        <span class="k">typeof</span><span class="p">(</span><span class="n">Program</span><span class="p">).</span><span class="nf">GetMethod</span><span class="p">(</span><span class="k">nameof</span><span class="p">(</span><span class="n">Program</span><span class="p">.</span><span class="n">GenericFoo</span><span class="p">)).</span><span class="nf">MakeGenericMethod</span><span class="p">(</span><span class="n">enumType</span><span class="p">).</span><span class="nf">Invoke</span><span class="p">(</span><span class="k">null</span><span class="p">,</span> <span class="k">null</span><span class="p">);</span>        
+    <span class="p">}</span>
+<span class="p">}</span>
+</code></pre></div></div>
+
+<p>GetMethod를 이용하여 MethodInfo를 가져온 후 인스턴스 메서드인 MakeGenericMethod를 호출하여 제네릭 메서드로 만들어준다.</p>
+
+<p>MakeGenericMethod의 인자로는 params type[]을 받으며 가져온 제네릭 메서드의 type paramater 인자 만큼 순서대로 인자로 넣어주면 된다.</p>
+
+<p>마지막으로 MakeGenericMethod를 이용하여 생성된 MethodInfo에서 Invoke 인스턴스 메서드를 호출해주면 된다.</p>
+
+<p>만약 제네릭 메서드가 클래스 메서드인 경우 Invoke 메서드의 첫번째 인자에 null을 넣어주면 되지만 인스턴스 메서드인 경우 호출하려는 메서드를 갖고있는 객체 인스턴스를 넣어줘야 한다.</p>
+
+<hr />
+
+<h2 id="reference">Reference</h2>
+
+<p><a href="https://docs.microsoft.com/ko-kr/dotnet/api/system.reflection.methodinfo.makegenericmethod?view=net-5.0" target="_blank">MethodInfo.MakeGenericMethod(Type[]) 메서드</a></p>
+:ET
