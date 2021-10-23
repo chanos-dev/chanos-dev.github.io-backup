@@ -1,0 +1,32 @@
+I"�<h2 id="visual-stduio-작업-목록"><center>Visual Stduio 작업 목록</center></h2>
+
+<hr />
+
+<p>안녕하세요. <b>chanos</b>입니다. 😉</p>
+
+<p>오늘은 Visual Studio의 기능 중 하나인 작업 목록에 대해 소개하도록 하겠습니다.</p>
+
+<p>우리는 코드 작성 중 종종 주석을 이용하여 노트 또는 개선사항 등을 적어놓고는 합니다.</p>
+
+<div class="language-c# highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="err">예</span><span class="p">)</span>
+<span class="c1">// NOTE : 테스트 클래스입니다.</span>
+<span class="k">class</span> <span class="nc">Foo</span>
+<span class="p">{</span>
+    <span class="k">private</span> <span class="k">void</span> <span class="nf">fooMethod</span><span class="p">()</span>
+    <span class="p">{</span>
+        <span class="c1">// TODO : 테스트 코드 작성</span>
+    <span class="p">}</span>
+
+    <span class="k">private</span> <span class="k">void</span> <span class="nf">booMethod</span><span class="p">()</span>
+    <span class="p">{</span>
+        <span class="c1">// BUG : out of range</span>
+    <span class="p">}</span>
+<span class="p">}</span>
+</code></pre></div></div>
+
+<hr />
+
+<h2 id="reference">Reference</h2>
+
+<p><a href="https://docs.microsoft.com/ko-kr/visualstudio/ide/using-the-task-list?view=vs-2019" target="_blank">Visual Studio 작업 목록</a></p>
+:ET
