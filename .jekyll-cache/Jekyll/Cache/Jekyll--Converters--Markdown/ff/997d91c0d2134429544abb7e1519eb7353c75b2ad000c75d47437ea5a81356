@@ -1,0 +1,95 @@
+I"�<h2 id="c-serialize"><center>c# Serialize</center></h2>
+
+<blockquote>
+  <p><a href="https://github.com/chanos-dev/blogcode/tree/master/21-1108" target="_blank">Git Source</a></p>
+</blockquote>
+
+<hr />
+
+<p>안녕하세요. <b>chanos</b>입니다. 😉</p>
+
+<p>오늘은 데이터 직렬화(Serialize)와 역직렬화(Deserialize)에 대한 글입니다.</p>
+
+<ul>
+  <li>
+    <p>직렬화 :  객체를 파일 및 네트워크에 저장 / 전송 가능한 형태(스트림)로 만드는 작업</p>
+  </li>
+  <li>
+    <p>역직렬화 : 직렬화된 데이터를 객체의 형태로 변환하는 작업</p>
+  </li>
+</ul>
+
+<h3 id="데이터를-그냥-넘기면-되는게-아닌가-왜-직렬화-작업을-해야하는가">데이터를 그냥 넘기면 되는게 아닌가? ‘왜’ 직렬화 작업을 해야하는가?</h3>
+
+<p>저장 및 전송에 쓰이는 데이터의 형식은 값 형식(Value Type)입니다. 즉, Stack 영역에 할당된 데이터입니다.</p>
+
+<p>하지만 객체의 실제 데이터는 Heap 메모리에 할당이되고 이를 참조하고 있는 주소 값이 Stack 영역에 할당되어 있습니다.</p>
+
+<p>만약 직렬화를 하지 않는다면 객체의 실제 데이터가 아닌 Stack에 할당된 주소 값의 데이터를 사용하게 됩니다.</p>
+
+<p>객체가 할당되는 주소 값은 컴퓨터마다 다르고 응용 프로그램에서 할당 됐던 주소 값을 저장했다가 재실행해서 해당 주소 값을 불러 오더라도 재실행되면서 메모리 영역이 해제되기 때문에 불러 올 수 없습니다.</p>
+
+<p>그렇기에 이러한 주소 값은 무의미한 데이터가 됩니다.</p>
+
+<p>이 때문에 Heap 영역에 있는 데이터를 Value Type으로 변환하여 저장 및 전송 가능하게 변환해주는 작업이 필요합니다.</p>
+
+<hr />
+
+<h3 id="c-serialize-사용">C# Serialize 사용</h3>
+
+<p>C#에서는 여러가지의 Serialize 포맷 방식이 있지만 이번 포스트에서는 BinaryFormatter를 이용합니다.</p>
+
+<p>BinaryFormatter의 Serialize/Deserialize를 사용하기 위해선 객체에 <code class="language-plaintext highlighter-rouge">Serializable</code> Attribute를 선언해야합니다.</p>
+
+<div class="language-c# highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="p">[</span><span class="n">Serializable</span><span class="p">]</span>
+<span class="k">class</span> <span class="nc">Foo</span>
+<span class="p">{</span>
+    <span class="k">public</span> <span class="kt">string</span> <span class="n">Value</span> <span class="p">{</span> <span class="k">get</span><span class="p">;</span> <span class="k">set</span><span class="p">;</span> <span class="p">}</span>
+<span class="p">}</span>
+</code></pre></div></div>
+
+<p>Foo라는 객체를 생성 후 BinaryFormatter를 이용하여 FileStream 또는 MemoryStream에 연속된 데이터를 만들 수 있습니다.</p>
+
+<div class="language-c# highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kt">var</span> <span class="n">foo</span> <span class="k">new</span> <span class="nf">Foo</span><span class="p">()</span>
+<span class="p">{</span>
+    <span class="n">Value</span> <span class="p">=</span> <span class="s">"Hello, world!"</span>
+<span class="p">};</span>
+
+<span class="n">BinaryFormatter</span> <span class="n">binartFormatter</span> <span class="p">=</span> <span class="k">new</span> <span class="nf">BinaryFormatter</span><span class="p">();</span>
+
+<span class="c1">// Serialize</span>
+<span class="k">using</span> <span class="p">(</span><span class="kt">var</span> <span class="n">stream</span> <span class="p">=</span> <span class="n">File</span><span class="p">.</span><span class="nf">Open</span><span class="p">(</span><span class="n">path</span><span class="p">,</span> <span class="n">FileMode</span><span class="p">.</span><span class="n">Create</span><span class="p">))</span>
+<span class="p">{</span>
+    <span class="n">binartFormatter</span><span class="p">.</span><span class="nf">Serialize</span><span class="p">(</span><span class="n">stream</span><span class="p">,</span> <span class="n">foo</span><span class="p">);</span>
+    <span class="n">Console</span><span class="p">.</span><span class="nf">WriteLine</span><span class="p">(</span><span class="n">foo</span><span class="p">.</span><span class="n">Value</span><span class="p">);</span>
+<span class="p">}</span> 
+
+<span class="c1">// Deserialize</span>
+<span class="k">using</span> <span class="p">(</span><span class="kt">var</span> <span class="n">stream</span> <span class="p">=</span> <span class="n">File</span><span class="p">.</span><span class="nf">Open</span><span class="p">(</span><span class="n">path</span><span class="p">,</span> <span class="n">FileMode</span><span class="p">.</span><span class="n">Open</span><span class="p">))</span>
+<span class="p">{</span>
+    <span class="kt">var</span> <span class="n">deFoo</span> <span class="p">=</span> <span class="n">binaryFormatter</span><span class="p">.</span><span class="nf">Deserialize</span><span class="p">(</span><span class="n">stream</span><span class="p">)</span> <span class="k">as</span> <span class="n">Foo</span><span class="p">;</span>    
+    <span class="n">Console</span><span class="p">.</span><span class="nf">WriteLine</span><span class="p">(</span><span class="n">deFoo</span><span class="p">.</span><span class="n">Value</span><span class="p">);</span>
+<span class="p">}</span>
+
+<span class="c1">// MemoeryStream 사용</span>
+<span class="k">using</span> <span class="p">(</span><span class="kt">var</span> <span class="n">ms</span> <span class="p">=</span> <span class="k">new</span> <span class="nf">MemoryStream</span><span class="p">())</span>
+<span class="p">{</span>
+    <span class="n">binaryFormatter</span><span class="p">.</span><span class="nf">Serialize</span><span class="p">(</span><span class="n">ms</span><span class="p">,</span> <span class="n">foo</span><span class="p">);</span>
+
+    <span class="n">Console</span><span class="p">.</span><span class="nf">WriteLine</span><span class="p">(</span><span class="n">Encoding</span><span class="p">.</span><span class="n">UTF8</span><span class="p">.</span><span class="nf">GetString</span><span class="p">(</span><span class="n">ms</span><span class="p">.</span><span class="nf">ToArray</span><span class="p">()));</span>
+<span class="p">}</span>
+
+</code></pre></div></div>
+
+<h3 id="직렬화된-데이터">직렬화된 데이터</h3>
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>              &gt;21-1109, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null   _21_1109.Foo   &lt;Value&gt;k__BackingField      Hello, World
+</code></pre></div></div>
+
+<hr />
+
+<h2 id="reference">Reference</h2>
+
+<p><a href="https://ko.wikipedia.org/wiki/%EC%A7%81%EB%A0%AC%ED%99%94" target="_blank">직렬화</a></p>
+
+<p><a href="https://docs.microsoft.com/ko-kr/dotnet/api/system.runtime.serialization.formatters.binary.binaryformatter?view=net-5.0" target="_blank">BinaryFormatter</a></p>
+:ET
