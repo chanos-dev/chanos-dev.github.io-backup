@@ -4,7 +4,7 @@ title:  "c# Serialize"
 date:   2021-11-09
 excerpt: "c# Serialize"
 tag: 
-- c#
+- C#
 - Serialize
 - Deserialize
 comments: true
