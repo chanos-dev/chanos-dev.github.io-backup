@@ -8,8 +8,8 @@
   {% else %}
   <title>{{ site.tabtitle }}</title>
   {% endif %}
-  {% if page.excerpt %}
-  <meta name="description" content="{{ page.excerpt | markdownify | strip_html | strip_newlines | escape_once }}">
+  {% if page.description %}
+  <meta name="description" content="{{ page.description | markdownify | strip_html | strip_newlines | escape_once }}">
   {% else %}
   <meta name="description" content="{{ site.description }}">
   {% endif %}
@@ -21,14 +21,14 @@
   {% else %}<meta name="twitter:card" content="summary">
   <meta name="twitter:image" content="{{ site.logo }}">{% endif %}
   <meta name="twitter:title" content="{% if page.title %}{{ page.title }}{% else %}{{ site.title }}{% endif %}">
-  {% if page.excerpt %}<meta name="twitter:description" content="{{ page.excerpt | markdownify | strip_html | strip_newlines | escape_once }}">{% endif %}
+  {% if page.description %}<meta name="twitter:description" content="{{ page.description | markdownify | strip_html | strip_newlines | escape_once }}">{% endif %}
   {% if site.twitter %}<meta name="twitter:site" content="@{{ site.twitter }}">
   <meta name="twitter:creator" content="@{{ site.twitter }}">{% endif %}
   <!-- Open Graph -->
   <meta property="og:locale" content="{{ site.locale }}">
   <meta property="og:type" content="article">
   <meta property="og:title" content="{% if page.title %}{{ page.title }}{% else %}{{ site.title }}{% endif %}">
-  {% if page.excerpt %}<meta property="og:description" content="{{ page.excerpt | markdownify | strip_html | strip_newlines | escape_once }}">{% endif %}
+  {% if page.description %}<meta property="og:description" content="{{ page.description | markdownify | strip_html | strip_newlines | escape_once }}">{% endif %}
   <meta property="og:url" content="{{ page.url | replace:'index.html','' | prepend: site.url }}">
   <meta property="og:site_name" content="{{ site.title }}">
   <meta property="og:image" content="{{ site.url }}/images/{{ site.logo }}">

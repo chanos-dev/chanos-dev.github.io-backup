@@ -2,7 +2,7 @@
 layout: post
 title:  "[C#] 튜플 사용자 정의 형식 분해"
 date:   2021-04-22
-excerpt: "C# Deconstruct"
+description: "C# Deconstruct"
 tag: 
 - C#
 - Tuple

@@ -2,7 +2,7 @@
 layout: post
 title:  "Visual Studio - Code Snippet"
 date:   2021-09-21
-excerpt: "Visual Studio, Code Snipeet"
+description: "Visual Studio, Code Snipeet"
 tag: 
 - Visual Studio
 - Code Snipeet

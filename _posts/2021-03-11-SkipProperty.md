@@ -2,7 +2,7 @@
 layout: post
 title:  "[C#] GetProperties 특정 Property 제외하고 가져오기"
 date:   2021-03-11
-excerpt: "C# SkipProperty"
+description: "C# SkipProperty"
 tag: 
 - C#
 - Attribute

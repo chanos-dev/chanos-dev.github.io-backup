@@ -2,7 +2,7 @@
 layout: post
 title:  "[C#] 익명 타입"
 date:   2021-04-06
-excerpt: "C# Anonymous Type"
+description: "C# Anonymous Type"
 tag: 
 - C#
 - Anonymous Type

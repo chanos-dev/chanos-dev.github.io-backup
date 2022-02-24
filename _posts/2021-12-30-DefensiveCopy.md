@@ -2,7 +2,7 @@
 layout: post
 title:  "c# Defensive Copy (readonly struct instance)"
 date:   2021-12-30
-excerpt: "DefensiveCopy"
+description: "DefensiveCopy"
 tag: 
 - C#
 - DefensiveCopy

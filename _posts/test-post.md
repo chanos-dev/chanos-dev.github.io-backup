@@ -2,7 +2,7 @@
 layout: post
 title:  "First github blog post"
 date:   2020-04-02
-excerpt: "practice markdown"
+description: "practice markdown"
 tag: 
 - github
 - blog  

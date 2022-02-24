@@ -2,7 +2,7 @@
 layout: post
 title:  "[Jenkins] Ubuntu Jenkins 설치"
 date:   2021-03-16
-excerpt: "Ubuntu Jenkins"
+description: "Ubuntu Jenkins"
 tag: 
 - Ubuntu
 - Jenkins 

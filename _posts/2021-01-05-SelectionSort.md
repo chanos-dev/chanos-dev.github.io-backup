@@ -2,7 +2,7 @@
 layout: post
 title:  "[Algorithm] 선택 정렬"
 date:   2021-01-05
-excerpt: "C++ Selection Sort"
+description: "C++ Selection Sort"
 tag: 
 - C++
 - Sort

@@ -2,7 +2,7 @@
 layout: post
 title:  "C# 캡처 변수"
 date:   2021-06-09
-excerpt: "C# 캡처 변수"
+description: "C# 캡처 변수"
 tag: 
 - C#
 - Closure

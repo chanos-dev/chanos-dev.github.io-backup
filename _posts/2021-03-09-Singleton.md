@@ -2,7 +2,7 @@
 layout: post
 title:  "[C#] Singleton Pattern"
 date:   2021-03-09
-excerpt: "C# Singleton"
+description: "C# Singleton"
 tag: 
 - C#
 - Singleton

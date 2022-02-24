@@ -2,7 +2,7 @@
 layout: post
 title:  "[C#] 사용자 정의 형변환"
 date:   2021-04-03
-excerpt: "C# 사용자 정의 형변환"
+description: "C# 사용자 정의 형변환"
 tag: 
 - C#
 - implicit

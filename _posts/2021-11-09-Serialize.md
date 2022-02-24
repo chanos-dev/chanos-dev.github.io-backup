@@ -2,7 +2,7 @@
 layout: post
 title:  "c# Serialize"
 date:   2021-11-09
-excerpt: "c# Serialize"
+description: "c# Serialize"
 tag: 
 - C#
 - Serialize

@@ -2,7 +2,7 @@
 layout: post
 title:  "C# IDisposable"
 date:   2021-08-07
-excerpt: "C# IDisposable"
+description: "C# IDisposable"
 tag: 
 - C#
 - IDisposable

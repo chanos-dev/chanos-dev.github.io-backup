@@ -2,7 +2,7 @@
 layout: post
 title:  "c# sqlite merge"
 date:   2022-02-09
-excerpt: "c# sqlite merge"
+description: "c# sqlite merge"
 tag: 
 - c#
 - sqlite

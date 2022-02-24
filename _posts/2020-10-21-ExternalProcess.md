@@ -2,7 +2,7 @@
 layout: post
 title:  "[C#] 응용프로그램 실행하기"
 date:   2020-10-21
-excerpt: "Process.Start"
+description: "Process.Start"
 tag: 
 - C# 
 comments: true

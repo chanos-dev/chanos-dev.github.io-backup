@@ -2,7 +2,7 @@
 layout: post
 title:  "C# static class, singleton"
 date:   2021-09-19
-excerpt: "C# static class, singleton"
+description: "C# static class, singleton"
 tag: 
 - C#
 - static class

@@ -2,7 +2,7 @@
 layout: post
 title:  "C# 원격 객체 생성"
 date:   2021-06-07
-excerpt: "C# 원격 객체 생성"
+description: "C# 원격 객체 생성"
 tag: 
 - C#
 - Activator

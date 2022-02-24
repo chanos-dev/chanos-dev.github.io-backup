@@ -2,7 +2,7 @@
 layout: post
 title:  "[C#] 한글 자동완성"
 date:   2021-04-28
-excerpt: "C# AutoComplete"
+description: "C# AutoComplete"
 tag: 
 - C#
 - AutoComplete

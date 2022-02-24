@@ -2,7 +2,7 @@
 layout: post
 title:  "[ES] ElasticSearch (3)"
 date:   2020-11-09
-excerpt: "ElasticSearch"
+description: "ElasticSearch"
 tag: 
 - ElasticSearch
 - ES

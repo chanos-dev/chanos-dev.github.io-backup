@@ -2,7 +2,7 @@
 layout: post
 title:  "[C#] 확장 메서드"
 date:   2021-01-04
-excerpt: "C# Extension Method"
+description: "C# Extension Method"
 tag: 
 - C#
 - Extension Method

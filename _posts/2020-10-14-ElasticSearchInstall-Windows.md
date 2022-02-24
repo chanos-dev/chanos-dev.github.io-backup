@@ -2,7 +2,7 @@
 layout: post
 title:  "[ES] 윈도우 ElasticSearch 설치"
 date:   2020-10-14
-excerpt: "윈도우 ES 설치"
+description: "윈도우 ES 설치"
 tag: 
 - ElasticSearch
 - ES

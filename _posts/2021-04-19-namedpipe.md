@@ -2,7 +2,7 @@
 layout: post
 title:  "[C#] named pipe"
 date:   2021-04-19
-excerpt: "C# named pipe"
+description: "C# named pipe"
 tag: 
 - C#
 - named pipe

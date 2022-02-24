@@ -2,7 +2,7 @@
 layout: post
 title:  "VisualStudio ColorPicker"
 date:   2021-05-04
-excerpt: "VisualStudio ColorPicker"
+description: "VisualStudio ColorPicker"
 tag: 
 - Visual Studio
 - Color Picker

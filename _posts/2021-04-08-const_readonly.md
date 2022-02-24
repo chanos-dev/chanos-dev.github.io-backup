@@ -2,7 +2,7 @@
 layout: post
 title:  "[C#] const, readonly"
 date:   2021-04-08
-excerpt: "C# const, readlony"
+description: "C# const, readlony"
 tag: 
 - C#
 - const

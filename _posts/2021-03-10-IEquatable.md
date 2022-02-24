@@ -2,7 +2,7 @@
 layout: post
 title:  "[C#] 객체 비교"
 date:   2021-03-10
-excerpt: "C# IEquatable"
+description: "C# IEquatable"
 tag: 
 - C#
 - IEquatable

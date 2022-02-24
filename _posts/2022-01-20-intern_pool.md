@@ -2,7 +2,7 @@
 layout: post
 title:  "c# Intern Pool"
 date:   2022-01-20
-excerpt: "Intern Pool"
+description: "Intern Pool"
 tag: 
 - C#
 - Intern Pool

@@ -2,7 +2,7 @@
 layout: post
 title:  "[Algorithm] 삽입 정렬"
 date:   2021-01-10
-excerpt: "C++ Insertion Sort"
+description: "C++ Insertion Sort"
 tag: 
 - C++
 - Sort

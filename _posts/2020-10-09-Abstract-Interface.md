@@ -2,7 +2,7 @@
 layout: post
 title:  "[C#] Abstract/Interface"
 date:   2020-10-09
-excerpt: "Abstract/Interface"
+description: "Abstract/Interface"
 tag: 
 - C# 
 comments: true

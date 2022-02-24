@@ -2,7 +2,7 @@
 layout: post
 title:  ".NET Interactive Notebooks (.NET 5 SDK)"
 date:   2022-01-23
-excerpt: ".NET Interactive Notebooks (.NET 5 SDK)"
+description: ".NET Interactive Notebooks (.NET 5 SDK)"
 tag: 
 - .NET
 - .NET 5

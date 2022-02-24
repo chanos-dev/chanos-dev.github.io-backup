@@ -2,7 +2,7 @@
 layout: post
 title:  "C# Finalizer"
 date:   2021-08-02
-excerpt: "C# Finalizer"
+description: "C# Finalizer"
 tag: 
 - C#
 - Finalizer

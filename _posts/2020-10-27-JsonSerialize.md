@@ -2,7 +2,7 @@
 layout: post
 title:  "[C#] Json Serialize, Deserialize"
 date:   2020-10-27
-excerpt: "Json Serialize, Deserialize"
+description: "Json Serialize, Deserialize"
 tag: 
 - C# 
 - Json

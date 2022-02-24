@@ -2,7 +2,7 @@
 layout: post
 title:  "c# MakeGenericMethod"
 date:   2021-09-25
-excerpt: "c# MakeGenericMethod"
+description: "c# MakeGenericMethod"
 tag: 
 - C#
 - Generic

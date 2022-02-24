@@ -2,7 +2,7 @@
 layout: post
 title:  "c# DoubleBuffered"
 date:   2021-11-23
-excerpt: "DoubleBuffered"
+description: "DoubleBuffered"
 tag: 
 - C#
 - DoubleBuffered 
