@@ -401,7 +401,7 @@ canvas {
         left: 0;
         right: 0;
         bottom: 0;
-        background: $green;
+        background: $white;
         -webkit-transform: scaleY(0);
         transform: scaleY(0);
         -webkit-transform-origin: 50% 100%;
@@ -420,7 +420,7 @@ canvas {
         }
       }
       &:nth-child(odd) {
-        background:#42444A;//$overlay-color;
+        background:#42444A;//$overlay-color; 
       }
       &:last-child {
         margin-right: 0;
@@ -429,8 +429,8 @@ canvas {
         display: inline-block;
         font-size: 1.3em;
         padding: 0.3em 0.35em;
-        color: RGB(218,170,219);
-      }
+        color: $red;
+      }  
     }
   }
 }

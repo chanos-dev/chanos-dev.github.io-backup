@@ -4,3 +4,11 @@
   width: (18em / 14);
   text-align: center;
 }
+
+
+.#{$fa-css-prefix}-fw-custom {
+  width: (18em / 14);
+  text-align: center;
+  display: flex;
+  margin: 0;
+} 

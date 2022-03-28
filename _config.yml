@@ -1,7 +1,7 @@
 # Site
-tabtitle: chanos-dev blog
+tabtitle: chanos-dev Tech Blog
 title: chanos-dev
-description: Junior Developer
+description: Junior C# Developer
 url: https://chanos-dev.github.io
 logo: chanos.png                                       # Site logo
 locale: en_US
@@ -30,13 +30,13 @@ sass:
 #google-analytics: UA-XXXXX-Y
 
 # Social Links
-github:             chanos-dev
-email:              chanos.dev@gmail.com
+github: chanos-dev
+email: chanos.dev@gmail.com
 #google.plus:        username
 #twitter:            username
 #facebook:           username
-stackoverflow:     13534068/chanos
-linkedin:          찬호-백-ba53a020b
+stackoverflow: 13534068/chanos
+linkedin: 찬호-백-ba53a020b
 #xing:              username
 #instagram:          username
 #lastfm:            username
@@ -54,8 +54,9 @@ linkedin:          찬호-백-ba53a020b
 #xmpp:              username@server.com
 #hackernews:        username
 #behance:           username
-baekjoon:           chanos
-rocketpunch:           chanosdev
+baekjoon: chanos
+rocketpunch: chanosdev
+codewars: chanos-dev
 
 # Gems
 gems:
